@@ -37,13 +37,13 @@ include_once "../model/getStudent.php";
 <table border="0" width="800"  align="center" cellspacing="4"  cellpadding="4" >
     <tr>
         <td height="50" align="center">
-            cid
+            Course ID
         </td>
         <td height="50" align="center">
-            title
+            Course Title
         </td>
         <td height="50" align="center">
-            detail
+            Course Offering
         </td>
     </tr>
 <?php
@@ -57,7 +57,7 @@ while ($row=mysql_fetch_array($result)){
     echo $row['title'];
     echo "</td>";
     echo "<td height='30' align='center'>";
-    echo "<a href='displayCourseProfile.php?cid=".$cid."'>detail</a>";
+    echo "<a href='displayCourseProfile.php?cid=".$cid."'>Details</a>";
     echo "</td>";
 
     echo "</tr>";

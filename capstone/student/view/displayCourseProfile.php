@@ -14,7 +14,7 @@ $row=mysql_fetch_array($result);
 echo "<br/>";
 echo "<br/>";
 echo "<br/>";
-echo $row['cid'];
+
 $lab=$row['lab'];
 //will do it later;
 $sid="1";
@@ -22,14 +22,17 @@ echo "<br/>";
 $result=getOfferingByCid($cid);
 ?>
 <form action="displaySelectResult.php" method="post">
-
+    <div style="position:relative; left:100px">
+       <?php
+        echo $row['cid'];
+        ?>
 <table border="1">
     <tr height="45">
-        <th>class Number</th>
+        <th>Class Number</th>
         <th>Instructor Name</th>
-        <th>class Time</th>
+        <th>Class Time</th>
 
-        <th>classroom</th>
+        <th>Classroom</th>
 
         <th></th>
     </tr>
@@ -62,25 +65,29 @@ $result=getOfferingByCid($cid);
     }
     ?>
 </table>
+        </div>
     <br>
     <br>
     <br>
     <?php
     if($lab!="no"){
-        echo $lab;
+
         echo "<br/>";
         $result=getOfferingByCid($lab);
 
 
     ?>
-
+    <div style="position:relative; left:100px">
+        <?php
+        echo $lab;
+        ?>
 <table border="1">
     <tr height="45">
-        <th>class Number</th>
+        <th>Class Number</th>
         <th>Instructor Name</th>
-        <th>class Time</th>
+        <th>Class Time</th>
 
-        <th>classroom</th>
+        <th>Classroom</th>
 
         <th></th>
     </tr>
@@ -116,6 +123,7 @@ $result=getOfferingByCid($cid);
 
 </table>
     <input type="submit" value="select">
+        </div>
 </form>
 <?php
 include_once "studentViewEnd.php";

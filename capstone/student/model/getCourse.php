@@ -30,4 +30,7 @@ function getCourseById($cid){
     $result=mysql_query("select * from Course where cid='".$cid."'");
     return $result;
 }
+function getCourseByConditions($condition,$cid){
+
+}
 ?>

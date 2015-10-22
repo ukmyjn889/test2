@@ -14,8 +14,9 @@ $sid=$_SESSION["sid"];
 $result=getStudentById($sid);
 $row=mysql_fetch_array($result);
 ?>
-    student info:
-<table border="0" title="student info" width="300" height="200">
+<div style="position:relative; left:100px">
+    Student Information
+<table border="0" title="student info" width="300" height="200" >
     <tr>
         <td>
             Student ID:
@@ -49,7 +50,7 @@ $row=mysql_fetch_array($result);
         </tr>
     <tr>
         <td>
-            grade:
+            Enrollment year:
         </td>
 
         <td>
@@ -60,16 +61,19 @@ $row=mysql_fetch_array($result);
     </tr>
 
 </table>
-    course taken:
+
+</div>
+<div style="position:relative; left:100px">
+    Course taken:
 <table border="1" width="690" >
     <tr height="45">
         <th>Course</th>
         <th>Course Title</th>
         <th>Instructor Name</th>
-        <th>class Time</th>
+        <th>Class Time</th>
 
-        <th>classroom</th>
-        <th>Taken time</th>
+        <th>Classroom</th>
+        <th>Offering Taken time</th>
         <th>Mark</th>
      </tr>
 <?php
@@ -113,7 +117,7 @@ while ($row=mysql_fetch_array($result)){
 }
     ?>
 </table>
-
+</div>
 <!--    --><?php
 
 //    while($outRow=mysql_fetch_array($result)){

@@ -35,19 +35,15 @@ include_once "../model/getStudent.php";
 <body>
 <div class="wraper">
     <header class="header">
-        <a class="logo" href="../../Login.html">student module</a>
+        <a class="logo" href="../../Login.html">Student module</a>
         <nav>
             <!-- top menu -->
             <ul>
-                <li><a href="displayStudentProfile.php">view profile</a>
+                <li><a >View student profile</a>
                     <ul>
-                        <li><a href="index2.html">Home Version 2</a></li>
-                        <li><a href="index3.html">Home Version 3</a></li>
-                        <li><a href="index4.html">Home Version 4</a></li>
-                        <li><a href="index5.html">Home Version 5</a></li>
-                        <li><a href="index6.html">Home Version 6</a></li>
-                        <li><a href="index7.html">Home Version 7</a></li>
-                        <li><a href="index8.html">Home Version 8</a></li>
+                        <li><a href="displayStudentProfile.php">User information</a></li>
+                        <li><a href="displayStudentProfile.php">Course profile</a></li>
+
                     </ul>
                 </li>
 
@@ -59,99 +55,41 @@ include_once "../model/getStudent.php";
                         echo "?major=".trim($row["major"]);
                     }
                     ?>
-                    ">view courses</a>
+                    ">Search courses</a>
                     <ul>
-                        <li><a href="about.html">About Us</a></li>
-                        <li><a href="team.html">Team</a></li>
-                        <li><a href="services.html">Services</a></li>
-                        <li><a href="process.html">Process</a></li>
-                        <li><a href="testimonials.html">Testimonials</a></li>
-                        <li><a href="contact_us.html">Contact Us</a></li>
-                        <li><a href="pricing.html">Pricing</a></li>
-                        <li><a href="faq.html">FAQ</a></li>
-                        <li><a href="left_nav.html">Left Nav</a></li>
-                        <li><a href="left_sidebar.html">Left Sidebar</a></li>
-                        <li><a href="right_nav.html">Right Nav</a></li>
-                        <li><a href="right_sidebar.html">Right Sidebar</a></li>
-                        <li><a href="full_width.html">Full Width</a></li>
+                        <li><a href="about.html">Search course fuzzy</a></li>
+                        <li><a href="team.html">Search courses by conditions</a></li>
+
+
                     </ul>
                 </li>
-                <li><a href="short_text.html">Select courses</a>
+                <li><a >My class Schedular</a>
                     <ul>
-                        <li><a href="short_text.html">Short Text Layout</a>
-                            <ul>
-                                <li><a href="short_text.html">1 Column</a></li>
-                                <li><a href="short_text2.html">2 Column</a></li>
-                                <li><a href="short_text3.html">3 Column</a></li>
-                                <li><a href="short_text4.html">4 Column</a></li>
-                            </ul>
+                        <li><a href="displayTimeTable.php">Show current course time table</a>
+
                         </li>
-                        <li><a href="long_text.html">my class schedular</a>
-                            <ul>
-                                <li><a href="long_text_wide.html">1 Column Wide</a></li>
-                                <li><a href="long_text.html">1 Column</a></li>
-                                <li><a href="long_text2.html">2 Column</a></li>
-                                <li><a href="long_text3.html">3 Column</a></li>
-                                <li><a href="long_text4.html">4 Column</a></li>
-                            </ul>
+                        <li><a href="long_text.html">Class planner</a>
+
                         </li>
-                        <li><a href="filtered.html">Log out</a>
-                            <ul>
-                                <li><a href="filtered.html">1 Column</a></li>
-                                <li><a href="filtered2.html">2 Column</a></li>
-                                <li><a href="filtered3.html">3 Column</a></li>
-                                <li><a href="filtered4.html">4 Column</a></li>
-                            </ul>
+                        <li><a href="filtered.html">Other</a>
+
                         </li>
-                        <li><a href="right_sidebar.html">Right Sidebar</a>
-                            <ul>
-                                <li><a href="right_sidebar.html">1 Column</a></li>
-                                <li><a href="right_sidebar2.html">2 Column</a></li>
-                                <li><a href="right_sidebar3.html">3 Column</a></li>
-                            </ul>
-                        </li>
-                        <li><a href="left_sidebar.html">Left Sidebar</a>
-                            <ul>
-                                <li><a href="left_sidebar.html">1 Column</a></li>
-                                <li><a href="left_sidebar2.html">2 Column</a></li>
-                                <li><a href="left_sidebar3.html">3 Column</a></li>
-                            </ul>
-                        </li>
-                        <li><a href="gallery.html">Gallery Style</a>
-                            <ul>
-                                <li><a href="gallery.html">1 Column</a></li>
-                                <li><a href="gallery2.html">2 Column</a></li>
-                                <li><a href="gallery3.html">3 Column</a></li>
-                                <li><a href="gallery4.html">4 Column</a></li>
-                            </ul>
-                        </li>
-                        <li><a href="single_full.html">Portfolio Single Post</a>
-                            <ul>
-                                <li><a href="single_full.html">Full Width</a></li>
-                                <li><a href="single_right.html">Right Sidebar</a></li>
-                                <li><a href="single_left.html">Left Sidebar</a></li>
-                            </ul>
-                        </li>
+
                     </ul>
                 </li>
-                <li><a href="blog_post.html">my class schedular</a>
+                <li><a href="blog_post.html">Planner</a>
                     <ul>
-                        <li><a href="blog_full_width.html">Full Width</a></li>
-                        <li><a href="blog_large.html">Large Image No Sidebar</a></li>
-                        <li><a href="blog_large_sidebar.html">Large Image With Sidebar</a></li>
-                        <li><a href="blog_medium_sidebar.html">Medium Image Right Sidebar</a></li>
+                        <li><a href="blog_full_width.html">Planner</a></li>
+                        <li><a href="blog_large.html">Planner</a></li>
+                        <li><a href="blog_large_sidebar.html">Planner</a></li>
+                        <li><a href="blog_medium_sidebar.html">Planner</a></li>
                     </ul>
                 </li>
-                <li><a href="../model/logOut.php">Log out</a>
+                <li><a >Log out</a>
                     <ul>
-                        <li><a href="shortcodes_typography.html">Typography</a></li>
-                        <li><a href="shortcodes_buttons_icons.html">Buttons</a></li>
-                        <li><a href="shortcodes_google_maps.html">Maps</a></li>
-                        <li><a href="shortcodes_content_sliders.html">Sliders</a></li>
-                        <li><a href="shortcodes_videos.html">Videos</a></li>
-                        <li><a href="shortcodes_pricing_tables.html">Tables</a></li>
-                        <li><a href="shortcodes_alerts_boxes.html">Boxes</a></li>
-                        <li><a href="shortcodes_accordions_tabs_toggles.html">Tabs</a></li>
+                        <li><a href="../model/logOut.php">Log out</a></li>
+                        <li><a href="shortcodes_buttons_icons.html">Switch user</a></li>
+
                     </ul>
                 </li>
             </ul>
@@ -187,7 +125,7 @@ include_once "../model/getStudent.php";
     <!-- /top_title -->
     <div class="wraper">
         <!-- left_nav -->
-        <div class="left_nav" style="border-left:solid 1px gray;border-right:solid 1px gray">
+        <div class="left_nav" style="border-left:solid 1px gray;border-right:solid 1px gray;height: 480px" >
 <!--            <div  class="c_after">-->
 <!--                <ul class="tab_select">-->
 <!--                    <li><a href="#tab-1">Home Page Options</a></li>-->
@@ -234,14 +172,15 @@ include_once "../model/getStudent.php";
 <!---->
 <!---->
 <!---->
-<!--            <!-- copyright -->
-<!--            <div class="copyright">-->
-<!--                <div class="wraper">-->
-<!--                    <p><span>Copyright </span>All Rights Reserved</a></p>-->
-<!--                    <a class="top" href="#">Back to the top</a>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--            <!-- /copyright -->
-<!--            <!-- /footer -->
-<!--</body>-->
-<!--</html>-->
+            <!-- copyright
+            <div class="copyright">
+                <div class="wraper">
+                    <p><span>Copyright </span>All Rights Reserved</a></p>
+                    <a class="top" href="#">Back to the top</a>
+                </div>
+            </div>
+            <!-- /copyright
+            <!-- /footer
+</body>
+</html>
+-->

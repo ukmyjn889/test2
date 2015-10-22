@@ -11,9 +11,10 @@ if(!$con){
     die('Could not connect: ' . mysql_error());
 }
 mysql_select_db("capstone",$con);
-function getOfferingByCid($cid){
-$sql="select * from Offering where cid='".$cid."'";
-    $result=mysql_query($sql);
+function getOfferingByCid($cid)
+{
+    $sql = "select * from Offering where cid='" . $cid . "'";
+    $result = mysql_query($sql);
     return $result;
 }
 function getOfferingById($oid){
@@ -58,7 +59,7 @@ function setOfferingTimeTable($offeringRow,$array){
     //echo $startIndex;
     //echo $endIndex;
    // print_r($offeringRow);
-    for($i=$startIndex;$i<=$endIndex;$i++) {
+    for($i=$startIndex;$i<$endIndex;$i++) {
         if ($offeringRow['Mon'] == "T") {
             $array[0][$i]="x";
         }
@@ -137,5 +138,19 @@ function isOccupied($oid,$timeTable){
         }
     }
     return true;
+}
+function getOfferingByOidArray($oidArray,$week){
+    $sql="select * from offering where (oid='".$oidArray[0]."'";
+    for($x=1;$x<count($oidArray);$x++){
+        $sql.=" or oid='".$oidArray[$x]."'";
+    }
+    $sql.=")and ".$week."='T' order by TimeStart";
+    //echo $sql;
+    $result=mysql_query($sql);
+    $array=array();
+    while($row=mysql_fetch_array($result)){
+        array_push($array,$row);
+    }
+    return $array;
 }
 ?>
