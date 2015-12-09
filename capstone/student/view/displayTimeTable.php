@@ -6,7 +6,7 @@
  * Time: 0:16
  */
 include_once "../model/getTimeTable.php";
-
+include_once "studentView.php";
 session_start();
 $sid=$_SESSION['sid'];
 $timeTable=getOfferingBySidOrderByAscent($sid);
@@ -40,6 +40,7 @@ $timeTableArray=getOfferingTimeTable($sid);
         }
         .right td{
             background:#E0ECFF;
+            border:skyblue solid 1px;
         }
         .right td.drop{
             background:#fafafa;
@@ -48,15 +49,13 @@ $timeTableArray=getOfferingTimeTable($sid);
         .right td.over{
             background:#FBEC88;
         }
-        .item{
-            text-align:center;
-            border:1px solid #499B33;
-            background:#fafafa;
-            width:100px;
+        .right table{
+
+
+
+
         }
-        .nocolor{
-            width:
-        }
+
 
 
     </style>
@@ -66,14 +65,19 @@ $timeTableArray=getOfferingTimeTable($sid);
 </head>
 <body>
 
-<div class="demo-info" style="margin-bottom:30px">
+<div  class="demo-info" style="margin-bottom:30px">
 
 </div>
 
 <div style="width:1200px;">
 
-    <div class="right" style="position:relative; left:200px; top:10px; ">
-        <table height="800" width="1200">
+
+    <div class="right" style="position:absolute; left:10px; top:5px; ">
+
+
+
+
+        <table height="800" width="1200"  >
             <tr>
                 <td class="blank"></td>
                 <td class="title">Monday</td>
@@ -198,9 +202,9 @@ $timeTableArray=getOfferingTimeTable($sid);
 
         </table>
     </div>
-    <div id="nocolor" style="position:absolute; left:664px; top:113px;">
+    <div id="nocolor" style="position:absolute; left:210px; top:145px;">
 
-        <table height="733"  style=" border-color: #00aeef;" border="0px"  width="742">
+        <table height="660"  style=" border-color: #00aeef;" border="0px"  width="700">
 
             <?php
            // print_r($timeTable);
@@ -227,7 +231,7 @@ $timeTableArray=getOfferingTimeTable($sid);
                             $offeringRow = $timeTable[$y][$count[$y]];
                             $rowSpan=calculateOfferingPeriod($offeringRow);
                             echo "<td class='title' align='center'  height='8px'  width='75' rowspan='" . $rowSpan . "'     style='border:1px solid; border-color:#1e90ff; '  bgcolor='#1e90ff'>" .
-                                $offeringRow['cid']."\n".$offeringRow['TimeStart']."-".$offeringRow['TimeEnd'] . "</td>\n";
+                                $offeringRow['cid']. "</td>\n";
                             $flag[$y] = $rowSpan-1;
                             $count[$y]++;
                         }
@@ -242,7 +246,7 @@ $timeTableArray=getOfferingTimeTable($sid);
            echo "</tr>\n";
             }
             ?>
-
+<!--            "\n".$offeringRow['TimeStart']."-".$offeringRow['TimeEnd'] .-->
 
 
         </table>

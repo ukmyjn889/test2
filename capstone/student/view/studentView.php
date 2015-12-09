@@ -15,6 +15,7 @@ include_once "../model/getStudent.php";
     <title>Left Navigation</title>
 <!--    <link rel="stylesheet" href="../../css/div5.css" />-->
     <link href="http://libs.baidu.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet">
+    <link href="http://apps.bdimg.com/libs/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet">
     <script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
     <script src="http://libs.baidu.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
 
@@ -42,7 +43,7 @@ include_once "../model/getStudent.php";
                 <li><a >View student profile</a>
                     <ul>
                         <li><a href="displayStudentProfile.php">User information</a></li>
-                        <li><a href="displayStudentProfile.php">Course profile</a></li>
+<!--                        <li><a href="displayStudentProfile.php">Course profile</a></li>-->
 
                     </ul>
                 </li>
@@ -57,8 +58,8 @@ include_once "../model/getStudent.php";
                     ?>
                     ">Search courses</a>
                     <ul>
-                        <li><a href="about.html">Search course fuzzy</a></li>
-                        <li><a href="team.html">Search courses by conditions</a></li>
+<!--                        <li><a href="about.html">Search course fuzzy</a></li>-->
+<!--                        <li><a href="team.html">Search courses by conditions</a></li>-->
 
 
                     </ul>
@@ -68,21 +69,22 @@ include_once "../model/getStudent.php";
                         <li><a href="displayTimeTable.php">Show current course time table</a>
 
                         </li>
-                        <li><a href="long_text.html">Class planner</a>
-
-                        </li>
-                        <li><a href="filtered.html">Other</a>
+<!--                        <li><a href="long_text.html">Class planner</a>-->
+<!---->
+<!--                        </li>-->
+<!--                        <li><a href="filtered.html">Other</a>-->
 
                         </li>
 
                     </ul>
                 </li>
-                <li><a href="blog_post.html">Planner</a>
+                <li><a href="#">Planner</a>
                     <ul>
-                        <li><a href="blog_full_width.html">Planner</a></li>
-                        <li><a href="blog_large.html">Planner</a></li>
-                        <li><a href="blog_large_sidebar.html">Planner</a></li>
-                        <li><a href="blog_medium_sidebar.html">Planner</a></li>
+                        <li><a href="selectTermToSetPlanner.php">Set my planner</a></li>
+                        <li><a href="selectTermToViewOwnPlanner.php">View my planner</a></li>
+                        <li><a href="displaySelectSemesters.php">Auto Generate planner</li>
+<!--                        <li><a href="blog_large_sidebar.html">Planner</a></li>-->
+<!--                        <li><a href="blog_medium_sidebar.html">Planner</a></li>-->
                     </ul>
                 </li>
                 <li><a >Log out</a>
@@ -125,7 +127,7 @@ include_once "../model/getStudent.php";
     <!-- /top_title -->
     <div class="wraper">
         <!-- left_nav -->
-        <div class="left_nav" style="border-left:solid 1px gray;border-right:solid 1px gray;height: 480px" >
+        <div class="left_nav" style="border-left:solid 1px gray;border-right:solid 1px gray; height: 480px" >
 <!--            <div  class="c_after">-->
 <!--                <ul class="tab_select">-->
 <!--                    <li><a href="#tab-1">Home Page Options</a></li>-->

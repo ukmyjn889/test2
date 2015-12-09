@@ -108,7 +108,7 @@ while ($row=mysql_fetch_array($result)){
         echo $innerRow['ClassLocation'];
         echo "</td>";
         echo "<td>";
-        echo $row['takenTime'];
+        echo $row['term'];
         echo "</td>";
         echo "<td width='20px'>";
         echo $row['mark'];

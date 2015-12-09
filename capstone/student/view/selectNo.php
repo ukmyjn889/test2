@@ -17,3 +17,6 @@ include_once "studentView.php";
 
 
     </div>
+<?php
+include_once "studentViewEnd.php";
+?>
