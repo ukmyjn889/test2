@@ -1,0 +1,446 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<!-- DW6 -->
+<head>
+    <meta charset="UTF-8" >
+
+
+
+    <script language="JavaScript">
+
+        function check(){
+
+            if(document.getElementById("sid").value=="" || document.getElementById("sid").value=="please enter student id"){
+
+                document.getElementById("siderror").innerHTML="error"
+                return;
+            }else if(document.getElementById("major").value=="" || document.getElementById("major").value=="please enter major"){
+
+                document.getElementById("majorerror").innerHTML="error"
+                return;
+            }else if(document.getElementById("sname").value=="" || document.getElementById("sname").value=="please enter student name"){
+
+                document.getElementById("snameerror").innerHTML="error"
+                return;
+            }
+            else if(document.getElementById("grade").value=="" || document.getElementById("grade").value=="please enter grade"){
+
+                document.getElementById("gradeerror").innerHTML="error"
+                return;
+            }
+
+            else{
+                alert("success")
+                addstudentprof.submit();
+            }
+
+        }
+		var mh = 30; //高度
+var step = 1; //每次变化的量
+var ms = 10; //循环时间
+function toggle(o){
+  if (!o.tid)o.tid = "_" + Math.random() * 100;
+  if (!window.toggler)window.toggler = {};
+  if (!window.toggler[o.tid]){
+  window.toggler[o.tid]={
+   obj:o,
+   maxHeight:o.offsetHeight,
+   minHeight:mh,
+   timer: null ,
+   action:1
+  };
+  }
+  o.style.height = o.offsetHeight + "px" ;
+  if (window.toggler[o.tid].timer)clearTimeout(window.toggler[o.tid].timer);
+  window.toggler[o.tid].action *= -1;
+  window.toggler[o.tid].timer = setTimeout( "anim('" +o.tid+ "')" ,ms );
+}
+function anim(id){
+  var t = window.toggler[id];
+  var o = window.toggler[id].obj;
+  if (t.action < 0){
+  if (o.offsetHeight <= t.minHeight){
+   clearTimeout(t.timer);
+   return ;
+  }
+  }
+  else {
+  if (o.offsetHeight >= t.maxHeight){
+   clearTimeout(t.timer);
+   return ;
+  }
+  }
+  o.style.height = (parseInt(o.style.height, 10) + t.action * step) + "px" ;
+  window.toggler[id].timer = setTimeout( "anim('" +id+ "')" ,ms );
+} 
+
+
+function addoption(){
+	document.getElementById("mopt1").style.display="block"
+	document.getElementById("another").style.display="block"
+ 	document.getElementById("firstone").style.display="none"
+	
+	}
+	function showanpther(){
+		
+		document.getElementById("mopt2").style.display="block"
+		document.getElementById("another").style.display="none"
+		
+		}
+
+function showadd(value1,value2){
+	
+	alert("123");
+	var add =document.getElementById(value1).value
+	alert("223");
+	
+	document.getElementById(value2).innerHTML+=add+"\n"
+	alert("323");
+	
+	document.getElementById(value1).value=""
+	alert("423");
+	
+	
+	}
+function showlist(value){
+	
+	if (value==1){
+		
+		document.getElementById("elist1").style.display="block"
+		
+		}
+	else if(value==2){
+		document.getElementById("elist1").style.display="block"
+		document.getElementById("elist2").style.display="block"
+		
+		}
+		else if(value==3){
+			document.getElementById("elist1").style.display="block"
+		document.getElementById("elist2").style.display="block"
+		
+		document.getElementById("elist3").style.display="block"
+		}
+		else if(value==4){
+		document.getElementById("elist1").style.display="block"
+		document.getElementById("elist2").style.display="block"
+		document.getElementById("elist3").style.display="block"
+		document.getElementById("elist4").style.display="block"
+		
+		}
+	
+	
+	}	
+    
+
+
+
+
+    </script>
+<style type= "text/css" >
+div.xx{
+  border:solid 1px;overflow:hidden;
+} div.xx h5{
+  border:solid 1px;border-width:0 0 1px;
+  padding:0;margin:0;height:28px;
+  line-height:30px;cursor:pointer;
+  background: #eee;
+} </style> </head> <body>
+
+
+
+
+    <title>Home Page</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+    <link rel="stylesheet" href="../../css/mm_health_nutr.css" type="text/css" />
+
+    <style type="text/css">
+        <!--
+        .STYLE1 {font-size: 16px}
+        -->
+    </style>
+</head>
+<body bgcolor="#F4FFE4">
+    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tr bgcolor="#D5EDB3">
+            <td colspan="3" rowspan="2"><img src="../../images/mm_health_photo.jpg" alt="Header image" width="382" height="101" border="0" /></td>
+            <td height="50" colspan="3" id="logo" valign="bottom" align="center" nowrap="nowrap">Admin manage interface</td>
+            <td width="657">&nbsp;</td>
+        </tr>
+
+        <tr bgcolor="#D5EDB3">
+            <td height="51" colspan="3" id="tagline" valign="top" align="center">add student prof</td>
+            <td width="657">&nbsp;</td>
+        </tr>
+
+        <tr>
+            <td colspan="7" bgcolor="#5C743D"><img src="../../images/mm_spacer.gif" alt="" width="1" height="2" border="0" /></td>
+        </tr>
+
+        <tr>
+            <td colspan="7" bgcolor="#99CC66" background="../../images/mm_dashed_line.gif"><img src="../../images/mm_dashed_line.gif" alt="line decor" width="4" height="3" border="0" /></td>
+        </tr>
+
+        <tr bgcolor="#99CC66">
+            <td colspan="7" id="dateformat" height="20">&nbsp;&nbsp;<script language="JavaScript" type="text/javascript">
+                    document.write(TODAY);	</script>	</td>
+        </tr>
+        <tr>
+            <td colspan="7" bgcolor="#99CC66" background="../../images/mm_dashed_line.gif"><img src="../../images/mm_dashed_line.gif" alt="line decor" width="4" height="3" border="0" /></td>
+        </tr>
+
+        <tr>
+            <td colspan="7" bgcolor="#5C743D"><img src="../../images/mm_spacer.gif" alt="" width="1" height="2" border="0" /></td>
+        </tr>
+
+        <tr>
+            <td width="165" height="974" valign="top" bgcolor="#5C743D">
+                <table border="0" cellspacing="0" cellpadding="0" width="165" id="navigation">
+                    <tr>
+                        <td width="165">&nbsp;<br />
+                            &nbsp;<br /></td>
+                    </tr>
+                    <tr>
+                        <td width="165"><a href="javascript:;" class="navText">saveCourse</a></td>
+                    </tr>
+                    <tr>
+                        <td width="165"><a href="javascript:;" class="navText">saveOffering</a></td>
+                    </tr>
+                    <tr>
+                        <td width="165"><a href="javascript:;" class="navText">addstudentprof</a></td>
+                    </tr>
+                    <tr>
+                        <td width="165"><a href="javascript:;" class="navText">guidelink4</a></td>
+                    </tr>
+                    <tr>
+                        <td width="165"><a href="javascript:;" class="navText">guidelink5</a></td>
+                    </tr>
+                </table>
+                ?<br />
+                &nbsp;<br />
+                &nbsp;<br />
+                &nbsp;<br /> 	</td>
+            <td width="350"></td>
+            <td  valign="top" width="450px" height="100%" ><img src="../../images/mm_spacer.gif" alt="" width="305" height="1" border="0" /><br />
+                &nbsp;<br />
+                &nbsp;<br />
+                </td>
+</tr>
+</table>
+<div style="width:900px; height:1500px; position:absolute; top:150px ;left:200px">
+ ADD A MAJOR PROFILE<br><br><br>
+ 
+
+<div id="core">
+please add core course
+<br>
+<input type="text" id="info" value="">
+<input type="button" value="add" onclick="showadd('info','ear')">
+<div id="showCore">
+the course you input will show as below:<br>
+<textarea id="ear"></textarea>   
+</div>
+
+</div>
+<br>
+<div id="clective list"> 
+how many list you wanna to create? 
+<p id="clv">
+  <label>
+    <input type="radio" name="RadioGroup1" value="1" id="RadioGroup1_0" checked >
+    1</label>
+  
+  <label>
+    <input type="radio" name="RadioGroup1" value="2" id="RadioGroup1_1"  onclick="showlist(2)">
+    2</label>
+  <label>
+    <input type="radio" name="RadioGroup1" value="3" id="RadioGroup1_2"  onclick="showlist(3)">
+    3</label>
+     <label>
+    <input type="radio" name="RadioGroup1" value="4" id="RadioGroup1_3"  onclick="showlist(4)">
+    4</label>
+    
+</p>
+</div>
+<div id="elist1" >
+pleast add course for list1<br>
+<input type="text" id="l1info" value="">
+<input type="button" value="add" onclick="showadd(l1info,l1ear)"><br>
+the course you input will show as below:<br>
+<br><textarea id="l1ear"></textarea>
+
+
+</div>
+<div id="elist2"  style="display:none">
+pleast add course for list2<br>
+<input type="text" id="l2info" value="">
+<input type="button" value="add" onclick="showadd(l2info,l2ear)"><br>
+the course you input will show as below:<br>
+<br><textarea id="l2ear"></textarea>
+</div>
+<div id="elist3"  style="display:none">
+pleast add course for list3<br>
+<input type="text" id="l3info" value="">
+<input type="button" value="add" onclick="showadd(l3info,l3ear)"><br>
+the course you input will show as below:<br>
+<br><textarea id="l3ear"></textarea></div>
+<div id="elist4"  style="display:none">
+pleast add course for list4<br>
+<input type="text" id="l4info" value="">
+<input type="button" value="add" onclick="showadd(l4info,l4ear)"><br>
+the course you input will show as below:<br>
+<br><textarea id="l4ear"></textarea></div>
+
+
+
+
+
+<br>
+<br>
+
+<div id="optionarea">
+<input type="button" id="firstone" value="add more option?" onclick="addoption()">
+<input type="button" id="another" value="another one?" onclick="showanpther()" style="display:none">
+<div class= "xx" id="xx"><h5 onclick= "toggle(this.parentNode)" >click to hide</h5>
+<p id="optipnp">
+<div>
+please choose
+<input type="text">
+  <select name="select" id="select_k1" class="xla_k">
+    <option value="1">courses</option>
+<option value="2">credits</option>
+    </select>
+    in  <select name="select" id="select_k2" class="xla_k">
+    <option value="1">list1</option>
+<option value="2">list2</option>
+    </select><br>
+    required credits:<input type="text">
+    
+    
+ 
+</div>
+
+
+
+
+
+</p> </div> 
+
+<div class= "xx" id="xxx"><h5 onclick= "toggle(this.parentNode)" >click to hide</h5>
+<p id="optipop">
+<div>
+please choose
+<input type="text">
+  <select name="select" id="select_k3" >
+    <option value="1">courses</option>
+<option value="2">credits</option>
+    </select>
+    in  <select name="select" id="select_k4" >
+    <option value="1">list1</option>
+<option value="2">list2</option>
+    </select><br>
+    required credits:<input type="text">
+    
+    
+ 
+</div>
+
+
+
+
+
+</p> </div> 
+<div id="mopt1" style="display:none">
+<div class= "xx" id="xxxx"><h5 onclick= "toggle(this.parentNode)" >click to hide</h5>
+<p id="optipop1">
+<div>
+please choose
+<input type="text">
+  <select name="select" id="select_k31" >
+    <option value="1">courses</option>
+<option value="2">credits</option>
+    </select>
+    in  <select name="select" id="select_k41" >
+    <option value="1">list1</option>
+<option value="2">list2</option>
+    </select><br>
+    required credits:<input type="text">
+    
+    
+ 
+</div>
+
+
+
+
+
+</p> </div> </div>
+<div id="mopt2" style="display:none">
+<div class= "xx" id="xxxxx"><h5 onclick= "toggle(this.parentNode)" >click to hide</h5>
+<p id="optipop2">
+<div>
+please choose
+<input type="text">
+  <select name="select" id="select_k32" >
+    <option value="1">courses</option>
+<option value="2">credits</option>
+    </select>
+    in  <select name="select" id="select_k42" >
+    <option value="1">list1</option>
+<option value="2">list2</option>
+    </select><br>
+    required credits:<input type="text">
+    
+    
+ 
+</div>
+
+
+
+
+
+</p> </div> </div>
+
+
+</div>
+<br><br><br><br><br>
+<input type="button" value="submit" >
+<input type="reset" value="clear">
+
+
+
+
+
+
+
+
+
+
+
+<div name="profview">
+<div name="required" style="width:200px; height:200px; position:absolute; top:50px ;left:400px ">
+major prof preview <br><br>
+core course:
+<textarea id="viewprof"></textarea>
+elective course:
+<textarea id="viewprof2"></textarea>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+</div>
+</body>
+
+</html>
+
