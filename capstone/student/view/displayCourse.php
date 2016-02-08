@@ -37,13 +37,13 @@ include_once "../model/getStudent.php";
 <table border="0" width="800"  align="center" cellspacing="4"  cellpadding="4" >
     <tr>
         <td height="50" align="left">
-            Course ID
+           <b> Course ID </b>
         </td>
         <td height="50" align="left">
-            Course Title
+            <b> Course Title </b>
         </td>
         <td height="50" align="center">
-            Course Offering
+            <b> Course Offering </b>
         </td>
     </tr>
 <?php

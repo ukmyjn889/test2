@@ -176,15 +176,15 @@ if($_SESSION['sid']!=null){
     <!-- top_title -->
     <div class="top_title">
         <div class="wraper">
-            <h2>Student Module    <span>This is a  page for student</span></h2>
-            <ul>
+            <h2>Student Module    </h2>
+
                 <!--                <li><a href="#">Home</a></li>-->
                 <!--                <li><a href="#">Log Out</a></li>-->
 
                 <?php
 session_start();
 if($_SESSION['sid']!=null){
-    echo "<p  style='color: #f9f8f8'>";
+    echo "<p  style='color: #f9f8f8 ;position:absolute;top:65%;left:85%'>";
     $result=getStudentById($_SESSION['sid']);
     $row=mysql_fetch_array($result);
     echo "Welcome,".$row['nameF']." ".$row['nameL'];
@@ -193,7 +193,7 @@ if($_SESSION['sid']!=null){
     echo "<a href='../../Login.html' style='color: #f9f8f8'>login</a>";
 }
 ?>
-            </ul>
+
         </div>
     </div>
     <!-- /top_title -->
@@ -210,8 +210,8 @@ if($_SESSION['sid']!=null){
 
     <div class="span12" >
     <div class="page-header" align="center">
-        <h1 style="color:#B0E2FF"> please choose a plan</h1>
-        <h1><small>or you can creat a new one</small> </h1>
+        <h1 style="color:#2894FF"> Please choose a plan</h1>
+        <h1><small>Or you can creat a new one</small> </h1>
     </div>
     <div id="planviewer" align="center">
         <form action="displayPlanner.php" method="get">
@@ -224,7 +224,7 @@ $result=getPlannerIdsBySid($sid);
 $i=1;
 $nickName="";
 ?>
-            <select name="plannerId">
+            <select name="plannerId" style="width: 330px;">
                 <?php while($row=mysql_fetch_array($result)){
     if($row['nickName']!=null){
         $nickName=$row['nickName'];
@@ -236,9 +236,9 @@ $nickName="";
     <?php $i++;}?>
             </select>
 <br>
-            <button class="btn" type="submit">view plan</button>
-            <button class="btn" type="button" onclick="showadvance()">advance viewer</button>
-            <button class="btn" type="reset">delete a plan</button>
+            <button class="btn" type="submit">View plan</button>
+            <button class="btn" type="button" onclick="showadvance()">Advance viewer</button>
+            <button class="btn" type="reset">Delete a plan</button>
 
 
             <!--        </center>-->
@@ -295,7 +295,14 @@ $result=getPlannerIdsBySid($sid);
 $i=1;
 $nickName="";
 ?>
-                    please select a plan <br>
+                    <table>
+                    <tr>
+                        <td>
+                    Please select a plan <br>
+                        </td>
+                        </tr>
+                    <tr>
+                        <td>
                     <select name="plannerId">
                         <?php while($row=mysql_fetch_array($result)){
     if($row['nickName']!=null){
@@ -306,20 +313,23 @@ $nickName="";
     ?>
     <option value="<?php echo $row['plannerId']?>"><?php echo $nickName?></option>
     <?php $i++;}?>
-                    </select><br>
-                </p>
-                <p >
-
-                    please input the year you want <br>
+                    </select></td>
+                </tr>
 
 
-                </p>
-                <p>
+                    <tr>
+                        <td>
+                    Please input the year you want <br>
 
+                    </td>
+                    </tr>
+
+                    <tr>
+                        <td>
                     <!--<center><input id="year" type="text" value="" >-->
                     <select name="term1" id="select_k1" class="xla_k">
 
-                        <option value="">please choose a year</option>
+                        <option value="">Please choose a year</option>
 
                         <option value="2015">2015</option>
                         <option value="2016">2016</option>
@@ -327,27 +337,38 @@ $nickName="";
                         <option value="2018">2018</option>
                         <option value="2019">2019</option>
                     </select>
+                        </td>
+                    </tr>
 
 
-                </p>
+                    <tr>
+                        <td>
 
-                <p class="info" >
 
-                    please choose a term <br>
+                    Please choose a term <br>
 
-                </p>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
                 <div id="checkbox" >
                     <label>
                         <input type="radio" name="term2" value="spring" id="RadioGroup1_0">
                         SPRING</label>
+                        </td>
+                    </tr>
 
 <!--                    <label>-->
 <!--                        <input type="radio" name="term2" value="summer" id="RadioGroup1_1">-->
 <!--                        SUMMER</label>-->
-
+                    <tr>
+                        <td>
                     <label>
                         <input type="radio" name="term2" value="fall" id="RadioGroup1_2">
                         FALL</label>
+                        </td>
+                    </tr>
 
 <!--                    <label>-->
 <!--                        <input type="radio" name="term2" value="winter" id="RadioGroup1_3">-->
@@ -365,11 +386,14 @@ $nickName="";
 <!--            <br>-->
             <div >
 
-
+                <tr>
+                    <td>
                     <input type="submit" value="OK">
-                    <input type="reset" value="clear">
-                <input type="button" value="hide me!" onclick="hideadvance()">
-                <br>
+                    <input type="reset" value="Clear">
+                <input type="button" value="Hide me!" onclick="hideadvance()">
+                    </td>
+                </tr>
+                </table>
 
 
             </div>

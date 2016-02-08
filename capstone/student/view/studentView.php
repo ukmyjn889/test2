@@ -100,26 +100,26 @@ include_once "../model/getStudent.php";
 
 <div class="content_block">
     <!-- top_title -->
-    <div class="top_title">
+    <div class="top_title" >
         <div class="wraper">
             <h2>Student Module    <span></span></h2>
-            <ul>
+
 <!--                <li><a href="#">Home</a></li>-->
 <!--                <li><a href="#">Log Out</a></li>-->
 
                 <?php
                 session_start();
                 if($_SESSION['sid']!=null){
-                    echo "<p  style='color: #f9f8f8'>";
+                    echo "<p  style='color: #f9f8f8;position:absolute;top:65%;left:85%' >";
                     $result=getStudentById($_SESSION['sid']);
                     $row=mysql_fetch_array($result);
                     echo "Welcome  ".$row['nameF']." ".$row['nameL'];
                     echo "</p>";
                 }else{
-                    echo "<a href='../../Login.html' style='color: #f9f8f8'>login</a>";
+                    echo "<a href='../../Login.html' style='color: #f9f8f8;position:absolute;top:65%;left:85%'>login</a>";
                 }
                 ?>
-            </ul>
+
         </div>
     </div>
     <!-- /top_title -->

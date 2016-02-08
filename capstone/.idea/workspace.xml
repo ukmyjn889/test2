@@ -25,12 +25,124 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="displaySelectResult.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/student/view/displaySelectResult.php">
+      <file leaf-file-name="addStudentProfile.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/admin/view/addStudentProfile.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.34788734" vertical-offset="190" max-vertical-offset="3097">
-              <caret line="23" column="26" selection-start-line="23" selection-start-column="26" selection-end-line="23" selection-end-column="26" />
+            <state vertical-scroll-proportion="-6.178571" vertical-offset="74" max-vertical-offset="1425">
+              <caret line="13" column="88" selection-start-line="13" selection-start-column="48" selection-end-line="13" selection-end-column="88" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="adminView.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/admin/view/adminView.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-21.607143" vertical-offset="1409" max-vertical-offset="2147">
+              <caret line="127" column="105" selection-start-line="127" selection-start-column="105" selection-end-line="127" selection-end-column="105" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="adminViewEnd.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/admin/view/adminViewEnd.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-10.857142" vertical-offset="0" max-vertical-offset="418">
+              <caret line="16" column="7" selection-start-line="16" selection-start-column="7" selection-end-line="16" selection-end-column="7" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="adminViewHead.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/admin/view/adminViewHead.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="2470">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="adminViewTail.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/admin/view/adminViewTail.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="950">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="displayMajor.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/admin/view/displayMajor.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-10.857142" vertical-offset="0" max-vertical-offset="456">
+              <caret line="16" column="1" selection-start-line="16" selection-start-column="1" selection-end-line="16" selection-end-column="1" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="displayMajorProfile.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/admin/view/displayMajorProfile.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-12.785714" vertical-offset="2340" max-vertical-offset="3078">
+              <caret line="142" column="43" selection-start-line="142" selection-start-column="43" selection-end-line="142" selection-end-column="43" />
+              <folding>
+                <marker date="1454220326357" expanded="true" signature="623:663" placeholder="..." />
+                <marker date="1454220326357" expanded="true" signature="1370:1387" placeholder="..." />
+                <marker date="1454220326357" expanded="true" signature="4711:4736" placeholder="..." />
+                <marker date="1454220326357" expanded="true" signature="4842:4882" placeholder="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="showCourse.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/admin/view/showCourse.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="3.8214285" vertical-offset="1399" max-vertical-offset="2109">
+              <caret line="73" column="145" selection-start-line="73" selection-start-column="145" selection-end-line="73" selection-end-column="145" />
+              <folding>
+                <element signature="n#style#0;n#a#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#a#1;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#a#2;n#!!top" expanded="true" />
+                <marker date="1454946673516" expanded="true" signature="696:1140" placeholder="..." />
+                <marker date="1454946673516" expanded="true" signature="743:799" placeholder="..." />
+                <marker date="1454946673516" expanded="true" signature="800:811" placeholder="..." />
+                <marker date="1454946673516" expanded="true" signature="800:833" placeholder="..." />
+                <marker date="1454946673516" expanded="true" signature="800:962" placeholder="..." />
+                <marker date="1454946673516" expanded="true" signature="800:1140" placeholder="..." />
+                <marker date="1454946673516" expanded="true" signature="1664:1706" placeholder="select * fro..Course..." />
+                <marker date="1454946673516" expanded="true" signature="3223:3250" placeholder="select count..Course..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="showOfferingBrief.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/admin/view/showOfferingBrief.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-6.785714" vertical-offset="0" max-vertical-offset="1425">
+              <caret line="10" column="18" selection-start-line="10" selection-start-column="18" selection-end-line="10" selection-end-column="18" />
+              <folding>
+                <marker date="1454351973035" expanded="true" signature="411:477" placeholder="select oid,c..Offering..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="showOfferingDetails.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/admin/view/showOfferingDetails.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.51830983" vertical-offset="183" max-vertical-offset="2964">
+              <caret line="33" column="44" selection-start-line="33" selection-start-column="44" selection-end-line="33" selection-end-column="44" />
+              <folding>
+                <element signature="n#STYLE#0;n#b#0;n#form#0;n#!!top" expanded="true" />
+                <marker date="1454947181373" expanded="true" signature="343:386" placeholder="select * fro..Offering..." />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -55,28 +167,21 @@
         <option value="$PROJECT_DIR$/student/model/getCourseDescription.php" />
         <option value="$PROJECT_DIR$/css/studentViewStyle.css" />
         <option value="$PROJECT_DIR$/student/view/displayCourseProfile.php" />
-        <option value="$PROJECT_DIR$/student/view/displayStudentProfile.php" />
-        <option value="$PROJECT_DIR$/student/view/displayCourse.php" />
         <option value="$PROJECT_DIR$/admin/view/adminViewHead.php" />
         <option value="$PROJECT_DIR$/admin/view/adminViewEnd.php" />
         <option value="$PROJECT_DIR$/addCourse.php" />
         <option value="$PROJECT_DIR$/admin/model/AnalysisPrerequisites.php" />
         <option value="$PROJECT_DIR$/admin/model/saveCourse.php" />
         <option value="$PROJECT_DIR$/admin/model/saveOffering.php" />
-        <option value="$PROJECT_DIR$/admin/view/showOfferingDetails.php" />
         <option value="$PROJECT_DIR$/getAccessLogin.php" />
         <option value="$PROJECT_DIR$/student/view/displayTimeTable.php" />
         <option value="$PROJECT_DIR$/admin/model/deleteOffering.php" />
-        <option value="$PROJECT_DIR$/admin/view/showCourse.php" />
         <option value="$PROJECT_DIR$/student/view/selectAutoPlan.php" />
         <option value="$PROJECT_DIR$/admin/model/deleteCourse.php" />
         <option value="$PROJECT_DIR$/student/view/studentView.php" />
         <option value="$PROJECT_DIR$/student/view/displayPlanner.php" />
         <option value="$PROJECT_DIR$/student/view/selectTermToSetPlanner.php" />
-        <option value="$PROJECT_DIR$/admin/view/addStudentProfile.php" />
-        <option value="$PROJECT_DIR$/admin/view/addOffering.php" />
         <option value="$PROJECT_DIR$/css/adminViewStyle.css" />
-        <option value="$PROJECT_DIR$/admin/view/addCourse.php" />
         <option value="$PROJECT_DIR$/admin/view/displayMajorProfile.php" />
         <option value="$PROJECT_DIR$/admin/view/adminView.php" />
         <option value="$PROJECT_DIR$/admin/view/showOfferingBrief.php" />
@@ -91,6 +196,13 @@
         <option value="$PROJECT_DIR$/student/model/checkRestriction.php" />
         <option value="$PROJECT_DIR$/student/model/AutoPlan.php" />
         <option value="$PROJECT_DIR$/student/view/displaySelectResult.php" />
+        <option value="$PROJECT_DIR$/student/view/displayStudentProfile.php" />
+        <option value="$PROJECT_DIR$/student/view/displayCourse.php" />
+        <option value="$PROJECT_DIR$/admin/view/addCourse.php" />
+        <option value="$PROJECT_DIR$/admin/view/addOffering.php" />
+        <option value="$PROJECT_DIR$/admin/view/addStudentProfile.php" />
+        <option value="$PROJECT_DIR$/admin/view/showCourse.php" />
+        <option value="$PROJECT_DIR$/admin/view/showOfferingDetails.php" />
       </list>
     </option>
   </component>
@@ -149,7 +261,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -270,6 +381,7 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -292,8 +404,8 @@
       <recent name="I:\phpWorkspace\capstone\scripts" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="I:\phpWorkspace\capstone\student\model" />
       <recent name="I:\phpWorkspace\capstone\student\view" />
+      <recent name="I:\phpWorkspace\capstone\student\model" />
       <recent name="I:\phpWorkspace\capstone\admin\view" />
       <recent name="I:\phpWorkspace\capstone" />
       <recent name="I:\phpWorkspace\capstone\images" />
@@ -339,9 +451,6 @@
       <BehatRunner />
       <method />
     </configuration>
-    <configuration default="true" type="PhpUnitRemoteRunConfigurationType" factoryName="PHPUnit on Server">
-      <method />
-    </configuration>
     <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
       <node-options />
       <gulpfile />
@@ -349,6 +458,9 @@
       <arguments />
       <pass-parent-envs>true</pass-parent-envs>
       <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="PhpUnitRemoteRunConfigurationType" factoryName="PHPUnit on Server">
       <method />
     </configuration>
     <list size="5">
@@ -382,8 +494,8 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1616" height="876" extended-state="6" />
-    <editor active="false" />
+    <frame x="-8" y="-8" width="1616" height="876" extended-state="7" />
+    <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
@@ -398,13 +510,13 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32985657" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32985657" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39895698" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -447,55 +559,10 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/student/model/getCourseList.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-8.142858" vertical-offset="0" max-vertical-offset="532">
-          <caret line="12" column="9" selection-start-line="12" selection-start-column="9" selection-end-line="12" selection-end-column="9" />
-          <folding>
-            <marker date="1447325021824" expanded="true" signature="-1:-1" placeholder="select * fro..course_list..." />
-            <marker date="1447325021824" expanded="true" signature="-1:-1" placeholder="select * fro..course_list..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin/model/deleteCourse.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-8.821428" vertical-offset="0" max-vertical-offset="494">
-          <caret line="13" column="51" selection-start-line="13" selection-start-column="51" selection-end-line="13" selection-end-column="51" />
-          <folding>
-            <marker date="1454170738110" expanded="true" signature="-1:-1" placeholder="delete from ..." />
-            <marker date="1454170738110" expanded="true" signature="-1:-1" placeholder="delete from ..." />
-            <marker date="1454170738110" expanded="true" signature="-1:-1" placeholder="delete from ..." />
-            <marker date="1454170738110" expanded="true" signature="-1:-1" placeholder="delete from ..." />
-            <marker date="1454170738110" expanded="true" signature="-1:-1" placeholder="delete from ..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Documents/Tencent Files/443893365/FileRecv/selectTermToSetPlanner.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="7581">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="19" selection-end-column="2" />
-          <folding>
-            <marker date="1454170897025" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1454170897025" expanded="true" signature="-1:-1" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/addOffering.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-11.535714" vertical-offset="95" max-vertical-offset="5947">
-          <caret line="22" column="28" selection-start-line="22" selection-start-column="28" selection-end-line="22" selection-end-column="28" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/addMajorProfile.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-6.785714" vertical-offset="0" max-vertical-offset="304">
           <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -503,7 +570,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-12.964286" vertical-offset="663" max-vertical-offset="1425">
           <caret line="54" column="32" selection-start-line="54" selection-start-column="32" selection-end-line="54" selection-end-column="32" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -511,9 +577,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="25.107143" vertical-offset="950" max-vertical-offset="3610">
           <caret line="13" column="26" selection-start-line="13" selection-start-column="26" selection-end-line="13" selection-end-column="26" />
-          <folding>
-            <marker date="1444177736930" expanded="true" signature="-1:-1" placeholder="select oid,c..Offering..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -521,9 +584,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-8.142858" vertical-offset="0" max-vertical-offset="5168">
           <caret line="16" column="47" selection-start-line="16" selection-start-column="47" selection-end-line="16" selection-end-column="47" />
-          <folding>
-            <marker date="1443724208073" expanded="true" signature="-1:-1" placeholder="select * fro..Offering..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -531,29 +591,310 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="23484">
           <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/student/view/displayTimeTable.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="1.8556851" vertical-offset="0" max-vertical-offset="4674">
+          <caret line="67" column="31" selection-start-line="67" selection-start-column="31" selection-end-line="67" selection-end-column="31" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/student/view/displayAutoplan.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-3.9642856" vertical-offset="744" max-vertical-offset="2071">
+          <caret line="45" column="19" selection-start-line="45" selection-start-column="19" selection-end-line="45" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/student/view/showCourseTable.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="94.32143" vertical-offset="2641" max-vertical-offset="3401">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/student/view/displayStudentOwnPlan.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="969">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/student/model/getCourse.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.0971831" vertical-offset="69" max-vertical-offset="779">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/student/model/getRequired.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.32112676" vertical-offset="0" max-vertical-offset="710">
+          <caret line="12" column="9" selection-start-line="12" selection-start-column="9" selection-end-line="12" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/student/model/getStudent.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="738">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/student/model/AjaxPlan.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.61549294" vertical-offset="0" max-vertical-offset="2926">
+          <caret line="23" column="1" selection-start-line="23" selection-start-column="1" selection-end-line="23" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/student/view/displaySearchView.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.4549296" vertical-offset="0" max-vertical-offset="798">
+          <caret line="22" column="38" selection-start-line="22" selection-start-column="38" selection-end-line="22" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/student/view/displayPlanner.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.6814921" vertical-offset="5092" max-vertical-offset="5833">
+          <caret line="298" column="18" selection-start-line="298" selection-start-column="18" selection-end-line="298" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/student/view/displayCourseProfile.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.2140845" vertical-offset="380" max-vertical-offset="2584">
+          <caret line="28" column="18" selection-start-line="28" selection-start-column="18" selection-end-line="28" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/student/model/getMajor.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.40140846" vertical-offset="0" max-vertical-offset="710">
+          <caret line="15" column="1" selection-start-line="15" selection-start-column="1" selection-end-line="15" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/model/getMajorList.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.053521127" vertical-offset="0" max-vertical-offset="710">
+          <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/model/getMajor.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-21.035715" vertical-offset="0" max-vertical-offset="722">
+          <caret line="31" column="1" selection-start-line="31" selection-start-column="1" selection-end-line="31" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/getAccessLogin.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-19.25" vertical-offset="563" max-vertical-offset="1273">
+          <caret line="58" column="55" selection-start-line="58" selection-start-column="10" selection-end-line="58" selection-end-column="55" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/model/getStudent.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.7087518" vertical-offset="0" max-vertical-offset="697">
+          <caret line="26" column="1" selection-start-line="26" selection-start-column="1" selection-end-line="26" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/model/getMajorProfile.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-18.571428" vertical-offset="69" max-vertical-offset="779">
+          <caret line="31" column="0" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/model/getRequired.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-19.0" vertical-offset="0" max-vertical-offset="703">
+          <caret line="28" column="52" selection-start-line="28" selection-start-column="52" selection-end-line="28" selection-end-column="52" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/model/AnalysisPrerequisites.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="121.92857" vertical-offset="3528" max-vertical-offset="4332">
+          <caret line="15" column="1" selection-start-line="15" selection-start-column="1" selection-end-line="15" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/student/view/selectTermToViewOwnPlanner.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2280">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/student/model/checkRestriction.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-12.892858" vertical-offset="0" max-vertical-offset="779">
+          <caret line="19" column="34" selection-start-line="19" selection-start-column="34" selection-end-line="19" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/student/view/selectAutoPlan.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-4.071429" vertical-offset="152" max-vertical-offset="11666">
+          <caret line="14" column="17" selection-start-line="14" selection-start-column="17" selection-end-line="14" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/student/model/checkCrosslist.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-5.428571" vertical-offset="38" max-vertical-offset="779">
+          <caret line="10" column="40" selection-start-line="10" selection-start-column="40" selection-end-line="10" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/student/model/checkPrerequisites.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-8.821428" vertical-offset="0" max-vertical-offset="779">
+          <caret line="13" column="9" selection-start-line="13" selection-start-column="9" selection-end-line="13" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/student/model/getStu_offering.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.34647888" vertical-offset="210" max-vertical-offset="950">
+          <caret line="24" column="9" selection-start-line="24" selection-start-column="9" selection-end-line="24" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/student/model/AutoPlan.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-19.928572" vertical-offset="1266" max-vertical-offset="3800">
+          <caret line="96" column="19" selection-start-line="96" selection-start-column="19" selection-end-line="96" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/student/view/displaySelectResult.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-8.821428" vertical-offset="190" max-vertical-offset="3097">
+          <caret line="23" column="26" selection-start-line="23" selection-start-column="26" selection-end-line="23" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/model/saveCourse.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-11.535714" vertical-offset="0" max-vertical-offset="1919">
+          <caret line="22" column="10" selection-start-line="22" selection-start-column="10" selection-end-line="22" selection-end-column="10" />
+          <folding>
+            <marker date="1453875890651" expanded="true" signature="-1:-1" placeholder="select * fro..Course..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/student/view/studentView.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-8.821428" vertical-offset="0" max-vertical-offset="3629">
+          <caret line="13" column="1" selection-start-line="13" selection-start-column="1" selection-end-line="13" selection-end-column="1" />
+          <folding>
+            <marker date="1454951638000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1454951638000" expanded="true" signature="-1:-1" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/student/view/selectTermToSetPlanner.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-11.535714" vertical-offset="608" max-vertical-offset="8075">
+          <caret line="49" column="30" selection-start-line="49" selection-start-column="30" selection-end-line="49" selection-end-column="30" />
+          <folding>
+            <marker date="1454917548000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1454917548000" expanded="true" signature="-1:-1" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/student/model/savePlanner.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="988">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1447929129073" expanded="true" signature="-1:-1" placeholder="insert into ..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/addCourse.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-10.285714" vertical-offset="1327" max-vertical-offset="15542">
+          <caret line="85" column="90" selection-start-line="85" selection-start-column="90" selection-end-line="85" selection-end-column="90" />
+          <folding>
+            <marker date="1453067841377" expanded="true" signature="-1:-1" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/student/view/displayStudentProfile.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-7.714286" vertical-offset="1076" max-vertical-offset="2527">
+          <caret line="68" column="28" selection-start-line="68" selection-start-column="28" selection-end-line="68" selection-end-column="28" />
+          <folding>
+            <element signature="e#1326#1363#0#HTML" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/student/view/displayCourse.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-14.142858" vertical-offset="516" max-vertical-offset="2622">
+          <caret line="48" column="5" selection-start-line="48" selection-start-column="5" selection-end-line="48" selection-end-column="5" />
+          <folding>
+            <marker date="1454945006957" expanded="true" signature="-1:-1" placeholder="select count..Course..." />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/admin/view/addCourse.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="10.178572" vertical-offset="437" max-vertical-offset="13946">
-          <caret line="8" column="49" selection-start-line="8" selection-start-column="49" selection-end-line="8" selection-end-column="49" />
+        <state vertical-scroll-proportion="-16.964285" vertical-offset="513" max-vertical-offset="13946">
+          <caret line="52" column="44" selection-start-line="52" selection-start-column="44" selection-end-line="52" selection-end-column="44" />
           <folding>
-            <element signature="n#style#0;n#table#0;n#form#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#input#0;n#td#1;n#tr#0;n#table#0;n#table#0;n#form#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#input#0;n#td#1;n#tr#1;n#table#0;n#table#0;n#form#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#input#0;n#td#1;n#tr#2;n#table#0;n#table#0;n#form#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#input#0;n#td#1;n#tr#7;n#table#0;n#table#0;n#form#0;n#!!top" expanded="true" />
-            <marker date="1454214227268" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1454945266502" expanded="true" signature="-1:-1" placeholder="..." />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/admin/view/addOffering.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-4.75" vertical-offset="304" max-vertical-offset="3933">
-          <caret line="23" column="48" selection-start-line="23" selection-start-column="48" selection-end-line="23" selection-end-column="48" />
+        <state vertical-scroll-proportion="-9.321428" vertical-offset="119" max-vertical-offset="3952">
+          <caret line="20" column="102" selection-start-line="20" selection-start-column="102" selection-end-line="20" selection-end-column="102" />
+          <folding>
+            <element signature="n#style#0;n#b#0;n#td#0;n#tr#0;n#table#0;n#form#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/view/addStudentProfile.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-6.178571" vertical-offset="74" max-vertical-offset="1425">
+          <caret line="13" column="88" selection-start-line="13" selection-start-column="48" selection-end-line="13" selection-end-column="88" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/view/adminView.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-21.607143" vertical-offset="1409" max-vertical-offset="2147">
+          <caret line="127" column="105" selection-start-line="127" selection-start-column="105" selection-end-line="127" selection-end-column="105" />
           <folding />
         </state>
       </provider>
@@ -574,200 +915,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/student/view/displayTimeTable.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.8556851" vertical-offset="0" max-vertical-offset="4674">
-          <caret line="67" column="31" selection-start-line="67" selection-start-column="31" selection-end-line="67" selection-end-column="31" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#table#0;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/student/view/studentView.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-20.571428" vertical-offset="1837" max-vertical-offset="3629">
-          <caret line="127" column="37" selection-start-line="127" selection-start-column="37" selection-end-line="127" selection-end-column="37" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <marker date="1454172689533" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1454172689533" expanded="true" signature="-1:-1" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/student/view/displayAutoplan.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-3.9642856" vertical-offset="744" max-vertical-offset="2071">
-          <caret line="45" column="19" selection-start-line="45" selection-start-column="19" selection-end-line="45" selection-end-column="19" />
-          <folding>
-            <marker date="1449473038110" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1449473038110" expanded="true" signature="-1:-1" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/student/view/showCourseTable.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="94.32143" vertical-offset="2641" max-vertical-offset="3401">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/student/view/selectTermToSetPlanner.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-14.178572" vertical-offset="2244" max-vertical-offset="7619">
-          <caret line="139" column="28" selection-start-line="139" selection-start-column="28" selection-end-line="139" selection-end-column="28" />
-          <folding>
-            <marker date="1454173719349" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1454173719349" expanded="true" signature="-1:-1" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin/view/adminView.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-20.214285" vertical-offset="1448" max-vertical-offset="2147">
-          <caret line="127" column="105" selection-start-line="127" selection-start-column="105" selection-end-line="127" selection-end-column="105" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin/view/addStudentProfile.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-2.7857144" vertical-offset="245" max-vertical-offset="1425">
-          <caret line="17" column="36" selection-start-line="17" selection-start-column="36" selection-end-line="17" selection-end-column="36" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/student/view/displayStudentOwnPlan.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="969">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <marker date="1449736400005" expanded="true" signature="-1:-1" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin/view/showCourse.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-7.464286" vertical-offset="418" max-vertical-offset="2071">
-          <caret line="38" column="31" selection-start-line="38" selection-start-column="31" selection-end-line="38" selection-end-column="31" />
-          <folding>
-            <marker date="1454159735677" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1454159735677" expanded="false" signature="-1:-1" placeholder="..." />
-            <marker date="1454159735677" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1454159735677" expanded="true" signature="-1:-1" placeholder="select * fro..Course..." />
-            <marker date="1454159735677" expanded="true" signature="-1:-1" placeholder="select count..Course..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/student/model/getCourse.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.0971831" vertical-offset="69" max-vertical-offset="779">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <marker date="1445421592485" expanded="true" signature="-1:-1" placeholder="SELECT count..course..." />
-            <marker date="1445421592485" expanded="true" signature="-1:-1" placeholder="select * fro..Course..." />
-            <marker date="1445421592485" expanded="true" signature="-1:-1" placeholder="select * fro..Course..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/student/model/getRequired.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.32112676" vertical-offset="0" max-vertical-offset="710">
-          <caret line="12" column="9" selection-start-line="12" selection-start-column="9" selection-end-line="12" selection-end-column="9" />
-          <folding>
-            <marker date="1446618217387" expanded="true" signature="-1:-1" placeholder="select * fro..required..." />
-            <marker date="1446618217387" expanded="true" signature="-1:-1" placeholder="select * fro..required..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/student/model/getStudent.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="738">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <marker date="1448238890188" expanded="true" signature="-1:-1" placeholder="select * fro..student..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/addCourse.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="2.8895266" vertical-offset="0" max-vertical-offset="15542">
-          <caret line="106" column="18" selection-start-line="106" selection-start-column="18" selection-end-line="106" selection-end-column="18" />
-          <folding>
-            <marker date="1453067841377" expanded="true" signature="-1:-1" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/student/model/AjaxPlan.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.61549294" vertical-offset="0" max-vertical-offset="2926">
-          <caret line="23" column="1" selection-start-line="23" selection-start-column="1" selection-end-line="23" selection-end-column="1" />
-          <folding>
-            <marker date="1449735239796" expanded="true" signature="-1:-1" placeholder="insert into ..." />
-            <marker date="1449735239796" expanded="true" signature="-1:-1" placeholder="insert into ..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/student/view/displaySearchView.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.4549296" vertical-offset="0" max-vertical-offset="798">
-          <caret line="22" column="38" selection-start-line="22" selection-start-column="38" selection-end-line="22" selection-end-column="38" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin/view/showOfferingBrief.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3746479" vertical-offset="0" max-vertical-offset="1425">
-          <caret line="14" column="10" selection-start-line="14" selection-start-column="10" selection-end-line="14" selection-end-column="10" />
-          <folding>
-            <marker date="1454351973035" expanded="true" signature="-1:-1" placeholder="select oid,c..Offering..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/student/view/displayPlanner.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6814921" vertical-offset="5092" max-vertical-offset="5833">
-          <caret line="298" column="18" selection-start-line="298" selection-start-column="18" selection-end-line="298" selection-end-column="18" />
-          <folding>
-            <marker date="1454173579557" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1454173579557" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1454173579557" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1454173579557" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1454173579557" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1454173579557" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1454173579557" expanded="true" signature="-1:-1" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/student/view/displayCourseProfile.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.2140845" vertical-offset="380" max-vertical-offset="2584">
-          <caret line="28" column="18" selection-start-line="28" selection-start-column="18" selection-end-line="28" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/admin/view/adminViewTail.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="950">
@@ -776,221 +923,65 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/student/view/displayCourse.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.4549296" vertical-offset="133" max-vertical-offset="2622">
-          <caret line="24" column="23" selection-start-line="24" selection-start-column="23" selection-end-line="24" selection-end-column="23" />
-          <folding>
-            <marker date="1452735927494" expanded="true" signature="-1:-1" placeholder="select count..Course..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/student/model/getMajor.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.40140846" vertical-offset="0" max-vertical-offset="710">
-          <caret line="15" column="1" selection-start-line="15" selection-start-column="1" selection-end-line="15" selection-end-column="1" />
-          <folding>
-            <marker date="1454459423307" expanded="true" signature="-1:-1" placeholder="select * fro..major..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/admin/view/displayMajor.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.40140846" vertical-offset="0" max-vertical-offset="710">
-          <caret line="15" column="5" selection-start-line="15" selection-start-column="5" selection-end-line="15" selection-end-column="5" />
-          <folding>
-            <element signature="e#302#327#0#HTML" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin/model/getMajorList.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.053521127" vertical-offset="0" max-vertical-offset="710">
-          <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+        <state vertical-scroll-proportion="-10.857142" vertical-offset="0" max-vertical-offset="456">
+          <caret line="16" column="1" selection-start-line="16" selection-start-column="1" selection-end-line="16" selection-end-column="1" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/admin/view/displayMajorProfile.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-14.142858" vertical-offset="2340" max-vertical-offset="3078">
-          <caret line="144" column="49" selection-start-line="144" selection-start-column="49" selection-end-line="144" selection-end-column="49" />
+        <state vertical-scroll-proportion="-12.785714" vertical-offset="2340" max-vertical-offset="3078">
+          <caret line="142" column="43" selection-start-line="142" selection-start-column="43" selection-end-line="142" selection-end-column="43" />
           <folding>
-            <marker date="1454220326357" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1454220326357" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1454220326357" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1454220326357" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1454220326357" expanded="true" signature="623:663" placeholder="..." />
+            <marker date="1454220326357" expanded="true" signature="1370:1387" placeholder="..." />
+            <marker date="1454220326357" expanded="true" signature="4711:4736" placeholder="..." />
+            <marker date="1454220326357" expanded="true" signature="4842:4882" placeholder="..." />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/admin/model/getMajor.php">
+    <entry file="file://$PROJECT_DIR$/admin/view/showCourse.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-21.035715" vertical-offset="0" max-vertical-offset="722">
-          <caret line="31" column="1" selection-start-line="31" selection-start-column="1" selection-end-line="31" selection-end-column="1" />
+        <state vertical-scroll-proportion="3.8214285" vertical-offset="1399" max-vertical-offset="2109">
+          <caret line="73" column="145" selection-start-line="73" selection-start-column="145" selection-end-line="73" selection-end-column="145" />
           <folding>
-            <marker date="1454461494742" expanded="true" signature="-1:-1" placeholder="select * fro..major..." />
-            <marker date="1454461494742" expanded="true" signature="-1:-1" placeholder="insert into ..." />
-            <marker date="1454461494742" expanded="true" signature="-1:-1" placeholder="select * fro..major..." />
-            <marker date="1454461494742" expanded="true" signature="-1:-1" placeholder="delete from ..." />
-            <marker date="1454461494742" expanded="true" signature="-1:-1" placeholder="delete from ..." />
-            <marker date="1454461494742" expanded="true" signature="-1:-1" placeholder="delete from ..." />
-            <marker date="1454461494742" expanded="true" signature="-1:-1" placeholder="delete from ..." />
+            <element signature="n#style#0;n#a#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#a#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#a#2;n#!!top" expanded="true" />
+            <marker date="1454946673516" expanded="true" signature="696:1140" placeholder="..." />
+            <marker date="1454946673516" expanded="true" signature="743:799" placeholder="..." />
+            <marker date="1454946673516" expanded="true" signature="800:811" placeholder="..." />
+            <marker date="1454946673516" expanded="true" signature="800:833" placeholder="..." />
+            <marker date="1454946673516" expanded="true" signature="800:962" placeholder="..." />
+            <marker date="1454946673516" expanded="true" signature="800:1140" placeholder="..." />
+            <marker date="1454946673516" expanded="true" signature="1664:1706" placeholder="select * fro..Course..." />
+            <marker date="1454946673516" expanded="true" signature="3223:3250" placeholder="select count..Course..." />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/getAccessLogin.php">
+    <entry file="file://$PROJECT_DIR$/admin/view/showOfferingBrief.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-19.25" vertical-offset="563" max-vertical-offset="1273">
-          <caret line="58" column="55" selection-start-line="58" selection-start-column="10" selection-end-line="58" selection-end-column="55" />
+        <state vertical-scroll-proportion="-6.785714" vertical-offset="0" max-vertical-offset="1425">
+          <caret line="10" column="18" selection-start-line="10" selection-start-column="18" selection-end-line="10" selection-end-column="18" />
           <folding>
-            <marker date="1454097772230" expanded="true" signature="-1:-1" placeholder="select * fro..student..." />
-            <marker date="1454097772230" expanded="true" signature="-1:-1" placeholder="select salt ..student..." />
+            <marker date="1454351973035" expanded="true" signature="411:477" placeholder="select oid,c..Offering..." />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/admin/model/getStudent.php">
+    <entry file="file://$PROJECT_DIR$/admin/view/showOfferingDetails.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7087518" vertical-offset="0" max-vertical-offset="697">
-          <caret line="26" column="1" selection-start-line="26" selection-start-column="1" selection-end-line="26" selection-end-column="1" />
+        <state vertical-scroll-proportion="0.51830983" vertical-offset="183" max-vertical-offset="2964">
+          <caret line="33" column="44" selection-start-line="33" selection-start-column="44" selection-end-line="33" selection-end-column="44" />
           <folding>
-            <marker date="1454469410085" expanded="true" signature="-1:-1" placeholder="insert into ..." />
-            <marker date="1454469410085" expanded="true" signature="-1:-1" placeholder="insert into ..." />
-            <marker date="1454469410085" expanded="true" signature="-1:-1" placeholder="insert into ..." />
-            <marker date="1454469410085" expanded="true" signature="-1:-1" placeholder="insert into ..." />
+            <element signature="n#STYLE#0;n#b#0;n#form#0;n#!!top" expanded="true" />
+            <marker date="1454947181373" expanded="true" signature="343:386" placeholder="select * fro..Offering..." />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin/model/getMajorProfile.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-18.571428" vertical-offset="69" max-vertical-offset="779">
-          <caret line="31" column="0" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin/model/getRequired.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-19.0" vertical-offset="0" max-vertical-offset="703">
-          <caret line="28" column="52" selection-start-line="28" selection-start-column="52" selection-end-line="28" selection-end-column="52" />
-          <folding>
-            <marker date="1454461494720" expanded="true" signature="-1:-1" placeholder="select * fro..required..." />
-            <marker date="1454461494720" expanded="true" signature="-1:-1" placeholder="select * fro..required..." />
-            <marker date="1454461494720" expanded="true" signature="-1:-1" placeholder="insert into ..." />
-            <marker date="1454461494720" expanded="true" signature="-1:-1" placeholder="insert into ..." />
-            <marker date="1454461494720" expanded="true" signature="-1:-1" placeholder="insert into ..." />
-            <marker date="1454461494720" expanded="true" signature="-1:-1" placeholder="delete from ..." />
-            <marker date="1454461494720" expanded="true" signature="-1:-1" placeholder="delete from ..." />
-            <marker date="1454461494720" expanded="true" signature="-1:-1" placeholder="delete from ..." />
-            <marker date="1454461494720" expanded="true" signature="-1:-1" placeholder="delete from ..." />
-            <marker date="1454461494720" expanded="true" signature="-1:-1" placeholder="delete from ..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin/model/AnalysisPrerequisites.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="121.92857" vertical-offset="3528" max-vertical-offset="4332">
-          <caret line="15" column="1" selection-start-line="15" selection-start-column="1" selection-end-line="15" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/student/view/selectTermToViewOwnPlanner.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2280">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/student/model/checkRestriction.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-12.892858" vertical-offset="0" max-vertical-offset="779">
-          <caret line="19" column="34" selection-start-line="19" selection-start-column="34" selection-end-line="19" selection-end-column="34" />
-          <folding>
-            <marker date="1454481301425" expanded="true" signature="-1:-1" placeholder="select restr..Course..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/student/view/selectAutoPlan.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-4.071429" vertical-offset="152" max-vertical-offset="11666">
-          <caret line="14" column="17" selection-start-line="14" selection-start-column="17" selection-end-line="14" selection-end-column="17" />
-          <folding>
-            <marker date="1454170607582" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1454170607582" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1454170607582" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1454170607582" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1454170607582" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1454170607582" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1454170607582" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1454170607582" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1454170607582" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1454170607582" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1454170607582" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1454170607582" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1454170607582" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1454170607582" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1454170607582" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1454170607582" expanded="true" signature="-1:-1" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/student/model/checkCrosslist.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-5.428571" vertical-offset="38" max-vertical-offset="779">
-          <caret line="10" column="40" selection-start-line="10" selection-start-column="40" selection-end-line="10" selection-end-column="40" />
-          <folding>
-            <marker date="1454480441521" expanded="true" signature="-1:-1" placeholder="select cross..Course..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/student/model/checkPrerequisites.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-8.821428" vertical-offset="0" max-vertical-offset="779">
-          <caret line="13" column="9" selection-start-line="13" selection-start-column="9" selection-end-line="13" selection-end-column="9" />
-          <folding>
-            <marker date="1444542585237" expanded="true" signature="-1:-1" placeholder="select prere..Course..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/student/model/getStu_offering.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.34647888" vertical-offset="210" max-vertical-offset="950">
-          <caret line="24" column="9" selection-start-line="24" selection-start-column="9" selection-end-line="24" selection-end-column="9" />
-          <folding>
-            <marker date="1444792382189" expanded="true" signature="-1:-1" placeholder="select * fro..stu_offering..." />
-            <marker date="1444792382189" expanded="true" signature="-1:-1" placeholder="select * fro..stu_offering..." />
-            <marker date="1444792382189" expanded="true" signature="-1:-1" placeholder="select * fro..stu_offering..." />
-            <marker date="1444792382189" expanded="true" signature="-1:-1" placeholder="insert into ..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/student/model/AutoPlan.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-19.928572" vertical-offset="1266" max-vertical-offset="3800">
-          <caret line="96" column="19" selection-start-line="96" selection-start-column="19" selection-end-line="96" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/student/view/displaySelectResult.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.34788734" vertical-offset="190" max-vertical-offset="3097">
-          <caret line="23" column="26" selection-start-line="23" selection-start-column="26" selection-end-line="23" selection-end-column="26" />
-          <folding />
         </state>
       </provider>
     </entry>

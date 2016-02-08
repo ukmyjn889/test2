@@ -19,7 +19,7 @@ include_once "studentView.php";
 <!--    </div>-->
 <!--</div>-->
 <div class="container" style="width: 100%">
-      <h2 align="center">welcome to use planner!</h2>
+      <h2 align="center">Welcome to use planner!</h2>
     <br><br><br>
 <!--      <p align="center">this is a planner please input some details you want at first.</p>-->
 
@@ -47,7 +47,7 @@ include_once "studentView.php";
                      <option value="40">2020 Spring</option>
                       </select>
     </td>
-             <td width="50%">how many semester?
+             <td width="50%">How many semester?
                <input type="text" name="semesters"/> </td>
            </tr>
 
@@ -55,8 +55,8 @@ include_once "studentView.php";
       </table>
 
     <p align="center">
-    <input type="submit" value="confirm">
-    <input type="reset" value="clear">
+    <input type="submit" value="Confirm">
+    <input type="reset" value="Clear">
     </p>
 </form>
 </div>

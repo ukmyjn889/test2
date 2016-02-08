@@ -19,7 +19,7 @@ $row=mysql_fetch_array($result);
 <table border="0" title="student info" width="300" height="100" >
     <tr>
         <td>
-            Name:
+            <b>Name:</b>
         </td>
         <td>
             <?php
@@ -30,7 +30,7 @@ $row=mysql_fetch_array($result);
     </tr>
     <tr>
         <td>
-            Student ID:
+            <b> Student ID:</b>
         </td>
         <td>
             <?php
@@ -41,7 +41,7 @@ $row=mysql_fetch_array($result);
 
     <tr>
         <td>
-            Major:
+            <b> Major:</b>
         </td>
         <td>
             <?php
@@ -51,7 +51,7 @@ $row=mysql_fetch_array($result);
         </tr>
     <tr>
         <td>
-            Enrollment year:
+            <b> Enrollment year:</b>
         </td>
 
         <td>
@@ -66,7 +66,7 @@ $row=mysql_fetch_array($result);
 </div>
 <br><br>
 <div style="position:relative; left:100px">
-    Course taken:
+   <b> Course taken:</b><br>
 <table border="1" width="710" >
     <tr>
         <th height="20">Course ID</th>
