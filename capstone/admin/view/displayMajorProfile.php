@@ -6,7 +6,7 @@
  * Time: 19:59
  */
 include_once "../model/getMajorProfile.php";
-include_once "adminViewHead.php";
+include_once "adminView.php";
 include_once "../model/getMajor.php";
 $major=$_GET['major'];
 $result=getMajorProfileByMajor($major);
@@ -153,5 +153,5 @@ for($y=1;$y<count($map[$keys[$x]]);$y++){
 }
     echo "</table>";
 }
-include_once "adminViewTail.php";
+include_once "adminViewEnd.php";
 ?>

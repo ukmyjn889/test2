@@ -18,7 +18,8 @@ include_once "../model/getStu_Plan.php";
  */
 include_once "../model/getStudent.php";
 ?>
-    <!DOCTYPE html>
+
+ <!DOCTYPE html>
     <html lang="en">
     <head>
         <meta charset="utf-8" />
@@ -62,6 +63,16 @@ include_once "../model/getStudent.php";
 
 
         <script>
+            function showadvance(){
+                document.getElementById('advanceSearch').style.display='block';
+                document.getElementById('planviewer').style.display='none';
+
+            }
+            function hideadvance(){
+                document.getElementById('advanceSearch').style.display='none';
+                document.getElementById('planviewer').style.display='block';
+            }
+
             function showdiv(){
 
                 document.getElementById('light').style.display='block';
@@ -110,13 +121,13 @@ include_once "../model/getStudent.php";
                     </li>
 
                     <li><a href="displayCourse.php<?php
-                        session_start();
-                        if($_SESSION['sid']!=null){
-                            $result=getStudentById($_SESSION['sid']);
-                            $row=mysql_fetch_array($result);
-                            echo "?major=".trim($row["major"]);
-                        }
-                        ?>
+session_start();
+if($_SESSION['sid']!=null){
+    $result=getStudentById($_SESSION['sid']);
+    $row=mysql_fetch_array($result);
+    echo "?major=".trim($row["major"]);
+}
+?>
                     ">Search courses</a>
                         <ul>
                             <!--                        <li><a href="about.html">Search course fuzzy</a></li>-->
@@ -141,9 +152,9 @@ include_once "../model/getStudent.php";
                 </li>
                 <li><a href="#">Planner</a>
                     <ul>
-                        <li><a href="selectTermToSetPlanner.php">Set my planner</a></li>
-                        <li><a href="selectTermToViewOwnPlanner.php">View my planner</a></li>
-                        <li><a href="displaySelectSemesters.php">Auto Generate planner</li>
+                        <li><a href="displaySelectSemesters.php">Create a new planner</a></li>
+                        <li><a href="selectTermToSetPlanner.php">View my planners</a></li>
+<!--                        <li><a href="displaySelectSemesters.php">Auto Generate planner</li>-->
                         <!--                        <li><a href="blog_large_sidebar.html">Planner</a></li>-->
                         <!--                        <li><a href="blog_medium_sidebar.html">Planner</a></li>-->
                     </ul>
@@ -171,17 +182,17 @@ include_once "../model/getStudent.php";
                 <!--                <li><a href="#">Log Out</a></li>-->
 
                 <?php
-                session_start();
-                if($_SESSION['sid']!=null){
-                    echo "<p  style='color: #f9f8f8'>";
-                    $result=getStudentById($_SESSION['sid']);
-                    $row=mysql_fetch_array($result);
-                    echo "Welcome,".$row['nameF']." ".$row['nameL'];
-                    echo "</p>";
-                }else{
-                    echo "<a href='../../Login.html' style='color: #f9f8f8'>login</a>";
-                }
-                ?>
+session_start();
+if($_SESSION['sid']!=null){
+    echo "<p  style='color: #f9f8f8'>";
+    $result=getStudentById($_SESSION['sid']);
+    $row=mysql_fetch_array($result);
+    echo "Welcome,".$row['nameF']." ".$row['nameL'];
+    echo "</p>";
+}else{
+    echo "<a href='../../Login.html' style='color: #f9f8f8'>login</a>";
+}
+?>
             </ul>
         </div>
     </div>
@@ -197,36 +208,37 @@ include_once "../model/getStudent.php";
 
 
 
-    <div class="span12">
-    <div class="page-header">
+    <div class="span12" >
+    <div class="page-header" align="center">
         <h1 style="color:#B0E2FF"> please choose a plan</h1>
         <h1><small>or you can creat a new one</small> </h1>
     </div>
-    <div>
+    <div id="planviewer" align="center">
         <form action="displayPlanner.php" method="get">
             <!--        <center>-->
             <?php
-            session_start();
-            $sid=$_SESSION['sid'];
-            $array=array();
-            $result=getPlannerIdsBySid($sid);
-            $i=1;
-            $nickName="";
-            ?>
+session_start();
+$sid=$_SESSION['sid'];
+$array=array();
+$result=getPlannerIdsBySid($sid);
+$i=1;
+$nickName="";
+?>
             <select name="plannerId">
                 <?php while($row=mysql_fetch_array($result)){
-                    if($row['nickName']!=null){
-                        $nickName=$row['nickName'];
-                    }else{
-                        $nickName="Planner ".$i;
-                    }
-                    ?>
-                    <option value="<?php echo $row['plannerId']?>"><?php echo $nickName?></option>
-                    <?php $i++;}?>
+    if($row['nickName']!=null){
+        $nickName=$row['nickName'];
+    }else{
+        $nickName="Planner ".$i;
+    }
+    ?>
+    <option value="<?php echo $row['plannerId']?>"><?php echo $nickName?></option>
+    <?php $i++;}?>
             </select>
-
+<br>
             <button class="btn" type="submit">view plan</button>
-            <button class="btn" type="reset">clear</button>
+            <button class="btn" type="button" onclick="showadvance()">advance viewer</button>
+            <button class="btn" type="reset">delete a plan</button>
 
 
             <!--        </center>-->
@@ -235,11 +247,9 @@ include_once "../model/getStudent.php";
 
 
 
-    </div>
 
-    <div>
 
-        <button class="btn" type="button" onClick="showdiv()">Create plan</button>
+<!--        <button class="btn" type="button" onClick="showdiv()">Create new plan?</button>-->
     </div>
 
 
@@ -267,6 +277,104 @@ include_once "../model/getStudent.php";
         </form>
 
     </div>
+    <div id="advanceSearch" style="display:none" align="center" > <form action="displayStudentOwnPlan.php" method="get" >
+            <div class="planner" style="font-size:20px;font-style:oblique;">
+                <div class="title" style="font-size:30px;font-style:oblique;font-variant: small-caps;color:#79B6E3" align="center ">
+
+
+
+
+                </div>
+
+                <p >
+                    <?php
+session_start();
+$sid=$_SESSION['sid'];
+$array=array();
+$result=getPlannerIdsBySid($sid);
+$i=1;
+$nickName="";
+?>
+                    please select a plan <br>
+                    <select name="plannerId">
+                        <?php while($row=mysql_fetch_array($result)){
+    if($row['nickName']!=null){
+        $nickName=$row['nickName'];
+    }else{
+        $nickName="Planner ".$i;
+    }
+    ?>
+    <option value="<?php echo $row['plannerId']?>"><?php echo $nickName?></option>
+    <?php $i++;}?>
+                    </select><br>
+                </p>
+                <p >
+
+                    please input the year you want <br>
+
+
+                </p>
+                <p>
+
+                    <!--<center><input id="year" type="text" value="" >-->
+                    <select name="term1" id="select_k1" class="xla_k">
+
+                        <option value="">please choose a year</option>
+
+                        <option value="2015">2015</option>
+                        <option value="2016">2016</option>
+                        <option value="2017">2017</option>
+                        <option value="2018">2018</option>
+                        <option value="2019">2019</option>
+                    </select>
+
+
+                </p>
+
+                <p class="info" >
+
+                    please choose a term <br>
+
+                </p>
+                <div id="checkbox" >
+                    <label>
+                        <input type="radio" name="term2" value="spring" id="RadioGroup1_0">
+                        SPRING</label>
+
+<!--                    <label>-->
+<!--                        <input type="radio" name="term2" value="summer" id="RadioGroup1_1">-->
+<!--                        SUMMER</label>-->
+
+                    <label>
+                        <input type="radio" name="term2" value="fall" id="RadioGroup1_2">
+                        FALL</label>
+
+<!--                    <label>-->
+<!--                        <input type="radio" name="term2" value="winter" id="RadioGroup1_3">-->
+<!--                        WINTER</label>-->
+<!--                    <br>-->
+
+
+
+
+                </div>
+
+            </div>
+<!--            <br>-->
+<!--            <br>-->
+<!--            <br>-->
+            <div >
+
+
+                    <input type="submit" value="OK">
+                    <input type="reset" value="clear">
+                <input type="button" value="hide me!" onclick="hideadvance()">
+                <br>
+
+
+            </div>
+        </form></div>
+
 
 
 

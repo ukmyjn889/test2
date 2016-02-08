@@ -92,7 +92,6 @@
         }
         var temp="";
         function getDetailCourse(cid){
-
             var xhttp = new XMLHttpRequest();
             xhttp.onreadystatechange = function() {
                 // alert(1);

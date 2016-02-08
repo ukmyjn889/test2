@@ -42,6 +42,65 @@ function checkPrerequisites($cid,$selectedCourse){
         return true;
     }
 }
+function checkCrosslist($cid,$selectedCourse)
+{
+    $crosslist = getCrosslistStringByCid($cid);
+    $array = transCrossToCNF($crosslist);
+    $error=array();
+    $count=0;
+    $error[$count]=null;
+    if($crosslist!=null) {
+        for ($i = 0; $i < count($array); $i++) {
+            $orArray = divOrStringIntoArray($array[$i]);
+            if (isInStu_offering($orArray)) {
+                $error[$count] = $array[$i];
+                $count++;
+            }else if(isInSelectedCourse($orArray,$selectedCourse)) {
+                $error[$count] = $array[$i];
+                $count++;
+            }
+        }
+        }
+    if($count!=0){
+        return false;
+    }else{
+        return true;
+    }
+
+}
+function checkRestriction($cid,$selectedCourse)
+{
+    $restriction = getRestrictionStringByCid($cid);
+    $array = transRestrictionToCNF($restriction);
+    $error=array();
+    $count=0;
+    $error[$count]=null;
+    if($restriction!=null) {
+        for ($i = 0; $i < count($array); $i++) {
+            $orArray = divOrStringIntoArray($array[$i]);
+            if (isInStu_offering($orArray)) {
+                $error[$count] = $array[$i];
+                $count++;
+            }else if(isInSelectedCourse($orArray,$selectedCourse)) {
+                $error[$count] = $array[$i];
+                $count++;
+            }
+        }
+    }
+    if($count!=0){
+        return false;
+    }else{
+        return true;
+    }
+
+}
+function checkThree($cid,$selectedCourse){
+    if(checkPrerequisites($cid,$selectedCourse)||checkRestriction($cid,$selectedCourse)||checkCrosslist($cid,$selectedCourse)){
+        return true;
+    }else{
+        return false;
+    }
+}
 function isInSelectedCourse($orArray,$selectedCourse){
     foreach($orArray as $value){
         if(in_array($value,$selectedCourse)){
@@ -72,6 +131,7 @@ function getKasiPlan($semesters,$sid)
             array_push($AllCourse, $subRow);
         }
     }
+   // return $AllCourse;
     session_start();
     $_SESSION['creditsList']=$creditsList;
     $returnResult = array();

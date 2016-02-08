@@ -226,7 +226,13 @@ for($i=0;$i<count($father);$i++){
             echo "conflict";
         }else{
             if($son[$i][$j]['term']!="Taken"){
-            echo "Semester".$son[$i][$j]['term'];
+            //echo "Semester".$son[$i][$j]['term'];
+                $year="20".(int)($son[$i][$j]['term']/2)." ";
+                if($son[$i][$j]['term']%2==0){
+                    echo $year." Spring";
+                }else{
+                    echo $year." Fall";
+                }
                 }else{
                 echo $son[$i][$j]['term'];
             }
@@ -261,21 +267,19 @@ echo "</div>";
                         please choose a year
                         <select id="select1" name="term1" >
                             <option></option>
-                            <option value="2015">2015</option>
-                            <option value="2016">2016</option>
-                            <option value="2017">2017</option>
-                            <option value="2018">2018</option>
-                            <option value="2019">2019</option>
+                            <option value="30">2015</option>
+                            <option value="32">2016</option>
+                            <option value="34">2017</option>
+                            <option value="36">2018</option>
+                            <option value="38">2019</option>
                         </select><br>
 
 
                         Please choose a term
                         <select id="select2" name="term2">
                             <option></option>
-                            <option value="spring">SPRING</option>
-                            <option value="summer">SUMMER</option>
-                            <option value="fall">FALL</option>
-                            <option value="winter">WINTER</option>
+                            <option value="0">SPRING</option>
+                            <option value="1">FALL</option>
                         </select>
                         <p >
                             <input type="hidden" id="termv1" name="cid">

@@ -35,6 +35,7 @@ if($prerequisites!=null) {
 
     }
 }
+
 //@如果发现error里面有值，返回select 界面（可异步） #否则check offering 是否与本人已选课程冲突
 if($error[0]!=null){
     //echo "xx";

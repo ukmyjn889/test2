@@ -77,31 +77,28 @@ $timeTableArray=getOfferingTimeTable($sid);
 
 
 
-        <table height="800" width="1200"  >
+        <table height="400" width="1200"  >
             <tr>
-                <td class="blank"></td>
-                <td class="title">Monday</td>
+                <td class="title"> Class Timings</td>
+                <td class="title" height="30">Monday</td>
                 <td class="title">Tuesday</td>
                 <td class="title">Wednesday</td>
                 <td class="title">Thursday</td>
                 <td class="title">Friday</td>
                 <td class="title">Saturday</td>
-                <td class="title">Sunday</td>
             </tr>
             <tr>
-                <td class="time">07:00-8:00</td>
-                <td class="drop" height="60px"></td>
-                <td class="drop" height="60px"></td>
-                <td class="drop" height="60px"></td>
-                <td class="drop" height="60px"></td>
-                <td class="drop" height="60px"></td>
-                <td class="drop" height="60px"></td>
-                <td class="drop" height="60px"></td>
+                <td class="time">07:00 AM-8:00 AM</td>
+                <td class="drop" height="30px"></td>
+                <td class="drop" height="30px"></td>
+                <td class="drop" height="30px"></td>
+                <td class="drop" height="30px"></td>
+                <td class="drop" height="30px"></td>
+                <td class="drop" height="30px"></td>
             </tr>
             <tr>
-                <td class="time">8:00-09:00</td>
-                <td class="drop" height="60"></td>
-                <td class="drop"></td>
+                <td class="time">8:00 AM-09:00 AM</td>
+                <td class="drop" height="30"></td>
                 <td class="drop"></td>
                 <td class="drop"></td>
                 <td class="drop"></td>
@@ -109,19 +106,8 @@ $timeTableArray=getOfferingTimeTable($sid);
                 <td class="drop"></td>
             </tr>
             <tr>
-                <td class="time">9:00-10:00</td>
-                <td class="drop" height="60"></td>
-                <td class="drop"></td>
-                <td class="drop"></td>
-                <td class="drop"></td>
-                <td class="drop"></td>
-                <td class="drop"></td>
-                <td class="drop"></td>
-            </tr>
-            <tr>
-                <td class="time">10:00-11:00</td>
-                <td class="drop" height="60"></td>
-                <td class="drop"></td>
+                <td class="time">9:00 AM-10:00 AM</td>
+                <td class="drop" height="30"></td>
                 <td class="drop"></td>
                 <td class="drop"></td>
                 <td class="drop"></td>
@@ -129,9 +115,8 @@ $timeTableArray=getOfferingTimeTable($sid);
                 <td class="drop"></td>
             </tr>
             <tr>
-                <td class="time">11:00-12:00</td>
-                <td class="drop" height="60"></td>
-                <td class="drop"></td>
+                <td class="time">10:00 AM-11:00 AM</td>
+                <td class="drop" height="30"></td>
                 <td class="drop"></td>
                 <td class="drop"></td>
                 <td class="drop"></td>
@@ -139,20 +124,18 @@ $timeTableArray=getOfferingTimeTable($sid);
                 <td class="drop"></td>
             </tr>
             <tr>
-                <td class="time">12:00-13:00</td>
+                <td class="time">11:00 AM-12:00 AM</td>
+                <td class="drop" height="30"></td>
+                <td class="drop"></td>
+                <td class="drop"></td>
+                <td class="drop"></td>
+                <td class="drop"></td>
+                <td class="drop"></td>
+            </tr>
+            <tr>
+                <td class="time">12:00 PM-13:00 PM</td>
 
-                <td class="drop" height="60"></td>
-                <td class="drop"></td>
-                <td class="drop"></td>
-                <td class="drop"></td>
-                <td class="drop"></td>
-                <td class="drop"></td>
-                <td class="drop"></td>
-            </tr>
-            <tr>
-                <td class="time">13:00-14:00</td>
-                <td class="drop" height="60"></td>
-                <td class="drop"></td>
+                <td class="drop" height="30"></td>
                 <td class="drop"></td>
                 <td class="drop"></td>
                 <td class="drop"></td>
@@ -160,19 +143,8 @@ $timeTableArray=getOfferingTimeTable($sid);
                 <td class="drop"></td>
             </tr>
             <tr>
-                <td class="time">14:00-15:00</td>
-                <td class="drop" height="60"></td>
-                <td class="drop"></td>
-                <td class="drop"></td>
-                <td class="drop"></td>
-                <td class="drop"></td>
-                <td class="drop"></td>
-                <td class="drop"></td>
-            </tr>
-            <tr>
-                <td class="time">16:00-17:00</td>
-                <td class="drop" height="60"></td>
-                <td class="drop"></td>
+                <td class="time">1:00 PM-2:00 PM</td>
+                <td class="drop" height="30"></td>
                 <td class="drop"></td>
                 <td class="drop"></td>
                 <td class="drop"></td>
@@ -180,9 +152,8 @@ $timeTableArray=getOfferingTimeTable($sid);
                 <td class="drop"></td>
             </tr>
             <tr>
-                <td class="time">18:00-19:00</td>
-                <td class="drop" height="60"></td>
-                <td class="drop"></td>
+                <td class="time">2:00 PM-3:00 PM</td>
+                <td class="drop" height="30"></td>
                 <td class="drop"></td>
                 <td class="drop"></td>
                 <td class="drop"></td>
@@ -190,9 +161,26 @@ $timeTableArray=getOfferingTimeTable($sid);
                 <td class="drop"></td>
             </tr>
             <tr>
-                <td class="time">20:00-21:00</td>
-                <td class="drop" height="60"></td>
+                <td class="time">3:00 PM-4:00 PM</td>
+                <td class="drop" height="30"></td>
                 <td class="drop"></td>
+                <td class="drop"></td>
+                <td class="drop"></td>
+                <td class="drop"></td>
+                <td class="drop"></td>
+            </tr>
+            <tr>
+                <td class="time">4:00 PM-5:00 PM</td>
+                <td class="drop" height="30"></td>
+                <td class="drop"></td>
+                <td class="drop"></td>
+                <td class="drop"></td>
+                <td class="drop"></td>
+                <td class="drop"></td>
+            </tr>
+            <tr>
+                <td class="time">5:00 PM-6:00 PM</td>
+                <td class="drop" height="30"></td>
                 <td class="drop"></td>
                 <td class="drop"></td>
                 <td class="drop"></td>
@@ -202,9 +190,9 @@ $timeTableArray=getOfferingTimeTable($sid);
 
         </table>
     </div>
-    <div id="nocolor" style="position:absolute; left:210px; top:145px;">
+    <div id="nocolor" style="position:absolute; left:310px; top:38px;">
 
-        <table height="660"  style=" border-color: #00aeef;" border="0px"  width="700">
+        <table height="400"  CellSpacing="0" style=" border-color: #00aeef; " border="0px"  width="598">
 
             <?php
            // print_r($timeTable);
@@ -222,7 +210,7 @@ $timeTableArray=getOfferingTimeTable($sid);
 //                }
 
                 echo "<tr>\n";
-                for($y=0;$y<7;$y++) {
+                for($y=0;$y<6;$y++) {
                     if ($timeTableArray[$y][$x] == "x" || $timeTableArray[$y][$x + 1]=="x") {
                         if ($flag[$y] >0) {
                                 $flag[$y] --;
@@ -230,13 +218,13 @@ $timeTableArray=getOfferingTimeTable($sid);
 
                             $offeringRow = $timeTable[$y][$count[$y]];
                             $rowSpan=calculateOfferingPeriod($offeringRow);
-                            echo "<td class='title' align='center'  height='8px'  width='75' rowspan='" . $rowSpan . "'     style='border:1px solid; border-color:#1e90ff; '  bgcolor='#1e90ff'>" .
-                                $offeringRow['cid']. "</td>\n";
+                            echo "<td class='title' align='center'  height='4px'  width='75' rowspan='" . $rowSpan . "'     style=' border:1px solid; border-color:#1e90ff; '  bgcolor='#1e90ff'><a href='#' style='color: #ffffff;'>" .
+                               $offeringRow['cid']. "<a></td>\n";
                             $flag[$y] = $rowSpan-1;
                             $count[$y]++;
                         }
                     } else {
-                        echo "<td align='center' class='drop' height='8px' width='75'  ></td>\n";
+                        echo "<td align='center' class='drop' height='4px' width='75'  ></td>\n";
                     }
                 }
 

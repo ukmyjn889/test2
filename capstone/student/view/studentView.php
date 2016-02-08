@@ -40,7 +40,7 @@ include_once "../model/getStudent.php";
         <nav>
             <!-- top menu -->
             <ul>
-                <li><a >View student profile</a>
+                <li><a >View Student Profile</a>
                     <ul>
                         <li><a href="displayStudentProfile.php">User information</a></li>
 <!--                        <li><a href="displayStudentProfile.php">Course profile</a></li>-->
@@ -56,7 +56,7 @@ include_once "../model/getStudent.php";
                         echo "?major=".trim($row["major"]);
                     }
                     ?>
-                    ">Search courses</a>
+                    ">Search Courses</a>
                     <ul>
 <!--                        <li><a href="about.html">Search course fuzzy</a></li>-->
 <!--                        <li><a href="team.html">Search courses by conditions</a></li>-->
@@ -64,7 +64,7 @@ include_once "../model/getStudent.php";
 
                     </ul>
                 </li>
-                <li><a >My class Schedular</a>
+                <li><a >View Schedule</a>
                     <ul>
                         <li><a href="displayTimeTable.php">Show current course time table</a>
 
@@ -78,20 +78,18 @@ include_once "../model/getStudent.php";
 
                     </ul>
                 </li>
-                <li><a href="#">Planner</a>
+                <li><a href="#">View Planner</a>
                     <ul>
-                        <li><a href="selectTermToSetPlanner.php">Set my planner</a></li>
-                        <li><a href="selectTermToViewOwnPlanner.php">View my planner</a></li>
-                        <li><a href="displaySelectSemesters.php">Auto Generate planner</li>
+                        <li><a href="displaySelectSemesters.php">Create new Planner</a></li>
+                        <li><a href="selectTermToSetPlanner.php">View my Planner</a></li>
+<!--                        <li><a href="displaySelectSemesters.php">Auto Generate planner</li>-->
 <!--                        <li><a href="blog_large_sidebar.html">Planner</a></li>-->
 <!--                        <li><a href="blog_medium_sidebar.html">Planner</a></li>-->
                     </ul>
                 </li>
-                <li><a >Log out</a>
+                <li><a href="../model/logOut.php">Log out</a>
                     <ul>
-                        <li><a href="../model/logOut.php">Log out</a></li>
-                        <li><a href="shortcodes_buttons_icons.html">Switch user</a></li>
-
+<!--                        <li><a href="shortcodes_buttons_icons.html">Switch user</a></li>-->
                     </ul>
                 </li>
             </ul>
@@ -104,7 +102,7 @@ include_once "../model/getStudent.php";
     <!-- top_title -->
     <div class="top_title">
         <div class="wraper">
-            <h2>Student Module    <span>This is a  page for student</span></h2>
+            <h2>Student Module    <span></span></h2>
             <ul>
 <!--                <li><a href="#">Home</a></li>-->
 <!--                <li><a href="#">Log Out</a></li>-->
@@ -115,7 +113,7 @@ include_once "../model/getStudent.php";
                     echo "<p  style='color: #f9f8f8'>";
                     $result=getStudentById($_SESSION['sid']);
                     $row=mysql_fetch_array($result);
-                    echo "Welcome,".$row['nameF']." ".$row['nameL'];
+                    echo "Welcome  ".$row['nameF']." ".$row['nameL'];
                     echo "</p>";
                 }else{
                     echo "<a href='../../Login.html' style='color: #f9f8f8'>login</a>";

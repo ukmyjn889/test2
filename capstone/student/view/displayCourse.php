@@ -36,10 +36,10 @@ include_once "../model/getStudent.php";
 <div align="center" style="height:480px">
 <table border="0" width="800"  align="center" cellspacing="4"  cellpadding="4" >
     <tr>
-        <td height="50" align="center">
+        <td height="50" align="left">
             Course ID
         </td>
-        <td height="50" align="center">
+        <td height="50" align="left">
             Course Title
         </td>
         <td height="50" align="center">
@@ -50,10 +50,10 @@ include_once "../model/getStudent.php";
 while ($row=mysql_fetch_array($result)){
     $cid=$row['cid'];
     echo "<tr>";
-    echo "<td height='30' align='center'>";
+    echo "<td height='30' width='250' align='left'>";
     echo $cid;
     echo "</td>";
-    echo "<td height='30' align='center'>";
+    echo "<td height='30' align='left'>";
     echo $row['title'];
     echo "</td>";
     echo "<td height='30' align='center'>";

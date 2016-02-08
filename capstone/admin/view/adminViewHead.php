@@ -38,7 +38,7 @@
             }
 
             else{
-                alert("success")
+                alert("success");
                 addstudentprof.submit();
             }
 

@@ -10,7 +10,7 @@ include_once "../model/getPlanner.php";
 include_once "studentView.php";
 $term1=$_GET['term1'];
 $term2=$_GET['term2'];
-$term=$term1." ".$term2;
+$term=$term1+$term2;
 $plannerId=$_GET['plannerId'];
 session_start();
 $sid=$_SESSION['sid'];
