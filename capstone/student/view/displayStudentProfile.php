@@ -9,53 +9,63 @@ include_once "studentView.php";
 include_once "../model/getStudent.php";
 include_once "../model/getStu_offering.php";
 include_once "../model/getOffering.php";
+include_once"../model/getMajor.php";
 session_start();
 $sid=$_SESSION["sid"];
 $result=getStudentById($sid);
 $row=mysql_fetch_array($result);
 ?>
-<div style="position:relative; left:100px">
-    Student Information
-<table border="0" title="student info" width="300" height="200" >
+<div>
+<table border="0" title="student info" width="500" height="100" >
     <tr>
         <td>
-            Student ID:
+            <h4 class="text-primary">Name:</h4>
         </td>
         <td>
             <?php
-            echo $row['sid'];
-            ?>
-        </td>
-    </tr>
-        <tr>
-        <td>
-            Name:
-        </td>
-        <td>
-            <?php
+            echo"<h4 class='text-primary'>";
             echo $row['nameF']." ";
+
             echo $row['nameL'];
+            echo"</h4>";
             ?>
         </td>
     </tr>
     <tr>
         <td>
-            Major:
+            <h4 class="text-primary"> Student ID:</h4>
         </td>
         <td>
             <?php
-            echo $row['major'];
+            echo"<h4 class='text-primary'>";
+            echo $row['sid'];
+             echo"</h4>";
+            ?>
+        </td>
+    </tr>
+
+    <tr>
+        <td>
+            <h4 class="text-primary"> Major:</h4>
+        </td>
+        <td>
+            <?php
+            echo"<h4 class='text-primary'>";
+            echo mysql_fetch_array(getMajorByMajorNickName($row['major']))['majorFullName'];
+            echo"</h4>";
             ?>
         </td>
         </tr>
     <tr>
         <td>
-            Enrollment year:
+            <h4 class="text-primary"> Enrollment year:</h4>
         </td>
 
         <td>
             <?php
-            echo $row['grade'];
+            echo"<h4 class='text-primary'>";
+            echo $row['grade']." ".$row['semester'];
+            echo"</h4>";
             ?>
         </td>
     </tr>
@@ -63,18 +73,19 @@ $row=mysql_fetch_array($result);
 </table>
 
 </div>
-<div style="position:relative; left:100px">
-    Course taken:
-<table border="1" width="690" >
-    <tr height="45">
-        <th>Course</th>
-        <th>Course Title</th>
-        <th>Instructor Name</th>
-        <th>Class Time</th>
+<br><br>
+<div >
+    <h3 class="text-primary"> Course taken:</h3><br>
+<table  width="710" class="table table-striped">
+    <tr>
+        <th height="20">Course ID</th>
+        <th height="20">Course Title</th>
+        <th height="20">Instructor Name</th>
+        <th height="20">Class Time</th>
 
-        <th>Classroom</th>
-        <th>Offering Taken time</th>
-        <th>Mark</th>
+        <th height="20">Classroom</th>
+        <th height="20">Taken in</th>
+        <th height="20">Grade</th>
      </tr>
 <?php
 $result=getStu_offeringBySid($sid);
@@ -84,34 +95,34 @@ while ($row=mysql_fetch_array($result)){
     $innerResult=getOfferingById($row['oid']);
   //  echo $innerResult;
     $innerRow=mysql_fetch_array($innerResult);
-            echo "<tr height='35'>";
+            echo "<tr>";
 //        echo "<td>";
 //        echo $innerRow['oid'];
 //        echo "</td>";
-        echo "<td>";
+        echo "<td height='35'>";
         echo $innerRow['cid']."<br/>".strtoupper($innerRow['component']);
         echo "</td>";
 
     echo "<td>";
-    echo $innerRow['courseTitle'];
+    echo  ucwords($innerRow['courseTitle']);
     echo "</td>";
         echo "<td>";
-        echo $innerRow['InstNameF']." ".$innerRow['InstNameL'];
+        echo ucwords($innerRow['InstNameF'])." ".ucwords($innerRow['InstNameL']);
         echo "</td>";
         echo "<td>";
-        echo $innerRow['TimeStart']."-".$innerRow['TimeEnd']." ( ". transWeekIntoString($innerRow)." ) ";
+        echo date("h:i A",strtotime($innerRow['TimeStart']))."-".date("h:i A",strtotime($innerRow['TimeEnd']))." ( ". transWeekIntoString($innerRow)." ) ";
         echo "</td>";
 //        echo "<td>";
 //        echo transWeekIntoString($innerRow);
 //        echo "</td>";
         echo "<td>";
-        echo $innerRow['ClassLocation'];
+        echo  ucwords($innerRow['ClassLocation']);
         echo "</td>";
         echo "<td>";
-        echo $row['term'];
+        echo  ucwords($row['term']);
         echo "</td>";
         echo "<td width='20px'>";
-        echo $row['mark'];
+        echo  ucwords($row['mark']);
         echo "</td>";
              echo "</tr>";
 }

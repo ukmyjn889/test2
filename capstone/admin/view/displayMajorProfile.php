@@ -6,7 +6,7 @@
  * Time: 19:59
  */
 include_once "../model/getMajorProfile.php";
-include_once "adminViewHead.php";
+include_once "adminView.php";
 include_once "../model/getMajor.php";
 $major=$_GET['major'];
 $result=getMajorProfileByMajor($major);
@@ -19,12 +19,13 @@ if($result[count($result)-1][0]['options']>1){
 $map=array();
 $option=0;
 ?>
-<table border='1' style='border-collapse: collapse' rules='rows' width="450">
+<table class="table table-striped "  style='border-collapse: collapse' rules='rows' width="450">
 <?php
+$count1=1;
 for($x=0;$x<count($result);$x++){
     $temp=$result[$x];
     if($x==0){
-        echo "<li style='font-size: medium; list-style-type: none'>Core Course</li>";
+        echo "<h3 class='text-success'>Core Course</h3>";
         for($y=1;$y<count($temp);$y++){
             $list=$temp[$y];
             echo "<tr>";
@@ -33,9 +34,18 @@ for($x=0;$x<count($result);$x++){
 //            echo $list['credits'];
 //            echo "<br>";
             echo "<td align='left' height='20px'>";
-            echo $list['cid'];
+           // echo $list['cid'];
+            ?>
+            <a href='#' data-toggle='popover' id="<?php echo  $list['cid']?>"
+               title="<?php echo $list['cid']?>"
+               data-html='true' data-content='' data-placement='top' data-trigger='focus'
+               onclick='return false' onmouseover='changeValue(this.id)'
+               onmouseout='leave(this.id)'><?php echo $list['cid']?></a>
+            <?php
             echo "</td><td align='right' height='20px' >";
+            echo"<h3 class='text-success'>";
             echo $list['credits'];
+            echo"</h3 >";
             echo "</td>";
             echo "</tr>";
         }
@@ -77,9 +87,17 @@ for($x=0;$x<count($result);$x++){
 //                echo "<br>";
                 echo "<tr>";
                 echo "<td align='left' height='20px'>";
-                echo $list['cid'];
+                ?>
+                <a href='#' data-toggle='popover' id="<?php echo  $list['cid']?>"
+                   title="<?php echo $list['cid']?>"
+                   data-html='true' data-content='' data-placement='top' data-trigger='focus'
+                   onclick='return false' onmouseover='changeValue(this.id)'
+                   onmouseout='leave(this.id)'><?php echo $list['cid']?></a>
+    <?php
                 echo "</td><td align='right' height='20px'>";
+                echo"<h3 class='text-success'>";
                 echo $list['credits'];
+                echo"</h3>";
                 echo "</td>";
                 echo "</tr>";
             }
@@ -95,19 +113,25 @@ for($x=0;$x<count($result);$x++){
             if ($head['component'] == "select") {
                 echo "<tr>";
                 echo "<td align='left' height='20px'>";
-                echo "select " . $head['subject'] . " course from ".$head['listname'].$string;
+                echo "select " . $head['subject'] . " course from Elective List".$count1.$string;
+                $count1++;
                 echo "</td>";
                 echo "<td align='right' height='20px'>";
+                echo"<h3 class='text-success'>";
                 echo $head['credits'];
+                echo"</h3>";
                 echo "</td></tr>";
               //  echo "select " . $head['subject'] . " course from ".$head['listname'].$string."            ".$head['credits']."<br>";
             } else if ($head['component'] == "credit") {
                 echo "<tr>";
                 echo "<td align='left' height='20px'>";
-                echo "select " . $head['subject'] . " course from ".$head['listname'].$string;
+                echo "select " . $head['subject'] . " course from Elective List".$count1.$string;
+                $count1++;
                 echo "</td>";
                 echo "<td align='right' height='20px'>";
+                echo"<h3 class='text-success'>";
                 echo $head['credits'];
+                echo"</h3>";
                 echo "</td></tr>";
                 //echo "select " . $head['subject'] . " credits from  ".$head['listname'].$string."            ".$head['credits']."<br>";
             }
@@ -118,7 +142,7 @@ for($x=0;$x<count($result);$x++){
 }
 ?>
     <tr>
-        <td height="20px" style="font-size: small; font-weight: bold">Total Credits</td><td align="right">
+        <td height="20px" ><h3 class='text-success'>Total Credits</h3></td><td align="right">
         <?php
         echo getMajorCreditByMajorName($major);
         ?>
@@ -128,12 +152,12 @@ for($x=0;$x<count($result);$x++){
 <?php
 $keys=array_keys($map);
 for($x=0;$x<count($keys);$x++){
-    echo "<table border='1' style='border-collapse: collapse' rules='rows' width='450'>";
+    echo "<table class='table table-striped ' style='border-collapse: collapse' rules='rows' width='450'>";
   //  echo "<tr>";
    // echo "<td>";
     echo "<br>";
     echo "<li style='font-size: medium; list-style-type: none'>";
-    echo $keys[$x];
+    echo "Elective list".($x+1);
     echo "</li>";
   //  echo "</td>";
  //   echo "</tr>";
@@ -141,9 +165,17 @@ for($y=1;$y<count($map[$keys[$x]]);$y++){
     $list=$map[$keys[$x]][$y];
     echo "<tr>";
     echo "<td align='left' height='20px'>";
-    echo $list['cid'];
+    ?>
+    <a href='#' data-toggle='popover' id="<?php echo  $list['cid']?>"
+       title="<?php echo $list['cid']?>"
+       data-html='true' data-content='' data-placement='top' data-trigger='focus'
+       onclick='return false' onmouseover='changeValue(this.id)'
+       onmouseout='leave(this.id)'><?php echo $list['cid']?></a>
+    <?php
     echo "</td><td align='right' height='20px'>";
+    echo"<h3 class='text-success'>";
     echo $list['credits'];
+    echo"</h3 >";
     echo "</td>";
     echo "</tr>";
 //    echo $list['cid'];
@@ -153,5 +185,30 @@ for($y=1;$y<count($map[$keys[$x]]);$y++){
 }
     echo "</table>";
 }
-include_once "adminViewTail.php";
+?>
+<script>
+    $(document).ready(function(){
+        $('[data-toggle="popover"]').popover();
+        $('[data-toggle="tooltip"]').tooltip();
+    });
+    function changeValue(id){
+       // alert(id);
+       // var value=document.getElementById(id).getAttribute("data-original-title");
+      //  var value=document.getElementById(id).onclick;
+        //alert(value);
+        $.ajax({
+            url:"../../student/model/getCourseDescription.php",
+            data:{cid:id},
+            type:"GET",
+            async:false,
+            success:function(data){
+               // alert(data);
+                document.getElementById(id).setAttribute("data-content",data);
+            }
+
+        });
+    }
+</script>
+<?php
+include_once "adminViewEnd.php";
 ?>

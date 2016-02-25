@@ -18,5 +18,15 @@ return $result;
 function getAllElectiveSubject($major){
     $sql = "select * from required where majorName='" . $major . "' and component<>'required'";
     $result=mysql_query($sql);
+    return $result;
+}
+function addRequired($rid,$mid,$majorName,$subject,$credits,$component,$options,$listid,$remark,$listname){
+    $sql="insert into required(rid,mid,majorName,subject,credits,componment,options,listid,remark,listname) VALUES ('".$rid."','".$mid."','".$majorName."','".$subject."','".$credits.
+        "','".$component."','".$options."','".$listid."','".$remark."','".$listname."')";
+    mysql_query($sql);
+}
+function deleteRequiredByMajorName($mid){
+    $sql="delete from requied where mid='".$mid."'";
+    mysql_query($sql);
 }
 ?>

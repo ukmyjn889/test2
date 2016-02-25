@@ -21,13 +21,18 @@ function getStu_offeringByOid($oid){
     $result=mysql_query($sql);
     return $result;
 }
-//undo
-function isInStu_offering($array){
-    $sql="select * from stu_offering where cid='".$array[0]."'";
+function getStu_offeringBySidAndCid($sid,$cid){
+    $sql="select * from stu_offering where cid='".$cid."' and sid='".$sid."'";
+   // echo $sql;
+    return mysql_fetch_array(mysql_query($sql));
+}
+function isInStu_offering($array,$sid){
+    $sql="select * from stu_offering where sid='".$sid."' and (cid='".$array[0]."'";
     for($i=1;$i<count($array);$i++){
         $sql.=" or cid='".$array[$i]."'";
     }
-   // echo $sql."\n";
+    $sql.=")";
+    //echo $sql."\n";
     $result=mysql_query($sql);
     $row=mysql_fetch_array($result);
     if($row[0]!=null){
@@ -37,9 +42,9 @@ function isInStu_offering($array){
     }
 }
 function saveStu_offering($sid,$cid,$oid,$takenTime){
-    $sql="insert into stu_offering (sid,cid,oid,takenTime) VALUES ('".$sid."','".$cid."','".$oid."','".$takenTime."')";
+    $sql="insert into stu_offering (sid,cid,oid,term) VALUES ('".$sid."','".$cid."','".$oid."','".$takenTime."')";
     //echo $sql;
-    $result=mysql_query($sql);
+    mysql_query($sql);
 }
 
 ?>

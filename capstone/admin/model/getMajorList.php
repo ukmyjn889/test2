@@ -6,4 +6,6 @@
  * Time: 7:45
  */
 
+$coreCourse=$_POST['coreCourse'];
+
 ?>

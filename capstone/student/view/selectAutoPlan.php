@@ -9,9 +9,14 @@ include_once "../model/AutoPlan.php";
 
 session_start();
 $result=$_SESSION['semesters'];
-$semesters=$_GET['semester'];
-$creditsList=$_SESSION['creditsList'];
+$sid=$_SESSION['sid'];
 $term=$_GET['term'];
+$semesters=$_GET['semesters'];
+$resultX=getKasiPlan($semesters,$sid);
+//print_r($resultX);
+$creditsList=$_SESSION['creditsList'];
+//print_r($creditsList);
+
 ?>
 
 
@@ -35,22 +40,6 @@ include_once "../model/getStudent.php";
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-<!--    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>-->
-<!--    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>-->
-    <!--    <link rel="stylesheet" href="../../css/div5.css" />-->
-<!--    <link href="http://libs.baidu.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet">-->
-<!--    <link href="http://apps.bdimg.com/libs/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet">-->
-<!--    <script src="../../scripts/jquery.min.js"></script>-->
-<!--    <script src="../../scripts/bootstrap.js"></script>-->
-    <!--    <script src="http://apps.bdimg.com/libs/bootstrap/3.3.0/js/bootstrap.min.js"></script>-->
-    <!--    <link rel="icon" type="image/png" href="images/favicon.ico" />-->
-    <!--    <link rel="apple-touch-icon" href="images/apple-touch-icon.png" />-->
-    <!--    <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png" />-->
-    <!--    <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png" />-->
-    <!--[if lt IE 9]>
-
-    <!--<script src="../../scripts/ie9.js">IE7_PNG_SUFFIX=".png";</script>-->
-    <!--[endif]-->
 
     <link rel="stylesheet" href="../../css/studentViewStyle.css" />
     <link rel="stylesheet" href="../../css/responsive.css" />
@@ -85,7 +74,7 @@ include_once "../model/getStudent.php";
                 }
             }
             var str="";
-            for(var i=0;i<arr.length-4;i+4){
+            for(var i=0;i<arr.length-4;i=i+4){
                 str+=arr[i]+","+arr[i+1]+",";
 
             }
@@ -96,16 +85,8 @@ include_once "../model/getStudent.php";
             xhttp.onreadystatechange = function() {
                 if (xhttp.readyState == 4 && xhttp.status == 200) {
                     document.getElementById("faq").innerHTML=xhttp.responseText;
-//                var result=xhttp.responseText;
-//                result=eval(result);
-//                for(var i = 0,length = result.length;i<length;i++){
-//                    document.getElementById("semester2").innerHTML+="<br>"+result[i]["cid"]+"    "+result[i]["credits"];
-//                    if(result[i]["available"]=="true"){
-//                        document.getElementById("semester2").innerHTML+="<input type=\"checkbox\"  value=\""+result[i]["cid"]+"\" onclick=\"checkVaild(this.value,"+(currentSemester+1)+")\" id=\""+(result[i]["cid"]+(currentSemester+1))+"\">"
-//                    }else{
-//                        document.getElementById("semester2").innerHTML+= "<input type='checkbox' disabled>";
-//                    }
-//                }
+                    document.getElementById("faq").innerHTML+="<br><img src='../../images/Correct.png'>"
+                    document.getElementById("viewCredit").type="hidden";
                 }
             };
             xhttp.open("POST", "/capstone/student/model/AjaxPlan.php", true);
@@ -124,85 +105,81 @@ include_once "../model/getStudent.php";
             var li=document.getElementById(currentSemester);
             var dl=li.getElementsByTagName("dl")[0];
             var dt=dl.getElementsByTagName("dt")[0];
+            var img=dt.getElementsByTagName("img")[0];
+            img.src="../../images/arrow.png";
             var dd=dl.getElementsByTagName("dd")[0];
             dd.style.display='none';
             li=document.getElementById(parseInt(currentSemester)-1);
             dl=li.getElementsByTagName("dl")[0];
             dt=dl.getElementsByTagName("dt")[0];
+            img=dt.getElementsByTagName("img")[0];
+            img.src="../../images/arrowDown.png";
             dd=dl.getElementsByTagName("dd")[0];
             dd.style.display='block';
             var input=dd.getElementsByTagName("input");
 
                 for(var j=0;j<input.length;j++){
                     var flag=false;
+                    var td;
+                    var STR="";
                     for(var i=0;i<arr.length;i=i+4){
                     if(input[j].value==arr[i]&&(input[j].id!=(arr[i]+""+arr[i+1]))){
-                        input[j].disabled=true;
-                        input[j].title="selected";
+                        STR=input[j].getAttribute("onclick");
+                        input[j].setAttribute("onclick","return false");
+                        input[j].setAttribute("data-toggle","tooltip");
+                        input[j].setAttribute("data-placement","right");
+                        input[j].setAttribute("data-original-title","selected");
+                        input[j].setAttribute("storage",STR);
+                        input[j].title="";
+                        td=input[j].parentNode;
+                        td.setAttribute("style","background:gray");
                         flag=true;
                         }
                     }
                     if(flag==false){
-                        if(input[j].title=="selected"){
-                           input[j].disabled=false;
+                        if(input[j].getAttribute("data-original-title")=="selected"){
+                            td=input[j].parentNode;
+//                            var tr=td.parentNode;
+//                            var cid=tr.getElementsByTagName("td")[0].getElementsByTagName("a")[0].innerHTML;
+                            STR=input[j].getAttribute("storage");
+
+                            input[j].setAttribute("onclick",STR);
+                            input[j].setAttribute("data-toggle","");
+                            input[j].setAttribute("data-placement","");
+                            input[j].setAttribute("data-original-title","");
                             input[j].title="";
+
+                            td.setAttribute("style","");
                         }
                 }
             }
-//            for(var i=0;i<arr.length;i=i+4){
-//                if(arr[i+1]==(parseInt(currentSemester))){
-//                   // alert(arr[i+1]+" "+currentSemester);
-//                   // alert((arr[i]+""+arr[i+1]));
-//                 document.getElementById((arr[i]+""+(arr[i+1]-1))).disabled=true;
-//                document.getElementById((arr[i]+""+(arr[i+1]-1))).title="selected";
-//                }
-//            }
-          //  alert(arr);
+
+            $('[data-toggle="tooltip"]').tooltip();
         }
-//        function hasSelected(cid,currentSemester){
-//            //alert(cid+"xxx");
-//           for(var i=0;i<arr.length;i=i+4){
-//              if(arr[i]==cid){
-//                  alert(arr[i]+" "+cid);
-//                  alert('yes');
-//              }else{
-//                  alert(arr[i]+" "+cid);
-//                  alert('no');
-//              }
-//            }
-//          //  alert( typeof(cid));
-//            return false;
-//        }
+
 
         function leave(id){
-//            document.getElementById(id).click();
-    //\        $('[data-toggle="popover"]').popover();
-        //   alert( $(".popover fade right in").attr("style"));
+
 
         }
         function changeValue(id){
            var value=document.getElementById(id).getAttribute("data-original-title");
            // alert(value);
-            $.get("../model/getCourseDescription.php",{cid:value},function(data){
+            $.ajax({
+                url:"../model/getCourseDescription.php",
+            data:{cid:value},
+                type:"GET",
+                async:false,
+            success:function(data){
                 document.getElementById(id).setAttribute("data-content",data);
-               // alert(data);
-            });
-         //  temp.attr("data-content",id);
-         //   alert( temp.attr("data-content"));
-              // var temp= document.getElementsByTagName("data-content");
-              //  alert(temp.length);
+            }
 
-           //alert( temp.Object("data-content"));
-           //alert( $('[data-toggle="popover"]').attr("data-content"));
-              //  alert(temp.attr("title"));
-           // alert(1);
-                // temp.popover();
-                // $('[data-toggle="popover"]').popover();
+            });
         }
         function next(currentSemester){
 
-          //  alert(arr);
-          //  alert(parseInt(currentSemester)+1);
+            //  alert(arr);
+            //  alert(parseInt(currentSemester)+1);
             var str="";
             for(var i=0;i<arr.length-4;i=i+4){
                 str+=arr[i]+",";
@@ -218,78 +195,117 @@ include_once "../model/getStudent.php";
                     var li=document.getElementById(currentSemester);
                     var dl=li.getElementsByTagName("dl")[0];
                     var dt=dl.getElementsByTagName("dt")[0];
+                    var img=dt.getElementsByTagName("img")[0];
+                    img.src="../../images/arrow.png";
                     var dd=dl.getElementsByTagName("dd")[0];
                     dd.style.display='none';
+                    //alert(1);
+
                     var result=xhttp.responseText;
                     //alert(result);
                     result=eval(result);
+                   // alert(result);
                     li=document.getElementById(parseInt(currentSemester)+1);
                     //alert(parseInt(currentSemester)+1);
                     dl=li.getElementsByTagName("dl")[0];
                     dt=dl.getElementsByTagName("dt")[0];
                     //alert(dt.innerHTML);
                     dd=dl.getElementsByTagName("dd")[0];
-                    //alert(dd.getElementsByTagName("table")[0].innerHTML);
-                    dd.innerHTML="";
+                   // alert(dd.innerHTML);
+                    var string="<table class='table' style='width: 700px;table-layout: fixed'><tr><td>Course ID</td><td>credits</td><td></td></tr>";
+
+                   // dd.innerHTML="<table><tr>";
                     for(var k=0;k<arr.length;k=k+4){
-                       // alert(arr[k+1]+" ");
-                       if(parseInt(arr[k+1])==(parseInt(currentSemester) + 1)){
-                            dd.innerHTML += "<a href='#' data-toggle='popover' id=\"" + ((parseInt(currentSemester) + 1)+arr[k]) + "\" title='"
-                            +arr[k] + "'data-html='true' data-content='' onmouseover='changeValue(this.id)' onmouseout='leave(this.id)'>"
-                            +arr[k] + "</a>&nbsp&nbsp&nbsp&nbsp" + arr[k+3] + "&nbsp&nbsp&nbsp&nbsp<tr>";
-                            dd.innerHTML += "<input type=\"checkbox\"  value=\"" + arr[k] + "\" onclick=\"checkVaild(this.value," + (parseInt(currentSemester) + 1) + ",'"
-                            + arr[k+2] + "'," + arr[k+3] + ")\" id=\"" + (arr[k] + (parseInt(currentSemester) + 1)) + "\" checked></p>";
+                        // alert(arr[k+1]+" ");
+                      //  dd.innerHTML+="<table><tbody><tr></tr></tbody></table>";
+                      // string+="<td>xxx</td>";
+                        if(parseInt(arr[k+1])==(parseInt(currentSemester) + 1)){
+                            string+="<tr>";
+                            string+="<td style='width: 620px'><a href='#' data-toggle='popover' id=\"" + ((parseInt(currentSemester) + 1)+arr[k]) + "\" title='"
+                            +arr[k] + "'data-html='true' data-content=''data-placement='top' data-trigger='focus' onclick='return false' onmouseover='changeValue(this.id)' onmouseout='leave(this.id)'>"
+                            +arr[k] + "</a></td>";
+                            string+="<td style='width: 40px'>"+arr[k+3]+"</td>";
+                            string+="<td style='width: 40px'><input type=\"checkbox\"  value=\"" + arr[k] + "\" onclick=\"checkVaild(this.value," + (parseInt(currentSemester) + 1) + ",'"
+                            + arr[k+2] + "'," + arr[k+3] + ")\" id=\"" + (arr[k] + (parseInt(currentSemester) + 1)) + "\" checked></td></tr>";
+
                         }
                     }
-                    for(var i = 0,length = result.length;i<length;i++){
-                            dd.innerHTML += "<a href='#' data-toggle='popover' id=\"" + ((parseInt(currentSemester) + 1)+result[i]["cid"]) + "\" title='"
-                            +result[i]["cid"] + "'data-html='true' data-content='' onmouseover='changeValue(this.id)' onmouseout='leave(this.id)'>"
-                            +result[i]["cid"] + "</a>&nbsp&nbsp&nbsp&nbsp" + result[i]["credits"] + "&nbsp&nbsp&nbsp&nbsp";
-                            // dd.innerHTML+="<br>"+result[i]["cid"]+"    "+result[i]["credits"];
-                            var tempStrArray=result[i]["offerTime"].split(" ");
-                            var offerTimeFlag=false;
-                            if((parseInt(currentSemester)+1)%2==0){
-                                if(inArray("spring",tempStrArray)){
-                                    offerTimeFlag=true;
-                                }
-                            }else{
-                                if(inArray("fall",tempStrArray)){
-                                    offerTimeFlag=true;
-                                }
+
+                    for(var i = 4,length = result.length;i<length;i++){
+
+                        //alert(length);
+                        string+="<tr>";
+                        string+="<td style='width: 620px' ><a href='#' data-toggle='popover' id=\"" + ((parseInt(currentSemester) + 1)+result[i]["cid"]) + "\" title='"
+                        +result[i]["cid"] + "'data-html='true' data-placement='top' data-trigger='focus' data-content='' onclick='return false' onmouseover='changeValue(this.id)' onmouseout='leave(this.id)'>"
+                        +result[i]["cid"] + "</a></td>";
+                        string+="<td  style='width: 40px'>"+result[i]["credits"]+"</td>";
+                        //alert(result[i]["cid"]);
+                        var tempStrArray=result[i]["offerTime"].split(" ");
+                        var offerTimeFlag=false;
+                        //alert(i);
+                        if((parseInt(currentSemester)+1)%2==0){
+                            if(inArray("spring",tempStrArray)){
+                                offerTimeFlag=true;
                             }
+                        }else{
+                            if(inArray("fall",tempStrArray)){
+                                offerTimeFlag=true;
+                            }
+                        }
+                        //alert(i);
                         if(offerTimeFlag) {
                             if (result[i]["available"] == "true") {
                                 //  if(hasSelected(result[i]["cid"],parseInt(currentSemester)+1)){
-                                dd.innerHTML += "<input type=\"checkbox\"  value=\"" + result[i]["cid"] + "\" onclick=\"checkVaild(this.value," + (parseInt(currentSemester) + 1) + ",'"
-                                + result[i]['listid'] + "'," + result[i]['credits'] + ")\" id=\"" + (result[i]["cid"] + (parseInt(currentSemester) + 1)) + "\"></p>";
-                                //  }else {
-                                //        dd.innerHTML += "<input type=\"checkbox\"  value=\"" + result[i]["cid"] + "\" onclick=\"checkVaild(this.value," + (parseInt(currentSemester) + 1) + ",'"
-                                //       + result[i]['listid'] + "'," + result[i]['credits'] + ")\" id=\"" + (result[i]["cid"] + (parseInt(currentSemester) + 1)) + "\"></p>";
-                                //   }
+                                string+="<td style='width: 40px'><input type=\"checkbox\"  value=\"" + result[i]["cid"] + "\" onclick=\"checkVaild(this.value," + (parseInt(currentSemester) + 1) + ",'"
+                                + result[i]['listid'] + "'," + result[i]['credits'] + ")\" id=\"" + (result[i]["cid"] + (parseInt(currentSemester) + 1)) + "\"></td>";
+
                             } else {
-                                dd.innerHTML += "<input type='checkbox' data-toggle='tooltip' onclick='return false' data-placement='right' title=\"" + result[i]["available"] + "\"></p>";
+                                string+="<td  style='background: gray;width: 40px'><input type='checkbox' data-toggle='tooltip' onclick='return false' data-placement='right' title=\"" + result[i]["available"] + "\"></td>";
+               //                 dd.innerHTML += "<input type='checkbox' data-toggle='tooltip' onclick='return false' data-placement='right' title=\"" + result[i]["available"] + "\"></p>";
                             }
                         }else{
-                            dd.innerHTML += "<input type='checkbox' data-toggle='tooltip' onclick='return false' data-placement='right' title=\"not offered this semester\"></p>";
+                            string+="<td  style='background: gray;width:40px'><input type='checkbox' data-toggle='tooltip' onclick='return false' data-placement='right' title=\"not offered this semester\"></td>";
+                  //          dd.innerHTML += "<input type='checkbox' data-toggle='tooltip' onclick='return false' data-placement='right' title=\"not offered this semester\"></p>";
                         }
 
+                        string+="</tr>";
+                       // alert(length);
+                       // alert(i);
                     }
-                   // dd.innerHTML+="</tbody></table>";
-                    dd.innerHTML+="<input type='button' value='Previous' onclick='previous("+(parseInt(currentSemester)+1)+")'>";
+                    //alert(string);
+                  //  string+="</table>";
+                  //  dd.innerHTML=string;
+                    // dd.innerHTML+="</tbody></table>";
+                    string+="<tr><td align='left'><input type='button' value='<<Previous' onclick='previous("+(parseInt(currentSemester)+1)+")'></td><td></td>";
+                 //   dd.innerHTML+="<input type='button' value='Previous' onclick='previous("+(parseInt(currentSemester)+1)+")'>";
                     if((parseInt(currentSemester)+1)==(<?php echo $term+$semesters-1;?>)){
-                        dd.innerHTML+="<input type='button' value='Generate' onclick='generate()'>";
+                        string+="<td align='right'><input type='button' value='Generate!!' onclick='generate()'></td>";
+                       // dd.innerHTML+="<input type='button' value='Generate' onclick='generate()'>";
                     }else{
-                        dd.innerHTML+="<input type='button' value='Next' onclick=\"next('"+(parseInt(currentSemester)+1)+"')\">";
+                        string+="<td align='right'><input type='button' value='Next>>' onclick=\"next('"+(parseInt(currentSemester)+1)+"')\"></td>";
+                  //      dd.innerHTML+="<input type='button' value='Next' onclick=\"next('"+(parseInt(currentSemester)+1)+"')\">";
                     }
+                    string+="</tr></table>";
+                    dd.innerHTML=string;
                     li=document.getElementById(parseInt(currentSemester)+1);
                     dl=li.getElementsByTagName("dl")[0];
                     dt=dl.getElementsByTagName("dt")[0];
+                   // alert(dt.innerHTML);
+                    img=dt.getElementsByTagName("img")[0];
+                    img.src="../../images/arrowDown.png";
                     dd=dl.getElementsByTagName("dd")[0];
                     dd.style.display='block';
+                    $(document).ready(function() {
                         $('[data-toggle="tooltip"]').tooltip();
-                    $('[data-toggle="popover"]').popover();
+                      //  $.when(changeValue()).done(function(){
+                            $('[data-toggle="popover"]').popover();
+//                        });
+//                        $(document).ajaxStop(function () {
+//                            $('[data-toggle="popover"]').popover();
+//                        });
 
-                  //  $('[data-toggle="popover"]').popover();
+                    });
+                    //  $('[data-toggle="popover"]').popover();
 
                 }
 
@@ -371,7 +387,7 @@ include_once "../model/getStudent.php";
 </script>
 <div class="wraper">
     <header class="header">
-        <a class="logo" href="../../Login.html">Student module</a>
+        <a class="logo" href="../../Login.html">Planner module</a>
         <nav>
             <!-- top menu -->
             <ul>
@@ -461,58 +477,85 @@ include_once "../model/getStudent.php";
 
     <div class="wraper">
 
-        <div class="left_nav" style="border-left:solid 1px gray;border-right:solid 1px gray; height: 480px" >
+        <div class="left_nav" style="border-left:solid 1px gray;border-right:solid 1px gray; height: auto;min-height: 550px" >
             <ul><li><dl><dd id="xxx"></dd></dl></li></ul>
 
-
+<?php if($resultX=="error"){
+   // echo $term;
+   // echo $semesters;
+    echo "<div align='center' style='position: relative;top:100px;font-weight: bolder'>";
+    echo "You cant finish these courses within ".$semesters." semesters<br>";
+    echo "<img src='../../images/wrong.png'>";
+    echo "<br><a href=\"javascript:history.go(-1)\">Back</a>";
+    echo "</div>";
+}else{?>
 <div align="right">
-    <input type="button" value="View credits requirement List" onclick="viewCredits()">
+    <input type="button" id="viewCredit" value="View credits requirement List" onclick="viewCredits()">
 </div>
 <?php
 $result=$_SESSION['semesters'];
 
 //echo "<table border='1'>";
+echo "<div style='position: relative;left: 10%'>";
 echo "<ul id=\"faq\">";
 for($i=0;$i<$semesters;$i++){
     ?>
-    <li id="<?php echo $term+$i;?>">
+    <li id="<?php echo $term + $i;?>">
         <dl>
             <dt><?php
-                $t=(int)(($term+$i)/2);
-                if(($term+$i)%2==0){
-                    echo "20".$t." SPRING";
+                $t = (int)(($term + $i) / 2);
+                if (($term + $i) % 2 == 0) {
+                    echo "20" . $t . " SPRING";
+                } else {
+                    echo "20" . $t . " FALL";
+                }
+                if($i==0){
+                    echo "<img src='../../images/arrowDown.png' height='15px' width='15px'>";
                 }else{
-                    echo "20".$t." FALL";
+                    echo "<img src='../../images/arrow.png' height='15px' width='15px'>";
                 }
 
+
                 ?></dt>
-            <?php if($i==0){?>
-            <dd style="display:block">
+            <?php if($i == 0){?>
+                <dd style="display:block">
                 <?php
+                echo "<table class='table' style='width:700px;table-layout: fixed'>";
+                echo "<tr><td>Course ID</td><td>credits</td><td>select</td></tr>";
                 //echo "111";
-                for($j=0;$j<count($result[$i]);$j++) {
-                    echo "<li>";
+                for($j = 0;$j < count($result[$i]);$j++) {
+
+                    echo "<tr>";
+                    echo "<td>";
                     ?>
-<!--                    echo $result[$i][$j]['cid'];-->
-                    <a href='#' data-toggle='popover' id="<?php echo "0".$result[$i][$j]['cid']?>" title="<?php echo $result[$i][$j]['cid']?>"
-                       data-html='true' data-content='' onmouseover='changeValue(this.id)' onmouseout='leave(this.id)'><?php echo $result[$i][$j]['cid']?></a>
+                    <!--                    echo $result[$i][$j]['cid'];-->
+                    <a href='#' data-toggle='popover' id="<?php echo "0" . $result[$i][$j]['cid']?>"
+                       title="<?php echo $result[$i][$j]['cid']?>"
+                       data-html='true' data-content='' data-placement='top' data-trigger='focus'
+                       onclick='return false' onmouseover='changeValue(this.id)'
+                       onmouseout='leave(this.id)'><?php echo $result[$i][$j]['cid']?></a>
                     <?php
+                    echo "</td>";
+                    echo "<td width=40>";
                     echo "&nbsp&nbsp&nbsp&nbsp";
                     echo $result[$i][$j]['credits'];
                     echo "&nbsp&nbsp&nbsp&nbsp";
-                    $offerTimeFlag=false;
-                    $tempStrArray=explode(" ",$result[$i][$j]['offerTime']);
-                    if($term%2==0){
-                        if(in_array("spring",$tempStrArray)){
-                            $offerTimeFlag=true;
+                    echo "</td>";
+                    $offerTimeFlag = false;
+                    $tempStrArray = explode(" ", $result[$i][$j]['offerTime']);
+
+                    if ($term % 2 == 0) {
+                        if (in_array("spring", $tempStrArray)) {
+                            $offerTimeFlag = true;
                         }
-                    }else{
-                        if(in_array("spring",$tempStrArray)){
-                            $offerTimeFlag=true;
+                    } else {
+                        if (in_array("spring", $tempStrArray)) {
+                            $offerTimeFlag = true;
                         }
                     }
                     if($offerTimeFlag) {
                         if ($result[$i][$j]['available'] == "true") {
+                            echo "<td width='40'>";
                             ?>
                             <input type="checkbox"
                                    onclick="checkVaild(this.value,<?php echo $term . ",'" . $result[$i][$j]['listid'] . "'," . $result[$i][$j]['credits']; ?>)"
@@ -520,27 +563,43 @@ for($i=0;$i<$semesters;$i++){
                                    id="<?php echo $result[$i][$j]['cid'] . $term; ?>">
                         <?php
                         } else {
+                            echo "<td width='40' style='background: gray'>";
                             echo "<input type='checkbox' data-toggle='tooltip'  onclick='return false' data-placement='right' title=\"$result[$i][$j]['available']\">";
                         }
-                        echo "  </li>";
-                    }else{
+
+                    }else {
+                        echo "<td width='40' style='background: gray'>";
                         echo "<input type='checkbox' data-toggle='tooltip' onclick='return false' data-placement='right' title=\"not offered this semester\">";
                     }
                     //   }
                 }
+                echo "</td></tr><tr><td></td><td></td>";
+                echo "<td align='right'>";
+                ?>
+
+
+                <input type="button" value="Next>>" onclick="next('<?php echo $term;?>')">
+                <?php  echo "</td>";
+                echo "</tr>";
+                echo "</table> </dd>"; }else{
 
                 ?>
-                <input type="button" value="Next" onclick="next('<?php echo $term;?>')">
-                <?php }else{?>
-            <dd style="display:none">
-<!--                <table><tr></tr></table>-->
-                <?php }?>
+
+
+                <dd style="display:none">
+                    <!--              <table class='table'><tr>-->
+                    <!--                      <td>324435454</td>-->
+                    <!--                  </tr></table>-->
                 </dd>
+            <?php }?>
+
+
         </dl>
     </li>
 <?php
 }
-echo "</ul>";
+echo "</ul></div>";
+}
 //echo "<input type='checkbox' data-toggle='tooltip'  onclick='return false' title=\"hover over me\">hover over me";
 ?>
 <!--            <input type="checkbox" onclick="next(31)" data-toggle="tooltip" title="Hooray!">Hover over me-->
@@ -550,43 +609,3 @@ echo "</ul>";
 </body>
 </html>
 
-<!---->
-<?php
-//
-////for($i=0;$i<1;$i++){
-//$i=0;
-//    echo "<tr>";
-//    echo "<td>";
-//    echo "semester".($i+1);
-//    echo "</td>";
-//    echo "</tr>";
-//    for($j=0;$j<count($result[$i]);$j++){
-//        echo "<tr>";
-//        for($k=0;$k<count($result[$i][$j]);$k++){
-//            if( $result[$i][$j][$k]!=null) {
-//                echo "<td>";
-//                echo $result[$i][$j][$k];
-//                echo "</td>";
-//            }
-//        }
-//        echo "<td>";
-//        if($result[$i][$j]['available']=="true"){
-//            ?>
-<!--            <input type="checkbox"  onclick="checkVaild(this.value,--><?php //echo ($i+1)?><!--)" value="--><?php //echo $result[$i][$j]['cid'] ?><!--" id="--><?php //echo $result[$i][$j]['cid'].($i+1)?><!--">-->
-<!--        --><?php
-//        }else{
-//            echo "<input type='checkbox' disabled>";
-//        }
-//        echo "</td>";
-//        echo "</tr>";
-// //   }
-//}
-//echo "</table>";
-//
-//
-//
-//?>
-<!--<input type="button" onclick="next(1)">-->
-<!--<input type="button" onclick="generate()" value="generate">-->
-<!--<p id="semester2">-->
-<!--    </p>-->

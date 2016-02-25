@@ -6,6 +6,9 @@
  * Time: 3:23 AM
  */
 include_once "../../AnalysisPrerequisites.php";
+include_once "getStu_offering.php";
+include_once "gradeValueList.php";
+include_once "getStudent.php";
 $con=mysql_connect("localhost:3306","root","5656123ljx");
 if(!$con){
     die('Could not connect: ' . mysql_error());
@@ -16,9 +19,105 @@ function getPrerequisitesStringByCid($cid){
     $result=mysql_query($sql);
     return mysql_fetch_array($result)[0];
 }
+function getCrossListByCid($cid){
+    $sql="select crosslist from course where cid='".$cid."'";
+    $result=mysql_query($sql);
+    return mysql_fetch_array($result)[0];
+}
+function getRestrictionByCid($cid){
+    $sql="select restrictions from course where cid='".$cid."'";
+    $result=mysql_query($sql);
+    return mysql_fetch_array($result)[0];
+}
 function transPreToCNF($prerequisites){
     $stack=analysis($prerequisites);
     return $stack[0];
+}
+function analysisEachOrArray($string,$sid){
+    $flag=4;
+
+    for($i=0;$i<strlen($string);$i++){
+       // echo
+        $char=$string{$i};
+//echo $char;
+        if($char=='^'){
+            $flag=0;
+            break;
+        }else if($char=='@'){
+            $flag=1;
+            break;
+        }else if($char=='#'){
+            $flag=2;
+            break;
+        }else if($char=='$'){
+            $flag=3;
+            break;
+        }
+    }
+    $array=array();
+
+    switch($flag){
+        case 0:
+            $array=explode("^",$string);
+            //echo $array[0];
+            $row=getStu_offeringBySidAndCid($sid,$array[1]);
+           // echo $row['sid'];
+            $list=getGradeValueList();
+            if($row['mark']==null||$row['mark']==""){
+                return false;
+            }
+
+           // echo $array[0];
+            if(compareGrade($list,$row['mark'],$array[0])>=0) {
+                // $list=array();
+                return true;
+            }else{
+                return false;
+            }
+        case 1:
+            $array=explode("@",$string);
+            return true;
+        case 2:
+            $array=explode("#",$string);
+            //echo $array[1];
+            $major=mysql_fetch_array(getStudentById($sid))['major'];
+            if($major==$array) {
+                return true;
+            }else{
+                return false;
+            }
+        case 3:
+            $array=explode("$",$string);
+            $registerYear=mysql_fetch_array(getStudentById($sid))['grade'];
+            $registerSemester=mysql_fetch_array(getStudentById($sid))['semester'];
+           // $newArray=explode("-",$array[1]);
+            $currentSemesterValue=32;
+            $semesterValue=0;
+            if($registerSemester=="Fall"||$registerSemester=="fall"){
+                $semesterValue=1;
+            }
+          $registerValue=($registerYear-2000)*2+$semesterValue;
+            $stayLengthValue=$currentSemesterValue-$registerValue;
+            $requiredLengthValue=0;
+            if($array[1]=="Sophomore"||$array[1]=="sophomore"){
+                $requiredLengthValue=2;
+            }else if($array[1]=="junior"||$array[1]=="Junior"){
+                $requiredLengthValue=4;
+            }else if($array[1]=="senior"||$array[1]=="Senior"){
+                $requiredLengthValue=6;
+            }
+           // echo $array[1];
+           // echo $registerYear."   ".$registerSemester."   ".$registerValue."   ".$stayLengthValue."   ".$requiredLengthValue;
+            if($stayLengthValue<$requiredLengthValue){
+                return false;
+            }else {
+                return true;
+            }
+        default:
+            $tempArray=array();
+            array_push($tempArray,$string);
+            return isInStu_offering($tempArray,$sid);
+    }
 }
 function divOrStringIntoArray($orString){
     $array=explode(" ",$orString);
@@ -32,5 +131,58 @@ function divOrStringIntoArray($orString){
         }
     }
     return $result;
+}
+function errorMessagesDecode($errorMessage){
+    $orArray=divOrStringIntoArray($errorMessage);
+    $returnString="";
+//    if(count($orArray)>1){
+//        $returnString="";
+//    }
+    foreach($orArray as $key=>$value){
+        if($key==0){
+            $returnString .=stringDecode($value);
+        }else {
+            $returnString .= "or ".stringDecode($value);
+        }
+    }
+    return $returnString;
+}
+function stringDecode($string){
+  //  $orArray=divOrStringIntoArray($string);
+    $flag=4;
+    for($i=0;$i<strlen($string);$i++){
+        // echo
+        $char=$string{$i};
+//echo $char;
+        if($char=='^'){
+            $flag=0;
+            break;
+        }else if($char=='@'){
+            $flag=1;
+            break;
+        }else if($char=='#'){
+            $flag=2;
+            break;
+        }else if($char=='$'){
+            $flag=3;
+            break;
+        }
+    }
+    $array=array();
+    switch($flag){
+        case 0:
+            $array=explode("^",$string);
+            return "Your ".$array[1]." course grade need ".$array[0]." or above";
+        case 1:
+            return "This function are not implement yet";
+        case 2:
+            $array=explode("#",$string);
+            return "Your Major must be ".$array[1]." to select this course";
+        case 3:
+            $array=explode("$",$string);
+            return "This course requires ".$array[1]." or above";
+        default:
+            return $string;
+    }
 }
 ?>

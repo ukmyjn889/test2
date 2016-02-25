@@ -19,6 +19,12 @@ function getCurrentStudentMajorPageNow($major){
 
     return (($row[0]/$pageSize)+1);
 }
+function getCourseByMajor($major){
+   // $pageSize=12;
+    $sql="SELECT * FROM course where major='".$major."' and cid not like '%L'";
+    $result=mysql_query($sql);
+  return $result;
+}
 function getAllLecCourse($pageNow){
     $pageSize=12;
     $pageCount=($pageNow-1)*$pageSize;

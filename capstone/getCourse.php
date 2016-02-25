@@ -25,7 +25,7 @@ $response="";
 while($row=mysql_fetch_array($result)){
     $response.=$row['cid']." ";
 }
-echo "$response";
+echo $response;
 ?>
 <?php
 ///**

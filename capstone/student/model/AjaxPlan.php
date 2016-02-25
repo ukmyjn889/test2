@@ -73,6 +73,7 @@ function isInSelectedCourse($orArray,$selectedCourse){
     }
     return false;
 }
+
 $method=$_POST['method'];
 $checkedCourse = $_POST['cids'];
 $array = explode(",", $checkedCourse);

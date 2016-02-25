@@ -14,22 +14,97 @@ $sid=$_SESSION['sid'];
 $cid=$_POST['cid'];
 $lecOid=$_POST['lec'];
 $labOid=$_POST['lab'];
-$prerequisites=getPrerequisitesStringByCid($cid);
-//echo $prerequisites;
-$array=transPreToCNF($prerequisites);
-//print_r($array);
 $error=array();
 $count=0;
 $error[$count]=null;
-if($prerequisites!=null) {
+$prerequisites=getPrerequisitesStringByCid($cid);
+if($prerequisites!=null&&$prerequisites!="") {
+    $array=transPreToCNF($prerequisites);
     for ($i = 0; $i < count($array); $i++) {
         //1.将array[$i]中的or 解析出来，放在新数组中
         $orArray = divOrStringIntoArray($array[$i]);
         //2.将这个数组放入profile里面进行查询，返回T or F
         //print_r($orArray);
         //3. 返回F就给$error赋值，否则继续
-        if (!isInStu_offering($orArray)) {
-            $error[$count] = $array[$i];
+//        if (!isInStu_offering($orArray)) {
+//            $error[$count] = $array[$i];
+//            $count++;
+//        }
+        //print_r($orArray);
+        $flag=false;
+        for($j=0;$j<count($orArray);$j++){
+           //echo $orArray[$j];
+            if(analysisEachOrArray($orArray[$j],$sid)){
+               // echo $orArray[$j];
+                $flag=true;
+                break;
+            }
+        }
+        if($flag==false){
+            $error[$count] = errorMessagesDecode($array[$i]);
+            $count++;
+        }
+
+    }
+}
+$crossList=getCrossListByCid($cid);
+if($crossList!=null&&$crossList!="") {
+    $array = transPreToCNF($crossList);
+//$restriction=getRestrictionByCid($cid);
+    for ($i = 0; $i < count($array); $i++) {
+        //1.将array[$i]中的or 解析出来，放在新数组中
+        $orArray = divOrStringIntoArray($array[$i]);
+        //2.将这个数组放入profile里面进行查询，返回T or F
+        //print_r($orArray);
+        //3. 返回F就给$error赋值，否则继续
+//        if (!isInStu_offering($orArray)) {
+//            $error[$count] = $array[$i];
+//            $count++;
+//        }
+        //print_r($orArray);
+        $flag = false;
+        for ($j = 0; $j < count($orArray); $j++) {
+            //echo $orArray[$j];
+            if (!analysisEachOrArray($orArray[$j], $sid)) {
+                // echo $orArray[$j];
+                $flag = true;
+                break;
+            }
+        }
+        if ($flag == false) {
+            $error[$count] = "You have already taken ".errorMessagesDecode($array[$i]);
+            $count++;
+        }
+
+    }
+}
+$restriction=getRestrictionByCid($cid);
+if($restriction!=null&&$restriction!="") {
+    $array =transPreToCNF($restriction);
+   // print_r($array);
+//$restriction=getRestrictionByCid($cid);
+    for ($i = 0; $i < count($array); $i++) {
+        //1.将array[$i]中的or 解析出来，放在新数组中
+        $orArray = divOrStringIntoArray($array[$i]);
+        //2.将这个数组放入profile里面进行查询，返回T or F
+        //print_r($orArray);
+        //3. 返回F就给$error赋值，否则继续
+//        if (!isInStu_offering($orArray)) {
+//            $error[$count] = $array[$i];
+//            $count++;
+//        }
+        //print_r($orArray);
+        $flag = false;
+        for ($j = 0; $j < count($orArray); $j++) {
+            //echo $orArray[$j];
+            if (!analysisEachOrArray($orArray[$j], $sid)) {
+                // echo $orArray[$j];
+                $flag = true;
+                break;
+            }
+        }
+        if ($flag == false) {
+            $error[$count] = "You have already taken ".errorMessagesDecode($array[$i]);
             $count++;
         }
 

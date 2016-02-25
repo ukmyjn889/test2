@@ -7,35 +7,36 @@
  */
 $username=$_POST["username"];
 $password=$_POST["password"];
-$authority="student";
+if($username=="admin"){
+    $username="0";
+}
 $password=passport_encrypt($password,$username);
-$flag=isValid($username,$password,$authority);
+$flag=isValid($username,$password);
 //echo 1;
 //echo $username;
 
 if($flag==true){
     //echo 1;
     session_start();
-    $_SESSION["sid"]=$username;
-    //header
-    header("location:student/view/displayStudentProfile.php");
+    if($username!="0") {
+        $_SESSION["sid"] = $username;
+        //header
+        header("location:student/view/displayStudentProfile.php");
+    }else{
+        header("location:admin/view/showCourse.php");
+    }
 }else{
-    //header
     echo "error";
 }
-function isValid($username,$password,$authority){
+function isValid($username,$password){
     $con=mysql_connect("localhost:3306","root","5656123ljx");
     if(!$con){
         die('Could not connect: ' . mysql_error());
     }
     mysql_select_db("capstone",$con);
     $sql="";
-    if($authority=="student") {
         $sql = "select * from student where sid='" . $username . "' and password='" . $password . "'";
         //echo $sql;
-    }else{
-        $sql = "select * from admin where username='" . $username . "' and password='" . $password . "'";
-    }
     $result=mysql_query($sql);
     $row=mysql_fetch_array($result);
     if($row[0]!=null){
