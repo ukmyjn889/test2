@@ -23,13 +23,7 @@ include_once "adminView.php";
                                     <td><input name="major" type="text" class="form-control" style="color:#999999"
                                                onFocus="if(value==defaultValue){value='';this.style.color='#000'}" onBlur="if(!value){value=defaultValue;this.style.color='#999'}" value="Please ennter course id" size="45"></td>
                                 </tr>
-                                <tr>
-                                    <td><h3 class="text-success">Offer Year</h3></td>
-                                    <td><select name="offerYear" class="form-control">
-                                            <option value="2016">2016</option>
-                                            <option value="2017">2017</option>
-                                            <option value="2018">2018</option>
-                                        </select></td></tr>
+
                                     <tr>
                                     <td><h3 class="text-success">Offer Semester</h3></td>
                                     <td><select name="offerTime" class="form-control">
@@ -39,47 +33,106 @@ include_once "adminView.php";
                                         </select></td>
                                 </tr>
                                 <tr>
-                                    <td height="100"><h3 class="text-success">Prerequisites</h3></td>
-                                    <!--                                    <td><textarea name="prerequisites" cols="45" rows="3" style="color:#999999" onFocus="if(value==defaultValue){value='';this.style.color='#000'}" onBlur="if(!value){value=defaultValue;this.style.color='#999'}">please enter course prerequisites</textarea></td>-->
-                                    <!--                                    <td><input type="text" id="template" onkeyup="getCourse(this.value)"><input type="button" value="add" onclick="addP(0)"><p><span id="xxx"></span></p></td>-->
-                                    <td><input type="text" id="template"  class="form-control" placeholder="Please input prerequisites" onkeyup="getCourse(this.value)" list="list">
-                                        <datalist id="list">
 
-                                        </datalist>
-                                        <input type="button" value="Add" class="btn btn-primary" onclick="addP(0)"><p><span id="xxx"></span></p></td>
-                                    <!--                                    <td> <textarea rows="3" cols="20" id="template" onkeyup="getCourse(this.value)"></textarea><input type="button" value="confirm" onclick="addP(0)"><p><span id="xxx"></span></p></td>-->
-                                </tr>
-                                <tr>
-                                    <td></td>
-                                    <td>
-                                        <input type="button" class="btn btn-primary btn-sm" value="AND" size="4" onclick="addP(1)">
-                                        <input type="button"  class="btn btn-primary btn-sm" value="OR" size="6" onclick="addP(2)">
-                                        <!--                                    <input type="button" value="NOT" size="4" onclick="addP(3)">-->
-                                        <input type="button" class="btn btn-primary btn-sm" value="(" size="2" onclick="addP(4)">
-                                        <input type="button" class="btn btn-primary btn-sm" value=")" size="2" onclick="addP(5)"><br><br>
-                                        <b>Other requirements:</b>
-                                        <select id="other" onchange="otherReq(this.value)">
-                                            <option value="0">Please select...</option>
-                                            <option value="1">Mark</option>
-                                            <option value="2">Semester</option>
-                                            <option value="3">Major</option>
-                                            <option value="4">Consent</option>
-                                            <option value="5">Grade</option>
-                                        </select><br>
-                                        <p><span id="oo"></span></p>
-                                    </td>
 
-                                </tr>
-                                <tr>
-                                    <td> <h3 class="text-success">Prerequisites overview</h3></td>
-                                    <!--                                    <td><input type="text" name="prerequisites" id="pid" size="50" readonly></td>-->
-                                    <td> <textarea class="form-control" rows="3" cols="45" name="prerequisites" id="pid" readonly></textarea><br>
-                                        <input type="button" class="btn btn-primary"onclick="clearP()" value="clear">
-                                        <input type="button" class="btn btn-primary" value="check"   onclick="showCNF(document.getElementById('pid').value)">
-                                        <p><span id="CNF"></span></p>
-                                    </td>
 
-                                </tr>
+
+
+
+
+
+
+
+
+                                    <div class="modal fade" id="mypre" tabindex="-1" role="dialog"
+                                         aria-labelledby="myModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <button type="button" class="close"
+                                                            data-dismiss="modal" aria-hidden="true">
+                                                        &times;
+                                                    </button>
+                                                    <h4 class="modal-title" id="myModalLabel">
+                                                        Please add Prerequisites
+                                                    </h4>
+                                                </div>
+                                                <div class="modal-body">
+
+
+
+                                                    <p class="form-inline" role="form">
+                                                    <input type="text" id="template"  class="  form-control" placeholder="Please input prerequisites" onkeyup="getCourse(this.value)" list="list">
+                                                    <datalist id="list">
+
+                                                    </datalist>
+                                                    <input type="button" value="Add" class="form-inline    btn btn-primary" onclick="addP(0)"><p><span id="xxx"></span></p>
+                                                    </p>
+                                                    <!--                                    <td> <textarea rows="3" cols="20" id="template" onkeyup="getCourse(this.value)"></textarea><input type="button" value="confirm" onclick="addP(0)"><p><span id="xxx"></span></p></td>-->
+
+                                                    <input type="button" class="btn btn-primary btn-sm" value="AND" size="4" onclick="addP(1)">
+                                                    <input type="button"  class="btn btn-primary btn-sm" value="OR" size="6" onclick="addP(2)">
+                                                    <!--                                    <input type="button" value="NOT" size="4" onclick="addP(3)">-->
+                                                    <input type="button" class="btn btn-primary btn-sm" value="(" size="2" onclick="addP(4)">
+                                                    <input type="button" class="btn btn-primary btn-sm" value=")" size="2" onclick="addP(5)"><br><br>
+                                                    <b>Other requirements:</b>
+                                                    <select id="other" class="form-control" onchange="otherReq(this.value)">
+                                                        <option value="0">Please select...</option>
+                                                        <option value="1">Mark</option>
+                                                        <option value="2">Semester</option>
+                                                        <option value="3">Major</option>
+                                                        <option value="4">Consent</option>
+                                                        <option value="5">Grade</option>
+                                                    </select><br>
+                                                    <p><span id="oo"></span></p><br>
+
+
+                                                        <!--                                    <td><input type="text" name="prerequisites" id="pid" size="50" readonly></td>-->
+                                                      <textarea class="form-control" rows="3" cols="45" name="prerequisites" id="pid" readonly></textarea><br>
+                                                            <input type="button" class="btn btn-primary"onclick="clearP()" value="clear">
+                                                            <input type="button" class="btn btn-primary" data-toggle="modal"
+                                                                   data-target="#mywin" value="check"   onclick="showCNF(document.getElementById('pid').value)">
+                                                            <p><span id="CNF"></span></p>
+
+
+
+
+
+
+
+
+
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-default"
+                                                            data-dismiss="modal">Close
+                                                    </button>
+                                                    <button type="button" class="btn btn-primary">
+                                                        Confirm
+                                                    </button>
+                                                </div>
+                                            </div><!-- /.modal-content -->
+                                        </div><!-- /.modal -->
+                                    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
                                 <tr>
                                     <td height="60"><label><h3 class="text-success">Credits</h3></label></td>
                                     <td><input name="credits"class="form-control" type="text" style="color:#999999"
@@ -92,12 +145,31 @@ include_once "adminView.php";
                                         <input name="lab" type="radio"  value="no" checked>
                                         no</td>
                                 </tr>
+
+
+
+                                 <tr>
+                                    <td height="100"><h3 class="text-success">Prerequisites</h3></td>
+                                    <!--                                    <td><textarea name="prerequisites" cols="45" rows="3" style="color:#999999" onFocus="if(value==defaultValue){value='';this.style.color='#000'}" onBlur="if(!value){value=defaultValue;this.style.color='#999'}">please enter course prerequisites</textarea></td>-->
+                                    <!--                                    <td><input type="text" id="template" onkeyup="getCourse(this.value)"><input type="button" value="add" onclick="addP(0)"><p><span id="xxx"></span></p></td>-->
+                                    <td>
+                                        <input name="preque" type="radio" value="yes"  data-toggle="modal"
+                                               data-target="#mypre">yes
+                                        <input name="preque" type="radio"  value="no" checked onclick="closeCroDiv()" >
+                                        no<br>
+                                    </td>
+
+                                </tr>
+
+
+
                                 <tr>
                                     <td height="58"><h3 class="text-success">Restrictions?</h3>
                                         <br></td>
                                     <td>
                                         <br>
-                                        <input name="restrictions" type="radio" value="yes"  onclick="showResDiv()" >
+                                        <input name="restrictions" type="radio" value="yes"  data-toggle="modal"
+                                               data-target="#myModal">
                                         yes
                                         <input name="restrictions" type="radio"  value="no" checked onclick="closeResDiv()" >
                                         no
@@ -112,7 +184,8 @@ include_once "adminView.php";
                                 </tr>
                                 <tr>
                                     <td height="58"><h3 class="text-success">CrossList?</h3></td>
-                                    <td><input name="CrossList" type="radio" value="yes" onclick="showCroDiv()" >
+                                    <td><input name="CrossList" type="radio" value="yes" data-toggle="modal"
+                                               data-target="#mycross">
                                         yes
                                         <input name="Crosslist" type="radio"  value="no" checked onclick="closeCroDiv()" >
                                         no<br>
@@ -139,97 +212,254 @@ include_once "adminView.php";
                     </div>
 
                 </table>
-    <div id="res" style="display:none; POSITION:absolute; left:75%; top:45%; width:600px; height:300px; margin-left:-300px; margin-top:-200px; border:2px solid #888; background-color:#f4ffe4; text-align:center">
-        <h3 class="text-success"PLEASE ADD A RESTRICTIONS></h3>
-        <table>
-            <tr>
-                <td height="73"><h3 class="text-success">restrictions</h3></td>
-                <!--                                    <td><textarea name="prerequisites" cols="45" rows="3" style="color:#999999" onFocus="if(value==defaultValue){value='';this.style.color='#000'}" onBlur="if(!value){value=defaultValue;this.style.color='#999'}">please enter course prerequisites</textarea></td>-->
-                <!--                                    <td><input type="text" id="template" onkeyup="getCourse(this.value)"><input type="button" value="add" onclick="addP(0)"><p><span id="xxx"></span></p></td>-->
-                <td><input type="text" id="templateR" class="form-control" onkeyup="getCourse(this.value)" list="list">
-                    <datalist id="list">
-
-                    </datalist>
-                    <input type="button"class="btn btn-primary" value="add" onclick="addR(0)">
-                    <!--                    <p><span id="xxx"></span></p>-->
-                </td>
-                <!--                                    <td> <textarea rows="3" cols="20" id="template" onkeyup="getCourse(this.value)"></textarea><input type="button" value="confirm" onclick="addP(0)"><p><span id="xxx"></span></p></td>-->
-            </tr>
-            <tr>
-                <td></td>
-                <td>
-                    <input type="button" class="btn btn-primary" value="AND" size="4" onclick="addR(1)">
-                    <input type="button"  class="btn btn-primary" value="OR" size="6" onclick="addR(2)">
-                    <!--                                    <input type="button" value="NOT" size="4" onclick="addP(3)">-->
-                    <input type="button" class="btn btn-primary" value="(" size="2" onclick="addR(4)">
-                    <input type="button" class="btn btn-primary" value=")" size="2" onclick="addR(5)"><br><br>
-
-                    <p><span id="oo"></span></p>
-                </td>
-
-            </tr>
-            <tr>
-                <td> <h3 class="text-success">restrictions overview</h3></td>
-                <!--                                    <td><input type="text" name="prerequisites" id="pid" size="50" readonly></td>-->
-                <td> <textarea rows="2" cols="45" name="restrictions" id="restrictions" class="form-control" readonly></textarea><br><input type="button" onclick="clearR()" value="clear">
-                    <input type="button" value="check" onclick="showCNF(document.getElementById('restrictions').value)">
-                    <p><span id="CNFR"></span></p>
-                </td>
-
-            </tr>
-        </table>
-
-    </div>
 
 
 
+     <div class="modal fade" id="myModal" tabindex="-1" role="dialog"
+          aria-labelledby="myModalLabel" aria-hidden="true">
+         <div class="modal-dialog">
+             <div class="modal-content">
+                 <div class="modal-header">
+                     <button type="button" class="close"
+                             data-dismiss="modal" aria-hidden="true">
+                         &times;
+                     </button>
+                     <h4 class="modal-title" id="myModalLabel">
+                         Please add a restriction
+                     </h4>
+                 </div>
+                 <div class="modal-body">
+
+                     <table>
+                         <tr>
+                             <td height="73"><h3 class="text-success">Restrictions</h3></td>
+                             <!--                                    <td><textarea name="prerequisites" cols="45" rows="3" style="color:#999999" onFocus="if(value==defaultValue){value='';this.style.color='#000'}" onBlur="if(!value){value=defaultValue;this.style.color='#999'}">please enter course prerequisites</textarea></td>-->
+                             <!--                                    <td><input type="text" id="template" onkeyup="getCourse(this.value)"><input type="button" value="add" onclick="addP(0)"><p><span id="xxx"></span></p></td>-->
+                             <td><input type="text" id="templateR" class="form-control" onkeyup="getCourse(this.value)" list="list">
+                                 <datalist id="list">
+
+                                 </datalist>
+                                 <input type="button" class="btn btn-primary" value="add" onclick="addR(0)">
+                                 <!--                    <p><span id="xxx"></span></p>-->
+                             </td>
+                             <!--                                    <td> <textarea rows="3" cols="20" id="template" onkeyup="getCourse(this.value)"></textarea><input type="button" value="confirm" onclick="addP(0)"><p><span id="xxx"></span></p></td>-->
+                         </tr>
+                         <tr>
+                             <td></td>
+                             <td>
+                                 <input type="button" class="btn btn-primary" value="AND" size="4" onclick="addR(1)">
+                                 <input type="button"  class="btn btn-primary" value="OR" size="6" onclick="addR(2)">
+                                 <!--                                    <input type="button" value="NOT" size="4" onclick="addP(3)">-->
+                                 <input type="button" class="btn btn-primary" value="(" size="2" onclick="addR(4)">
+                                 <input type="button" class="btn btn-primary" value=")" size="2" onclick="addR(5)"><br><br>
+
+                                 <p><span id="oo"></span></p>
+                             </td>
+
+                         </tr>
+                         <tr>
+                             <td> <h3 class="text-success">Restrictions<br> overview</h3></td>
+                             <!--                                    <td><input type="text" name="prerequisites" id="pid" size="50" readonly></td>-->
+                             <td> <textarea rows="2" cols="45" name="restrictions" id="restrictions" class="form-control" readonly></textarea><br><input type="button" class="btn btn-primary" onclick="clearR()" value="clear">
+                                 <input type="button" class="btn btn-primary" data-toggle="modal"
+                                        data-target="#mywin" value="check" onclick="showCNF(document.getElementById('restrictions').value)">
+                                 <p><span id="CNFR"></span></p>
+                             </td>
+
+                         </tr>
+                     </table>
+                 </div>
+                 <div class="modal-footer">
+                     <button type="button" class="btn btn-default"
+                             data-dismiss="modal">Close
+                     </button>
+                     <button type="button" class="btn btn-primary">
+                         Confirm
+                     </button>
+                 </div>
+             </div><!-- /.modal-content -->
+         </div><!-- /.modal -->
+     </div>
 
 
 
-    <div id="cross" style="display:none; POSITION:absolute; left:75%; top:75%; width:600px; height:200px; margin-left:-300px; margin-top:-200px; border:2px solid #888; background-color:#f4ffe4; text-align:center">
-        <p id="croi"></p>
-        <h3 class="text-success"PLEASE ADD A RESTRICTIONS>please add crosslist courses</h3>
-        <table>
-            <tr>
-                <td height="73"><h3 class="text-success">Course</h3></td>
-                <td><input type="text" id="templateC" class="form-control" onkeyup="getCourse(this.value)" list="list">
-                    <datalist id="list"></datalist>
-                    <input type="button"  class="btn btn-primary" value="add" onclick="addC(0)">
-                    <input type="reset"  class="btn btn-primary" value="clear" >
-                    <!--                    <p><span id="xxx"></span></p>-->
-                </td>
-            </tr>
-            <tr>
-                <td> <h3 class="text-success">Crosslist overview</h3></td>
-
-                <td> <textarea rows="3" cols="45" class="form-control" id="crosslist" name="crosslist"></textarea></td>
-            </tr>
-        </table>
 
 
+     <div class="modal fade" id="mycross" tabindex="-1" role="dialog"
+          aria-labelledby="myModalLabel" aria-hidden="true">
+         <div class="modal-dialog">
+             <div class="modal-content">
+                 <div class="modal-header">
+                     <button type="button" class="close"
+                             data-dismiss="modal" aria-hidden="true">
+                         &times;
+                     </button>
+                     <h4 class="modal-title" id="myModalLabel">
+                         please add crosslist courses
+                     </h4>
+                 </div>
+                 <div class="modal-body">
+
+
+                     <table>
+                         <tr>
+                             <td height="73"><h3 class="text-success">Course</h3></td>
+                             <td><input type="text" id="templateC" class="form-control" onkeyup="getCourse(this.value)" list="list">
+                                 <datalist id="list"></datalist>
+                                 <input type="button"  class="btn btn-primary" value="add" onclick="addC(0)">
+                                 <input type="reset"  class="btn btn-primary" value="clear" >
+                                 <!--                    <p><span id="xxx"></span></p>-->
+                             </td>
+                         </tr>
+                         <tr>
+                             <td> <h3 class="text-success">Crosslist overview</h3></td>
+
+                             <td> <textarea rows="3" cols="45" class="form-control" id="crosslist" name="crosslist"></textarea></td>
+                         </tr>
+                     </table>
 
 
 
 
 
-    </div>
-    <div id="win" style="clear:both;display:none; POSITION:absolute; left:44%; top:81%; width:400px; height:80px; margin-left:-300px; margin-top:-200px; border:1px solid #888; background-color:#f4ffe4; text-align:center">
-        <table height="90px" align="center">
-            <tr align="center">
-                <td height="70px" align="center">
-                    <p id="cnfi" style="font-size: small;font-weight: bold">
 
 
-                    </p>
-                </td>
-            </tr>
-            <tr align="center">
-                <td height="20px" align="center">
-                    <input id="123" type="button" value="close" onclick="closeCnfDiv()">
-                </td>
-            </tr>
-        </table>
-    </div>
+
+
+                 </div>
+                 <div class="modal-footer">
+                     <button type="button" class="btn btn-default"
+                             data-dismiss="modal">Close
+                     </button>
+                     <button type="button" class="btn btn-primary">
+                         Confirm
+                     </button>
+                 </div>
+             </div><!-- /.modal-content -->
+         </div><!-- /.modal -->
+     </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+     <div class="modal fade" id="mywin" tabindex="-1" role="dialog"
+          aria-labelledby="myModalLabel" aria-hidden="true">
+         <div class="modal-dialog">
+             <div class="modal-content">
+                 <div class="modal-header">
+                     <button type="button" class="close"
+                             data-dismiss="modal" aria-hidden="true">
+                         &times;
+                     </button>
+                     <h4 class="modal-title" id="myModalLabel">
+
+                     </h4>
+                 </div>
+                 <div class="modal-body">
+
+
+
+
+                     <table height="90px" align="center">
+                         <tr align="center">
+                             <td height="70px" align="center">
+                                 <p id="cnfi" style="font-size: small;font-weight: bold">
+
+
+                                 </p>
+                             </td>
+                         </tr>
+                         <tr align="center">
+                             <td height="20px" align="center">
+
+                             </td>
+                         </tr>
+                     </table>
+
+
+
+
+
+
+                 </div>
+                 <div class="modal-footer">
+                     <button type="button" class="btn btn-default"
+                             data-dismiss="modal">Close
+                     </button>
+
+                     </button>
+                 </div>
+             </div><!-- /.modal-content -->
+         </div><!-- /.modal -->
+     </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--    <div id="win" style="clear:both;display:none; POSITION:absolute; left:44%; top:81%; width:400px; height:80px; margin-left:-300px; margin-top:-200px; border:1px solid #888; background-color:#f4ffe4; text-align:center">-->
+<!--        <table height="90px" align="center">-->
+<!--            <tr align="center">-->
+<!--                <td height="70px" align="center">-->
+<!--                    <p id="cnfi" style="font-size: small;font-weight: bold">-->
+<!---->
+<!---->
+<!--                    </p>-->
+<!--                </td>-->
+<!--            </tr>-->
+<!--            <tr align="center">-->
+<!--                <td height="20px" align="center">-->
+<!--                    <input id="123" type="button" value="close" onclick="closeCnfDiv()">-->
+<!--                </td>-->
+<!--            </tr>-->
+<!--        </table>-->
+<!--    </div>-->
  </form>
 </div>
 </body>
@@ -302,22 +532,22 @@ include_once "adminView.php";
              }else if(value==1){
                  //  alert(1);
                  <!--ignore -->
-                 document.getElementById("oo").innerHTML="<select id='addMark1'><option value='A'>A</option><option value='B'>B</option><option value='C'>C</option><option value='D'>D</option></select>" +
-                 " or better in Course <input type='text' id='addMark2'><input type='button' value='add' onclick='addP(6)'>";
+                 document.getElementById("oo").innerHTML="  <p class='form-inline' role='form'><select id='addMark1'class='form-control'><option value='A'>A</option><option value='B'>B</option><option value='C'>C</option><option value='D'>D</option></select>" +
+                 " or better in Course <input class='form-control' type='text' id='addMark2'><input type='button'class='btn btn-success' value='add' onclick='addP(6)'></p>";
 
              }else if(value==2){
                  <!--ignore -->
-                 document.getElementById("oo").innerHTML="<input type='text' id='addSemester1'>semester(s) of course<input type='text' id='addSemester2'><input type='button' value='add' onclick='addP(7)'>";
+                 document.getElementById("oo").innerHTML="<p class='form-inline' role='form'><input type='text'class='form-control'id='addSemester1'>semesters<input class='form-control' type='text' id='addSemester2'><input type='button'class='btn btn-success' value='add' onclick='addP(7)'></p>";
              }else if(value==3){
                  <!--ignore -->
-                 document.getElementById("oo").innerHTML="<input type='text' id='addMajor'><input type='button' value='add' onclick='addP(8)'>";
+                 document.getElementById("oo").innerHTML="<p class='form-inline' role='form'><input type='text'class='form-control' id='addMajor'><input type='button'class='btn btn-success' value='add' onclick='addP(8)'></p>";
              }else if(value==4){
                  <!--ignore -->
-                 document.getElementById("oo").innerHTML="<select id='addConsent'><option value='instructor'>Instructor</option><option value='department'>Department</option> </select><input type='button' value='add' onclick='addP(9)'>";
+                 document.getElementById("oo").innerHTML="<p class='form-inline' role='form'><select id='addConsent'class='form-control'><option value='instructor'>Instructor</option><option value='department'>Department</option> </select><input type='button' class='btn btn-success' value='add' onclick='addP(9)'></p>";
              }else if(value==5){
                  <!--ignore -->
-                 document.getElementById("oo").innerHTML="<select id='addGrade'><option value='freshman'>freshman</option><option value='sophomore'>sophomore</option>" +
-                 "<option value='junior'>junior</option><option value='senior'>senior</option></select><input type='button' value='add' onclick='addP(10)'>";
+                 document.getElementById("oo").innerHTML="<p class='form-inline' role='form'><select id='addGrade'class='form-control'><option value='freshman'>freshman</option><option value='sophomore'>sophomore</option>" +
+                 "<option value='junior'>junior</option><option value='senior'>senior</option></select><input class='btn btn-success' type='button' value='add' onclick='addP(10)'></p>";
              }
          }
          var temp="";

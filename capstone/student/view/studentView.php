@@ -125,6 +125,6 @@ include_once "../model/getStudent.php";
     <!-- /top_title -->
     <div class="wraper">
         <!-- left_nav -->
-        <div class="left_nav" style="border-left:solid 1px gray;border-right:solid 1px gray; height: 480px" >
+        <div class="left_nav" style="border-left:solid 1px gray;border-right:solid 1px gray; height: auto" >
 
                 <div id="tab-1">

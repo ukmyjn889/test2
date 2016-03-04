@@ -159,7 +159,6 @@ include_once "../model/getStu_Plan.php";
             <li><a >Log out</a>
                 <ul>
                     <li><a href="../model/logOut.php">Log out</a></li>
-                    <li><a href="shortcodes_buttons_icons.html">Switch user</a></li>
 
                 </ul>
             </li>

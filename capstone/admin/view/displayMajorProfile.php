@@ -35,13 +35,15 @@ for($x=0;$x<count($result);$x++){
 //            echo "<br>";
             echo "<td align='left' height='20px'>";
            // echo $list['cid'];
+            echo"<h3 class='text-success'>";
             ?>
             <a href='#' data-toggle='popover' id="<?php echo  $list['cid']?>"
                title="<?php echo $list['cid']?>"
                data-html='true' data-content='' data-placement='top' data-trigger='focus'
                onclick='return false' onmouseover='changeValue(this.id)'
-               onmouseout='leave(this.id)'><?php echo $list['cid']?></a>
+               onmouseout='leave(this.id)' style='color: #006600'><?php echo $list['cid']?></a>
             <?php
+            echo"</h3>";
             echo "</td><td align='right' height='20px' >";
             echo"<h3 class='text-success'>";
             echo $list['credits'];
@@ -73,7 +75,9 @@ for($x=0;$x<count($result);$x++){
 //                echo "select " . $head['subject'] . " credits from the following:            ".$head['credits']."<br>";
                 echo "<tr>";
                 echo "<td align='left' height='20px'>";
-                echo "select " . $head['subject'] . " credits from the following: ";
+                echo "<h3>";
+                echo "Select " . $head['subject'] . " credits from the following: ";
+                echo "</h3>";
                 echo "</td>";
                 echo "<td align='right' height='20px'>";
                 echo $head['credits'];
@@ -92,7 +96,7 @@ for($x=0;$x<count($result);$x++){
                    title="<?php echo $list['cid']?>"
                    data-html='true' data-content='' data-placement='top' data-trigger='focus'
                    onclick='return false' onmouseover='changeValue(this.id)'
-                   onmouseout='leave(this.id)'><?php echo $list['cid']?></a>
+                   onmouseout='leave(this.id)' style="color: #006600"><?php echo $list['cid']?></a>
     <?php
                 echo "</td><td align='right' height='20px'>";
                 echo"<h3 class='text-success'>";
@@ -113,7 +117,9 @@ for($x=0;$x<count($result);$x++){
             if ($head['component'] == "select") {
                 echo "<tr>";
                 echo "<td align='left' height='20px'>";
-                echo "select " . $head['subject'] . " course from Elective List".$count1.$string;
+                echo "<h3>";
+                echo "Select " . $head['subject'] . " course from Elective List".$count1.$string;
+                echo "</h3>";
                 $count1++;
                 echo "</td>";
                 echo "<td align='right' height='20px'>";
@@ -125,7 +131,9 @@ for($x=0;$x<count($result);$x++){
             } else if ($head['component'] == "credit") {
                 echo "<tr>";
                 echo "<td align='left' height='20px'>";
-                echo "select " . $head['subject'] . " course from Elective List".$count1.$string;
+                echo "<h3>";
+                echo "Select " . $head['subject'] . " course from Elective List".$count1.$string;
+                echo "</h3>";
                 $count1++;
                 echo "</td>";
                 echo "<td align='right' height='20px'>";
@@ -143,9 +151,9 @@ for($x=0;$x<count($result);$x++){
 ?>
     <tr>
         <td height="20px" ><h3 class='text-success'>Total Credits</h3></td><td align="right">
-        <?php
+            <h3 class='text-success'> <?php
         echo getMajorCreditByMajorName($major);
-        ?>
+        ?></h3>
         </td>
     </tr>
 </table>
@@ -157,7 +165,9 @@ for($x=0;$x<count($keys);$x++){
    // echo "<td>";
     echo "<br>";
     echo "<li style='font-size: medium; list-style-type: none'>";
-    echo "Elective list".($x+1);
+    echo"<h3 class='text-success'>";
+    echo "Elective List".($x+1);
+    echo"</h3>";
     echo "</li>";
   //  echo "</td>";
  //   echo "</tr>";
@@ -166,11 +176,11 @@ for($y=1;$y<count($map[$keys[$x]]);$y++){
     echo "<tr>";
     echo "<td align='left' height='20px'>";
     ?>
-    <a href='#' data-toggle='popover' id="<?php echo  $list['cid']?>"
+    <h3><a href='#' data-toggle='popover' id="<?php echo  $list['cid']?>"
        title="<?php echo $list['cid']?>"
        data-html='true' data-content='' data-placement='top' data-trigger='focus'
        onclick='return false' onmouseover='changeValue(this.id)'
-       onmouseout='leave(this.id)'><?php echo $list['cid']?></a>
+       onmouseout='leave(this.id)' style="color: #006600"><?php echo $list['cid']?></a></h3>
     <?php
     echo "</td><td align='right' height='20px'>";
     echo"<h3 class='text-success'>";

@@ -10,6 +10,15 @@ if(!$con){
     die('Could not connect: ' . mysql_error());
 }
 mysql_select_db("capstone",$con);
+function getMaxMajorID(){
+    $sql="select Max(mid) from required";
+    return mysql_fetch_array(mysql_query($sql))[0];
+}
+function insertRequired($mid,$majorName,$subject,$credits,$component,$options,$listid,$remark,$listname){
+    $sql="insert into requried(mid,majorname,subject,credits,component,options,listid,remark,listname) VALUES
+('".$mid."','".$majorName."','".$subject."','".$credits."','".$component."','".$options."','".$listid."','".$remark."','".$listname."')";
+    mysql_query($sql);
+}
 function getAllSubjectsByMajor($major){
     $sql = "select * from required where majorName='" . $major . "'order by options";
     $result = mysql_query($sql);

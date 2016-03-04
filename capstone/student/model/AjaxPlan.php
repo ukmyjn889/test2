@@ -11,7 +11,7 @@ include_once "getStudent.php";
 include_once "checkPrerequisites.php";
 include_once "getStu_offering.php";
 include_once "getStu_Plan.php";
-
+session_start();
 $con=mysql_connect("localhost:3306","root","5656123ljx");
 if(!$con){
     die('Could not connect: ' . mysql_error());
@@ -49,7 +49,7 @@ function checkPrerequisites($cid,$selectedCourse){
             //2.将这个数组放入profile里面进行查询，返回T or F
             //print_r($orArray);
             //3. 返回F就给$error赋值，否则继续
-            if (!isInStu_offering($orArray)) {
+            if (!isInStu_offering($orArray,$_SESSION['sid'])) {
                 if(!isInSelectedCourse($orArray,$selectedCourse)) {
                     $error.=echoOrString($orArray)."\n";
                     $count++;

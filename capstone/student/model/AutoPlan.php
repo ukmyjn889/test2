@@ -11,6 +11,7 @@ include_once "getStudent.php";
 include_once "checkPrerequisites.php";
 include_once "getStu_offering.php";
 include_once "getCourse.php";
+session_start();
 function checkPrerequisites($cid,$selectedCourse){
     $prerequisites=getPrerequisitesStringByCid($cid);
 //echo $prerequisites;
@@ -26,7 +27,7 @@ function checkPrerequisites($cid,$selectedCourse){
             //2.将这个数组放入profile里面进行查询，返回T or F
             //print_r($orArray);
             //3. 返回F就给$error赋值，否则继续
-            if (!isInStu_offering($orArray)) {
+            if (!isInStu_offering($orArray,$_SESSION['sid'])) {
                 if(!isInSelectedCourse($orArray,$selectedCourse)) {
                     $error[$count] = $array[$i];
                     $count++;
@@ -52,7 +53,7 @@ function checkCrosslist($cid,$selectedCourse)
     if($crosslist!=null) {
         for ($i = 0; $i < count($array); $i++) {
             $orArray = divOrStringIntoArray($array[$i]);
-            if (isInStu_offering($orArray)) {
+            if (isInStu_offering($orArray,$_SESSION['sid'])) {
                 $error[$count] = $array[$i];
                 $count++;
             }else if(isInSelectedCourse($orArray,$selectedCourse)) {
@@ -78,7 +79,7 @@ function checkRestriction($cid,$selectedCourse)
     if($restriction!=null) {
         for ($i = 0; $i < count($array); $i++) {
             $orArray = divOrStringIntoArray($array[$i]);
-            if (isInStu_offering($orArray)) {
+            if (isInStu_offering($orArray,$_SESSION['sid'])) {
                 $error[$count] = $array[$i];
                 $count++;
             }else if(isInSelectedCourse($orArray,$selectedCourse)) {
@@ -121,6 +122,7 @@ function getKasiPlan($semesters,$sid)
 //while($row=mysql_fetch_array($result)){
 //    array_push($AllCourse,$row);
 //}
+    session_start();
     $major = mysql_fetch_array(getStudentById($sid))['major'];
     $result = getAllSubjectsByMajor($major);
     while ($row = mysql_fetch_array($result)) {
@@ -128,12 +130,16 @@ function getKasiPlan($semesters,$sid)
         $listid = $row['listid'];
         $subResult = getListByListID($listid);
         while ($subRow = mysql_fetch_array($subResult)) {
-            array_push($AllCourse, $subRow);
+            if(!isInStu_offering(array($subRow['cid']),$_SESSION['sid'])) {
+                array_push($AllCourse, $subRow);
+            }
         }
     }
+    //print_r($selectedCourse);
    // return $AllCourse;
-    session_start();
+
     $_SESSION['creditsList']=$creditsList;
+   // print_r($selectedCourse);
     $returnResult = array();
     for ($i = 0; $i < $semesters; $i++) {
         $eachLevel = array();
@@ -152,10 +158,14 @@ function getKasiPlan($semesters,$sid)
                 }
 
                 array_push($eachLevel, $value);
+
                 //array_push($selectedCourse, $value['cid']);
                 unset($AllCourse[$key]);
             }
+
         }
+      //  print_r($eachLevel);
+       // echo "<br><br>";
         foreach ($eachLevel as $value) {
             array_push($selectedCourse, $value['cid']);
             for($ii=0;$ii<count($creditsList);$ii++){
@@ -175,6 +185,7 @@ function getKasiPlan($semesters,$sid)
     for($i=0;$i<count($creditsList);$i++){
       //  echo $creditsList[$i]['credits']."<br>";
         if($creditsList[$i]['credits']>0){
+           // print_r($creditsList[$i]);
             $flag=false;
         }
     }
@@ -182,6 +193,7 @@ function getKasiPlan($semesters,$sid)
     if($flag==true) {
         session_start();
         $_SESSION['semesters']=$returnResult;
+       // print_r($returnResult);
        // $_SESSION['creditsList']=$creditsList;
         return $returnResult;
     }

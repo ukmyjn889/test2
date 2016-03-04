@@ -17,12 +17,17 @@ function getOfferingByCid($cid)
     $result = mysql_query($sql);
     return $result;
 }
+function addOffeingTotEnrl($newTotEnrl,$oid){
+    $sql="update offering set TotEnrl='".$newTotEnrl."' where oid=".$oid;
+    mysql_query($sql);
+}
 function getOfferingById($oid){
     $sql="select * from offering where oid='".$oid."'";
    // echo $sql;
     $result=mysql_query($sql);
     return $result;
 }
+
 function transWeekIntoString($row){
     $string="";
     if($row['Mon']=="T"){

@@ -39,4 +39,14 @@ function getCourseById($cid){
 function getCourseByConditions($condition,$cid){
 
 }
+function getCoursesByMajorAndConditions($major,$conditions,$conditionValue){
+    $sql="";
+    if($conditions=="contains"){
+        $sql="select * from course where cid like '".$major.$conditionValue."%' and major='".$major."'";
+    }else{
+        $sql="select * from course where cid".$conditions." '".$major.$conditionValue."' and major='".$major."'";
+    }
+    return mysql_query($sql);
+  //  return $sql;
+}
 ?>

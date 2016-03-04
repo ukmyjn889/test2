@@ -47,27 +47,26 @@ $result=mysql_query($sql);
 <form action="../model/saveCourse.php" method="post" name="saveCourse">
             <?php echo $_GET['title'];
             ?>
-                <table border="1" align="center" width="500px">
+                <table border="1" align="center" width="100%" class='table table-striped'>
                     <th>Offering ID</th>
-                    <th>Class Number</th>
                     <th>Course Title</th>
-                    <th>details</th>
+                    <th>Details</th>
                     <th>Delete</th>
                     <?php
                     while($row = mysql_fetch_array($result)){
                         echo "<tr><td>";
                         echo $row['oid'];
-                        echo  "</td><td>";
-                        echo $row['classNum'];
+//                        echo  "</td><td>";
+//                        echo $row['classNum'];
                         echo  "</td><td>";
                         echo $row['courseTitle'];
                         echo  "</td><td>";
                         ?>
-                        <a href="../view/showOfferingDetails.php?oid=<?php echo $row['oid'];?>">details</a>
+                        <a href="../view/showOfferingDetails.php?oid=<?php echo $row['oid'];?>"><h3 style="color: #006600">Details</h3></a>
                     <?php
                         echo  "</td><td>";
                         ?>
-                        <input type="button" value="delete" onclick="del(<?php echo $row['oid'];?>,'<?php echo $cid;?>')">
+                        <input type="button" value="delete" class="btn btn-default" onclick="del(<?php echo $row['oid'];?>,'<?php echo $cid;?>')">
                         <?php
                         echo "</td></tr>";
                     }

@@ -15,4 +15,8 @@ function getListByListID($listID){
     $result=mysql_query($sql);
     return $result;
 }
+function insertCourse_list($listid,$cid,$credits,$additional){
+    $sql="insert into course_list (listid,cid.credits.additional) VALUES ('".$listid."','".$cid."','".$credits."','".$additional."')";
+    mysql_query($sql);
+}
 ?>

@@ -60,7 +60,9 @@ $timeTableArray=getOfferingTimeTable($sid);
 
     </style>
     <script>
-
+        $(document).ready(function(){
+            $('[data-toggle="tooltip"]').tooltip();
+        });
     </script>
 </head>
 <body>
@@ -77,7 +79,7 @@ $timeTableArray=getOfferingTimeTable($sid);
 
 
 
-        <table height="400" width="1200"  >
+        <table height="470" width="1200">
             <tr>
                 <td class="title"> Class Timings</td>
                 <td class="title" height="30">Monday</td>
@@ -190,9 +192,9 @@ $timeTableArray=getOfferingTimeTable($sid);
 
         </table>
     </div>
-    <div id="nocolor" style="position:absolute; left:310px; top:38px;">
+    <div id="nocolor" style="position:absolute; left:310px; top:47px;">
 
-        <table height="400"  CellSpacing="0" style=" border-color: #00aeef; " border="0px"  width="598">
+        <table height="430"  CellSpacing="0" style=" border-color: #00aeef; " border="0px"  width="598">
 
             <?php
            // print_r($timeTable);
@@ -204,7 +206,7 @@ $timeTableArray=getOfferingTimeTable($sid);
 //            echo $timeTableArray[1][10];
 //            echo $timeTableArray[1][11];
 //           print_r( $timeTableArray);
-            for($x=0;$x<11*12;$x+=2){
+            for($x=0;$x<11*12;$x=$x+2){
 //                if($x<15) {
 //                    echo $flag[1];
 //                }
@@ -218,13 +220,15 @@ $timeTableArray=getOfferingTimeTable($sid);
 
                             $offeringRow = $timeTable[$y][$count[$y]];
                             $rowSpan=calculateOfferingPeriod($offeringRow);
-                            echo "<td class='title' align='center'  height='4px'  width='75' rowspan='" . $rowSpan . "'     style=' border:1px solid; border-color:#1e90ff; '  bgcolor='#1e90ff'><a href='#' style='color: #ffffff;'>" .
+                            echo "<td class='title' align='center'    width='75' rowspan='" . $rowSpan .
+                                "'     style=' border:1px solid; border-color:#1e90ff; '  bgcolor='#1e90ff'><a href='#' style='color: #ffffff;' data-toggle='tooltip' title='".
+                                date('h:i A',strtotime($offeringRow['TimeStart']))."-".date('h:i A',strtotime($offeringRow['TimeEnd']))."'>" .
                                $offeringRow['cid']. "<a></td>\n";
                             $flag[$y] = $rowSpan-1;
                             $count[$y]++;
                         }
                     } else {
-                        echo "<td align='center' class='drop' height='4px' width='75'  ></td>\n";
+                        echo "<td align='center' class='drop'  width='75'  ></td>\n";
                     }
                 }
 

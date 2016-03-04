@@ -73,10 +73,17 @@ include_once "adminVIew.php";
                             <b> Friday</b>
                             <input name="Sat" type="checkbox" value="T" >
                             <b> Saturday</b>
-                            <input name="Sun" type="checkbox" value="T" >
-                            <b> Sunday</b>
+                            <input name="Sun" type="checkbox" value="T" style="display: none">
+<!--                            <b> Sunday</b>-->
 
                     </tr>
+                                <tr>
+                                    <td><h3 class="text-success">Offer Year</h3></td>
+                                    <td><select name="offerYear" class="form-control">
+                                            <option value="2016">2016</option>
+                                            <option value="2017">2017</option>
+                                            <option value="2018">2018</option>
+                                        </select></td></tr>
                     <tr>
                         <td height="50"> <h3 class="text-success">Semester:</h3></td>
                         <td> <select name="semester" class="form-control">

@@ -37,43 +37,6 @@
         });
 
     });
-//    $(function(){
-//
-//        var el = $("#corelist").multiselect(),
-//            disabled = $('#disabled'),
-//            selected = $('#selected'),
-//            newItem = $('#newItem');
-//
-//       // $("#add").click(function(){
-//       // xxx();
-//           var m="666"; var v = "xxx";
-//                opt = $('<option />', {
-//                value: v,
-//                text: m
-//
-//            });
-//
-//        //    alert(v);
-//
-//            if(disabled.is(':checked')){
-//                opt.attr('disabled','disabled');
-//            }
-//            if(selected.is(':checked')){
-//                opt.attr('selected','selected');
-//            }
-//
-//            opt.appendTo( el );
-//          //  el.multiselect('refresh');
-//        v = "yyy",
-//            opt = $('<option />', {
-//                value: v,
-//                text: v
-//
-//            });
-//        opt.appendTo( el );
-//        el.multiselect('refresh');
-//     //   });
-//    });
 
 
     var gn=2;
@@ -81,22 +44,7 @@
     {
 
         $ ('#addg').click (function ()
-        {//
-//		   var html='';
-//	html+='<p>'
-//	html+='<select name="elegrup1" multiple="multiple" style="width:400px">'
-//		html+='<option value="option1">Option 1</option>'
-//		html+='<option value="option2">Option 2</option>'
-//		html+='<option value="option3">Option 3</option>'
-//		html+='<option value="option4">Option 4</option>'
-//		html+='<option value="option5">Option 5</option>'
-//		html+='<option value="option6">Option 6</option>'
-//		html+='<option value="option7">Option 7</option></select>'
-//		html+='</p>'
-//		
-//   
-//    $('#elearea').append(html);
-//   
+        {
 
             $('#elegrup'+gn+'').show();
 
@@ -111,65 +59,9 @@
 </head>
 <body onload="prettyPrint();">
 <?php include_once "viewStructureBody.php";?>
-<!--<div class="wraper">-->
-<!--    <header class="header">-->
-<!--        <a class="logo" href="../../Login.html">Admin module</a>-->
-<!--        <nav>-->
-<!--      -->
-<!--            <ul>-->
-<!--                <li><a >View Course</a>-->
-<!--                    <ul>-->
-<!---->
-<!--                    </ul>-->
-<!--                </li>-->
-<!--                -->
-<!--                <li><a >View Major</a>-->
-<!--                    <ul>-->
-<!--                        <li><a href="displayTimeTable.php"><p class="text-primary">Add Courses into Major</p></a>-->
-<!---->
-<!--                        </li>-->
-<!--      -->
-<!---->
-<!--                </li>-->
-<!---->
-<!--                </li>-->
-<!---->
-<!--            </ul>-->
-<!--            </li>-->
-<!--            <li><a href="#">View Offering</a>-->
-<!--                <ul>-->
-<!--                   -->
-<!--                </ul>-->
-<!--            </li>-->
-<!--            <li><a href="../../student/model/logOut.php">Log out</a>-->
-<!--                <ul>-->
-<!--                 -->
-<!--                </ul>-->
-<!--            </li>-->
-<!--            </ul>-->
-<!--       -->
-<!--        </nav>-->
-<!--    </header>-->
-<!--</div>-->
-<!---->
-<!--<div class="content_block">-->
-<!--   -->
-<!--    <div class="top_title">-->
-<!--        <div class="wraper">-->
-<!--            <h2>Admin Module <span></span></h2>-->
-<!--            <ul>-->
-<!--                -->
-<!--            </ul>-->
-<!--        </div>-->
-<!--    </div>-->
-<!-- -->
-<!--    <div class="wraper">-->
-<!--       -->
-<!--        <div class="left_nav" style="border-left:solid 1px  gray;border-right:solid 1px gray; height:auto" >-->
-<!--            <div id="tab-1">-->
                 <div style="margin: 0 auto;">
                     <div style="position: relative;left: 25%">
-                    <h1 style="color:lightblue">Add major</h1>
+                    <h1 style="color:blue">Add major courses</h1>
 
 <!--                    <div style="float:left; width:325px">-->
 <!--                        <h3 style="margin-top:0">Add an item:</h3>-->
@@ -218,14 +110,7 @@
                         <h3 style="color:darkgreen">Please choose core courses</h3>
 
                         <p>
-                            <select id="corelist" name="corelist" multiple="multiple" style="width:400px" >
-<!--                                <option value="option1">Option 1</option>-->
-<!--                                <option value="option2">Option 2</option>-->
-<!--                                <option value="option3">Option 3</option>-->
-<!--                                <option value="option4">Option 4</option>-->
-<!--                                <option value="option5">Option 5</option>-->
-<!--                                <option value="option6">Option 6</option>-->
-<!--                                <option value="option7">Option 7</option>-->
+                            <select id="corelist" name="corelist[]" multiple="multiple" style="width:400px" >
                             </select>
 
                         </p>
@@ -233,68 +118,130 @@
                             <h3 style="color:darkgreen">Please add elective course to elective group</h3>
 
                             <div>
-                            <h4 style="color:darkgreen">Group1</h4>
-                                <label><input type="text" name="eName1"></label>
-                            <select name="elegrup1" id="ele1" multiple="multiple" style="width:400px">
+                            <h4 style="color:darkgreen">Group1</h4><br>
+                               <label> Credits or number of courses:<br>
+                                    <select name="eChoice1" id="eChoice1">
+                                        <option value="credits">number of credits</option>
+                                        <option value="courses">number of courses</option>
+                                </select>
+                                   </label><br>
+                                <label><input type="text" name="eChoiceValue1" class="form-control"></label><br>
+                            <select name="elegrup1[]" id="ele1" multiple="multiple" style="width:400px">
 
                             </select>   <button class="btn" id="addg" type="button">add more group</button>
                             </div>
 
                             <div id="elegrup2" style="display:none">
                             <h4 style="color:darkgreen">Group2</h4>
-                            <select name="elegrup2" multiple="multiple" style="width:400px" id="ele2">
+                                <label> Credits or number of courses:<br>
+                                    <select name="eChoice2" id="eChoice2">
+                                        <option value="credits">number of credits</option>
+                                        <option value="courses">number of courses</option>
+                                    </select>
+                                </label><br>
+                                <label><input type="text" name="eChoiceValue2" class="form-control"></label><br>
+                            <select name="elegrup2[]" multiple="multiple" style="width:400px" id="ele2">
 
                             </select>
                             </div >
                             <div id="elegrup3" style="display:none">
                                 <h4 style="color:darkgreen">Group3</h4>
-                                <select name="elegrup3" multiple="multiple" style="width:400px" id="ele3">
+                                <label> Credits or number of courses:<br>
+                                    <select name="eChoice3" id="eChoice3">
+                                        <option value="credits">number of credits</option>
+                                        <option value="courses">number of courses</option>
+                                    </select>
+                                </label><br>
+                                <label><input type="text" name="eChoiceValue3" class="form-control"></label><br>
+                                <select name="elegrup3[]" multiple="multiple" style="width:400px" id="ele3">
 
                                 </select>
                             </div>
                             <div id="elegrup4" style="display:none">
                                 <h4 style="color:darkgreen">Group4</h4>
-                                <select name="elegrup4" multiple="multiple" style="width:400px" id="ele4">
+                                <label> Credits or number of courses:<br>
+                                    <select name="eChoice4" id="eChoice4">
+                                        <option value="credits">number of credits</option>
+                                        <option value="courses">number of courses</option>
+                                    </select>
+                                </label><br>
+                                <label><input type="text" name="eChoiceValue4" class="form-control"></label><br>
+                                <select name="elegrup4[]" multiple="multiple" style="width:400px" id="ele4">
 
                                 </select>
                             </div>
                             <div id="elegrup5" style="display:none">
                                 <h4 style="color:darkgreen">Group5</h4>
-                                <select name="elegrup5" multiple="multiple" style="width:400px" id="ele5">
+                                <label> Credits or number of courses:<br>
+                                    <select name="eChoice5" id="eChoice5">
+                                        <option value="credits">number of credits</option>
+                                        <option value="courses">number of courses</option>
+                                    </select>
+                                </label><br>
+                                <label><input type="text" name="eChoiceValue5" class="form-control"></label><br>
+                                <select name="elegrup5[]" multiple="multiple" style="width:400px" id="ele5">
 
                                 </select>
                             </div>
                             <div id="elegrup6" style="display:none">
                                 <h4 style="color:darkgreen">Group6</h4>
-                                <select name="elegrup" multiple="multiple" style="width:400px" id="ele6">
+                                <label> Credits or number of courses:<br>
+                                    <select name="eChoice6" id="eChoice6">
+                                        <option value="credits">number of credits</option>
+                                        <option value="courses">number of courses</option>
+                                    </select>
+                                </label><br>
+                                <label><input type="text" name="eChoiceValue6" class="form-control"></label><br>
+                                <select name="elegrup[]" multiple="multiple" style="width:400px" id="ele6">
                                 </select>
                             </div>
                             <div id="elegrup7" style="display:none">
                                 <h3 style="color:darkgreen">Group7</h3>
-                                <select name="elegrup7" multiple="multiple" style="width:400px" id="ele7">
+                                <label> Credits or number of courses:<br>
+                                    <select name="eChoice7" id="eChoice7">
+                                        <option value="credits">number of credits</option>
+                                        <option value="courses">number of courses</option>
+                                    </select>
+                                </label><br>
+                                <label><input type="text" name="eChoiceValue7" class="form-control"></label><br>
+                                <select name="elegrup7[]" multiple="multiple" style="width:400px" id="ele7">
 
                                 </select>
                             </div>
                             <div id="elegrup8" style="display:none">
                                 <h4 style="color:darkgreen">Group8</h4>
-                                <select name="elegrup8" id="ele8" multiple="multiple" style="width:400px">
+                                <label> Credits or number of courses:<br>
+                                    <select name="eChoice8" id="eChoice8">
+                                        <option value="credits">number of credits</option>
+                                        <option value="courses">number of courses</option>
+                                    </select>
+                                </label><br>
+                                <label><input type="text" name="eChoiceValue1" class="form-control"></label><br>
+                                <select name="elegrup8[]" id="ele8" multiple="multiple" style="width:400px">
 
                                 </select>
                                 <script>
 
+                                    $("#eChoice1,#eChoice2,#eChoice3,#eChoice4,#eChoice5,#eChoice6,#eChoice7,#eChoice8").multiselect({
+                                        multiple: false,
+                                        header: "Select an option",
+                                        noneSelectedText: "Select an Option",
+                                        selectedList: 1
+                                    });
                                     $("select").multiselect({beforeopen:function() {
                                        // alert($("#corelist").val());
                                        var coreValue="";
                                         var temp=$("#corelist").val();
-                                           if(temp!=null){
+                                               if(temp!=null){
                                                coreValue=temp;
                                            }
                                         var id = this.id;
-
                                         var el = $("#" + id).multiselect();
                                         var majorName = $("#majorName").val();
                                        // alert(id);
-                                        if(id!="majorName"&&id!="corelist"){
+
+                                        if(id!="majorName"&&id!="corelist"&&id!="eChoice1"&&id!="eChoice2"&&id!="eChoice3"
+                                            &&id!="eChoice4"&&id!="eChoice5"&&id!="eChoice6"&&id!="eChoice7"&&id!="eChoice8"){
                                         $.ajax({
                                             url: "../../student/service/getMajorAndMajorName.php?message=" + majorName+"&&corelist="+coreValue,
                                             success: function (result) {

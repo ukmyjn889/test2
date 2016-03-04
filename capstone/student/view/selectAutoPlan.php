@@ -8,7 +8,7 @@
 include_once "../model/AutoPlan.php";
 
 session_start();
-$result=$_SESSION['semesters'];
+//$result=$_SESSION['semesters'];
 $sid=$_SESSION['sid'];
 $term=$_GET['term'];
 $semesters=$_GET['semesters'];
@@ -215,6 +215,7 @@ include_once "../model/getStudent.php";
                     var string="<table class='table' style='width: 700px;table-layout: fixed'><tr><td>Course ID</td><td>credits</td><td></td></tr>";
 
                    // dd.innerHTML="<table><tr>";
+                    //alert(arr.length);
                     for(var k=0;k<arr.length;k=k+4){
                         // alert(arr[k+1]+" ");
                       //  dd.innerHTML+="<table><tbody><tr></tr></tbody></table>";
@@ -230,9 +231,9 @@ include_once "../model/getStudent.php";
 
                         }
                     }
-
-                    for(var i = 4,length = result.length;i<length;i++){
-
+                  //  alert(result.length);
+                    for(var i = 0,length = result.length;i<length;i++){
+                      //  alert(result[i]["cid"]);
                         //alert(length);
                         string+="<tr>";
                         string+="<td style='width: 620px' ><a href='#' data-toggle='popover' id=\"" + ((parseInt(currentSemester) + 1)+result[i]["cid"]) + "\" title='"
@@ -521,6 +522,7 @@ for($i=0;$i<$semesters;$i++){
                 <dd style="display:block">
                 <?php
                 echo "<table class='table' style='width:700px;table-layout: fixed'>";
+                //print_r($result[0]);
                 echo "<tr><td>Course ID</td><td>credits</td><td>select</td></tr>";
                 //echo "111";
                 for($j = 0;$j < count($result[$i]);$j++) {

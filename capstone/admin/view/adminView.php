@@ -31,7 +31,7 @@
 <body>
 <div class="wraper">
     <header class="header">
-        <a class="logo" href="../../Login.html">Admin module</a>
+        <a class="logo" href="showCourse.php">Admin module</a>
         <nav>
             <!-- top menu -->
             <ul>
@@ -77,7 +77,7 @@
 
             </ul>
             </li>
-            <li><a href="#"><p class="text-success">View Offering</p></a>
+            <li><a href="#"><p class="text-success">View Offerings</p></a>
                 <ul>
 <!--                    <li><a href="selectTermToSetPlanner.php">Set my planner</a></li>-->
 <!--                    <li><a href="selectTermToViewOwnPlanner.php">View my planner</a></li>-->

@@ -21,7 +21,7 @@ while($row=mysql_fetch_array($result)) {
                 <ul class="thumbnails">
                     <li class="span4">
                         <div class="thumbnail">
-                            <img alt="300x200" src="../../images/3306.png" />
+
                             <div class="caption">
                                 <h3>
                                     <a href="displayMajorProfile.php?major=<?php echo $row['majorName']?>" style="font-size: medium"><?php echo $row['majorFullName']?></a><br>
